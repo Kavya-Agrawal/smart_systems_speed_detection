@@ -1,0 +1,60 @@
+CREATE TABLE vehicles (
+    plate TEXT PRIMARY KEY,
+    owner TEXT NOT NULL,
+    phone TEXT,
+    email TEXT,
+    type TEXT,  -- Student / Faculty / Staff / Visitor / Vendor
+
+    total_violations INT DEFAULT 0,
+    last_seen TIMESTAMP,
+    currently_in_campus BOOLEAN DEFAULT FALSE,
+
+    max_speed INT DEFAULT 0,
+    min_speed INT DEFAULT 0,
+    avg_speed FLOAT DEFAULT 0
+);
+
+CREATE TABLE zones (
+    zone_id INT PRIMARY KEY,
+    name TEXT UNIQUE NOT NULL,
+
+    speed_limit INT NOT NULL,
+    risk_level TEXT,   -- LOW / MEDIUM / HIGH
+
+    accident_count INT DEFAULT 0,
+    vehicle_density INT DEFAULT 0
+);
+
+CREATE TABLE events (
+    event_id INT PRIMARY KEY,
+
+    plate TEXT,
+    zone_id INT,
+
+    speed INT,
+    speed_limit INT,
+
+    event_time TIMESTAMP,
+    camera_id TEXT,
+
+    status TEXT,  -- NORMAL / VIOLATION
+
+    FOREIGN KEY (plate) REFERENCES vehicles(plate),
+    FOREIGN KEY (zone_id) REFERENCES zones(zone_id)
+);
+
+CREATE TABLE notifications (
+    notif_id INT PRIMARY KEY,
+
+    plate TEXT,
+    owner TEXT,
+    phone TEXT,
+
+    type TEXT,  -- SMS / EMAIL / SYSTEM
+    message TEXT,
+
+    delivery_status TEXT,  -- Delivered / Failed
+    sent_time TIMESTAMP,
+
+    FOREIGN KEY (plate) REFERENCES vehicles(plate)
+);

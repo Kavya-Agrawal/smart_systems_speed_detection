@@ -1,0 +1,9 @@
+zone_id,name,limit,risk,accidents,vehicles
+1,Main Gate,20,HIGH,34,120
+2,Academic Block A,20,MEDIUM,18,90
+3,Academic Block B,20,LOW,7,60
+4,Residential Zone,15,MEDIUM,22,80
+5,Sports Complex,25,LOW,5,40
+6,Hospital Road,20,HIGH,29,70
+7,Library Junction,20,MEDIUM,11,65
+8,GH-4 Gate,20,HIGH,41,100

@@ -1,0 +1,1213 @@
+notif_id,plate,owner,phone,type,message,status,time
+0,DL59QR2695,Suresh Das,+910814670689,SMS,DL59QR2695 overspeeding (53 km/h) at GH-4 Gate,Delivered,2026-03-24 10:17:58
+1,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (58 km/h) at Hospital Road,Delivered,2026-03-23 21:39:58
+2,AS95FF9779,Arjun Sharma,+917988247351,SMS,AS95FF9779 overspeeding (62 km/h) at Residential Zone,Delivered,2026-03-23 23:44:58
+3,DL39UK9366,Pooja Bose,+918116523937,EMAIL,DL39UK9366 overspeeding (43 km/h) at GH-4 Gate,Failed,2026-03-24 06:15:58
+4,AS20XH6881,Ananya Gupta,+911468643669,SMS,AS20XH6881 overspeeding (30 km/h) at Academic Block A,Failed,2026-03-24 05:59:58
+5,AS40IU3799,Rohan Nair,+910527804140,SYSTEM,AS40IU3799 overspeeding (62 km/h) at Hospital Road,Delivered,2026-03-24 01:18:58
+6,KA14YZ5213,Rajesh Bose,+917500846271,SYSTEM,KA14YZ5213 overspeeding (29 km/h) at Residential Zone,Delivered,2026-03-24 09:05:58
+7,ML46MM6488,Rajesh Joshi,+919322317460,SYSTEM,ML46MM6488 overspeeding (30 km/h) at Hospital Road,Failed,2026-03-23 21:28:58
+8,DL83WU9535,Kavya Nair,+911915390504,SYSTEM,DL83WU9535 overspeeding (69 km/h) at GH-4 Gate,Failed,2026-03-23 18:16:58
+9,WB35LG7640,Neha Verma,+911544676659,EMAIL,WB35LG7640 overspeeding (64 km/h) at Academic Block A,Delivered,2026-03-24 06:29:58
+10,WB57OF5240,Arjun Iyer,+911483946013,EMAIL,WB57OF5240 overspeeding (38 km/h) at Library Junction,Failed,2026-03-24 08:13:58
+11,KA26GV1325,Priya Mehta,+915506330633,EMAIL,KA26GV1325 overspeeding (41 km/h) at Academic Block B,Failed,2026-03-23 23:53:58
+12,KA55JD5796,Riya Gupta,+916827671617,SMS,KA55JD5796 overspeeding (66 km/h) at Hospital Road,Delivered,2026-03-24 03:19:58
+13,KA16IA3366,Rohan Sharma,+915286067475,EMAIL,KA16IA3366 overspeeding (47 km/h) at Residential Zone,Failed,2026-03-23 16:02:58
+14,WB83EK6884,Pooja Iyer,+913168632252,SYSTEM,WB83EK6884 overspeeding (43 km/h) at Main Gate,Failed,2026-03-24 11:25:58
+15,DL98TW1231,Arjun Das,+911014027580,EMAIL,DL98TW1231 overspeeding (53 km/h) at Sports Complex,Failed,2026-03-23 19:53:58
+16,AS95FF9779,Arjun Sharma,+917988247351,SMS,AS95FF9779 overspeeding (54 km/h) at Main Gate,Failed,2026-03-24 08:31:58
+17,WB83EK6884,Pooja Iyer,+913168632252,SYSTEM,WB83EK6884 overspeeding (59 km/h) at GH-4 Gate,Delivered,2026-03-24 08:40:58
+18,ML96SL5034,Ananya Nair,+913496992806,SYSTEM,ML96SL5034 overspeeding (38 km/h) at Library Junction,Delivered,2026-03-24 12:06:58
+19,DL63EZ3326,Suresh Nair,+913397774947,SMS,DL63EZ3326 overspeeding (47 km/h) at GH-4 Gate,Delivered,2026-03-24 09:58:58
+20,ML28CR1695,Suresh Mehta,+915639757890,SYSTEM,ML28CR1695 overspeeding (47 km/h) at Library Junction,Delivered,2026-03-24 04:07:58
+21,DL31BI3386,Kavya Verma,+919431025879,SYSTEM,DL31BI3386 overspeeding (54 km/h) at Hospital Road,Delivered,2026-03-23 18:42:58
+22,DL40VN4049,Rajesh Das,+915928684265,EMAIL,DL40VN4049 overspeeding (64 km/h) at Academic Block B,Delivered,2026-03-23 20:54:58
+23,KA04TV4558,Vikram Bose,+917707675638,SMS,KA04TV4558 overspeeding (67 km/h) at Library Junction,Delivered,2026-03-24 01:58:58
+24,ML88RX4292,Sneha Joshi,+913910963340,EMAIL,ML88RX4292 overspeeding (47 km/h) at Library Junction,Delivered,2026-03-23 22:52:58
+25,KA91KA4712,Meena Mehta,+914977347776,SYSTEM,KA91KA4712 overspeeding (63 km/h) at Academic Block A,Delivered,2026-03-23 14:54:58
+26,DL49NC5997,Pooja Kumar,+913421486777,EMAIL,DL49NC5997 overspeeding (52 km/h) at Sports Complex,Delivered,2026-03-23 22:05:58
+27,AS66CQ3987,Neha Das,+911025854153,SMS,AS66CQ3987 overspeeding (67 km/h) at Library Junction,Delivered,2026-03-24 11:21:58
+28,ML28TE1153,Rajesh Gupta,+910236906726,SYSTEM,ML28TE1153 overspeeding (31 km/h) at Academic Block A,Delivered,2026-03-23 13:54:58
+29,KA92JX4694,Riya Kumar,+914291031585,SYSTEM,KA92JX4694 overspeeding (60 km/h) at Academic Block B,Delivered,2026-03-23 12:34:58
+30,AS39TF1535,Suresh Sharma,+916015436475,SYSTEM,AS39TF1535 overspeeding (56 km/h) at Sports Complex,Failed,2026-03-24 03:53:58
+31,AS86JG9373,Suresh Mehta,+912381617150,EMAIL,AS86JG9373 overspeeding (55 km/h) at Main Gate,Failed,2026-03-23 20:37:58
+32,DL98KR3808,Rohan Iyer,+917462868793,SMS,DL98KR3808 overspeeding (30 km/h) at Residential Zone,Delivered,2026-03-24 06:49:58
+33,KA72NF7276,Kavya Sharma,+914958854666,SYSTEM,KA72NF7276 overspeeding (25 km/h) at Main Gate,Delivered,2026-03-23 19:04:58
+34,AS66CQ3987,Neha Das,+911025854153,SMS,AS66CQ3987 overspeeding (51 km/h) at GH-4 Gate,Delivered,2026-03-23 21:52:58
+35,DL39UK9366,Pooja Bose,+918116523937,SYSTEM,DL39UK9366 overspeeding (37 km/h) at Library Junction,Delivered,2026-03-23 17:03:58
+36,KA85SP8923,Sneha Iyer,+915424963059,EMAIL,KA85SP8923 overspeeding (27 km/h) at Library Junction,Failed,2026-03-24 07:19:58
+37,WB35LG7640,Neha Verma,+911544676659,EMAIL,WB35LG7640 overspeeding (39 km/h) at Sports Complex,Failed,2026-03-23 16:47:58
+38,DL15VL1668,Arjun Mehta,+918492100012,EMAIL,DL15VL1668 overspeeding (56 km/h) at Academic Block B,Delivered,2026-03-24 02:42:58
+39,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (53 km/h) at Library Junction,Failed,2026-03-24 10:18:58
+40,DL40VN4049,Rajesh Das,+915928684265,SMS,DL40VN4049 overspeeding (27 km/h) at Main Gate,Failed,2026-03-23 23:56:58
+41,ML66DO3392,Neha Kumar,+919221505021,EMAIL,ML66DO3392 overspeeding (38 km/h) at Main Gate,Delivered,2026-03-24 01:57:58
+42,ML56VE5235,Rahul Bose,+916488033059,SMS,ML56VE5235 overspeeding (56 km/h) at Main Gate,Failed,2026-03-23 22:17:58
+43,WB89CN6765,Riya Mehta,+913561598010,SMS,WB89CN6765 overspeeding (68 km/h) at Academic Block A,Failed,2026-03-23 17:16:58
+44,AS40IU3799,Rohan Nair,+910527804140,SMS,AS40IU3799 overspeeding (65 km/h) at Sports Complex,Failed,2026-03-23 22:18:58
+45,WB53AS7612,Riya Das,+915125486662,SMS,WB53AS7612 overspeeding (58 km/h) at Hospital Road,Delivered,2026-03-24 04:45:58
+46,ML72BR1484,Rohan Nair,+911576202706,SYSTEM,ML72BR1484 overspeeding (62 km/h) at Sports Complex,Failed,2026-03-23 22:58:58
+47,KA04TV4558,Vikram Bose,+917707675638,EMAIL,KA04TV4558 overspeeding (25 km/h) at GH-4 Gate,Failed,2026-03-24 08:30:58
+48,ML88RX4292,Sneha Joshi,+913910963340,SYSTEM,ML88RX4292 overspeeding (50 km/h) at Library Junction,Failed,2026-03-23 17:56:58
+49,ML96SL5034,Ananya Nair,+913496992806,EMAIL,ML96SL5034 overspeeding (47 km/h) at Hospital Road,Delivered,2026-03-24 11:33:58
+50,AS87CO8533,Arjun Kumar,+914853515621,SMS,AS87CO8533 overspeeding (51 km/h) at Academic Block A,Failed,2026-03-23 15:06:58
+51,DL01NF5747,Arjun Verma,+911316655257,SYSTEM,DL01NF5747 overspeeding (32 km/h) at Academic Block A,Delivered,2026-03-24 07:49:58
+52,ML88RX4292,Sneha Joshi,+913910963340,SMS,ML88RX4292 overspeeding (68 km/h) at Sports Complex,Delivered,2026-03-23 14:44:58
+53,DL83RN3192,Pooja Mehta,+916710951012,EMAIL,DL83RN3192 overspeeding (40 km/h) at Sports Complex,Delivered,2026-03-23 23:29:58
+54,DL15VL1668,Arjun Mehta,+918492100012,SYSTEM,DL15VL1668 overspeeding (60 km/h) at Main Gate,Delivered,2026-03-23 17:25:58
+55,WB91KK4291,Sneha Verma,+918987479903,SYSTEM,WB91KK4291 overspeeding (39 km/h) at Main Gate,Delivered,2026-03-24 08:34:58
+56,DL49NC5997,Pooja Kumar,+913421486777,SMS,DL49NC5997 overspeeding (61 km/h) at Hospital Road,Failed,2026-03-23 17:59:58
+57,KA97LD1716,Rajesh Gupta,+916474566939,SYSTEM,KA97LD1716 overspeeding (35 km/h) at Academic Block A,Failed,2026-03-23 14:50:58
+58,ML32GF1928,Aman Iyer,+917798826466,EMAIL,ML32GF1928 overspeeding (60 km/h) at Main Gate,Failed,2026-03-24 01:18:58
+59,AS85BJ2738,Rohan Joshi,+910333651880,SMS,AS85BJ2738 overspeeding (22 km/h) at Academic Block A,Failed,2026-03-23 19:39:58
+60,KA14YZ5213,Rajesh Bose,+917500846271,SYSTEM,KA14YZ5213 overspeeding (21 km/h) at Hospital Road,Delivered,2026-03-24 12:01:58
+61,WB66YQ5291,Riya Nair,+913398014429,SMS,WB66YQ5291 overspeeding (37 km/h) at Main Gate,Delivered,2026-03-23 13:05:58
+62,ML28CR1695,Suresh Mehta,+915639757890,SMS,ML28CR1695 overspeeding (25 km/h) at GH-4 Gate,Failed,2026-03-23 18:59:58
+63,ML45SH3466,Sneha Joshi,+914389074659,SMS,ML45SH3466 overspeeding (57 km/h) at Library Junction,Delivered,2026-03-24 09:35:58
+64,AS05UA4808,Kavya Das,+919637877610,EMAIL,AS05UA4808 overspeeding (33 km/h) at Main Gate,Delivered,2026-03-24 01:15:58
+65,KA72NF7276,Kavya Sharma,+914958854666,EMAIL,KA72NF7276 overspeeding (48 km/h) at Main Gate,Failed,2026-03-23 15:38:58
+66,DL39UK9366,Pooja Bose,+918116523937,SMS,DL39UK9366 overspeeding (62 km/h) at Residential Zone,Failed,2026-03-23 21:54:58
+67,ML46MM6488,Rajesh Joshi,+919322317460,SYSTEM,ML46MM6488 overspeeding (38 km/h) at Academic Block B,Delivered,2026-03-23 17:33:58
+68,DL74BJ4274,Suresh Verma,+912083212354,SMS,DL74BJ4274 overspeeding (30 km/h) at Library Junction,Delivered,2026-03-24 11:41:58
+69,DL49NC5997,Pooja Kumar,+913421486777,EMAIL,DL49NC5997 overspeeding (24 km/h) at Academic Block A,Delivered,2026-03-24 10:11:58
+70,WB66YQ5291,Riya Nair,+913398014429,SYSTEM,WB66YQ5291 overspeeding (28 km/h) at Library Junction,Failed,2026-03-23 14:16:58
+71,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (35 km/h) at Main Gate,Delivered,2026-03-23 13:14:58
+72,WB43LM1595,Sneha Gupta,+914372014242,EMAIL,WB43LM1595 overspeeding (55 km/h) at Hospital Road,Delivered,2026-03-24 08:25:58
+73,DL39UK9366,Pooja Bose,+918116523937,EMAIL,DL39UK9366 overspeeding (61 km/h) at Sports Complex,Failed,2026-03-24 00:16:58
+74,AS84QL6148,Rohan Joshi,+913289615662,SYSTEM,AS84QL6148 overspeeding (52 km/h) at Academic Block B,Delivered,2026-03-24 07:54:58
+75,KA91KA4712,Meena Mehta,+914977347776,SYSTEM,KA91KA4712 overspeeding (46 km/h) at Sports Complex,Delivered,2026-03-23 15:23:58
+76,WB53AS7612,Riya Das,+915125486662,EMAIL,WB53AS7612 overspeeding (29 km/h) at Library Junction,Failed,2026-03-23 14:49:58
+77,KA91LX9133,Riya Das,+915415160089,SYSTEM,KA91LX9133 overspeeding (66 km/h) at GH-4 Gate,Delivered,2026-03-24 09:36:58
+78,WB58WC3808,Arjun Joshi,+913635977474,SYSTEM,WB58WC3808 overspeeding (63 km/h) at Residential Zone,Failed,2026-03-24 11:45:58
+79,KA54JI4942,Neha Nair,+918675014564,EMAIL,KA54JI4942 overspeeding (68 km/h) at Main Gate,Failed,2026-03-24 02:34:58
+80,DL05AZ5766,Rahul Joshi,+913347348918,EMAIL,DL05AZ5766 overspeeding (60 km/h) at Residential Zone,Delivered,2026-03-23 19:50:58
+81,DL21FZ5173,Rahul Nair,+911900874208,SYSTEM,DL21FZ5173 overspeeding (51 km/h) at Academic Block A,Delivered,2026-03-24 06:09:58
+82,WB36BB8849,Pooja Nair,+916299069117,EMAIL,WB36BB8849 overspeeding (39 km/h) at GH-4 Gate,Failed,2026-03-24 10:07:58
+83,AS39TF1535,Suresh Sharma,+916015436475,SYSTEM,AS39TF1535 overspeeding (30 km/h) at Hospital Road,Failed,2026-03-23 23:58:58
+84,DL98TW1231,Arjun Das,+911014027580,SMS,DL98TW1231 overspeeding (40 km/h) at GH-4 Gate,Delivered,2026-03-23 20:33:58
+85,WB59SZ3341,Rahul Bose,+917914437386,SYSTEM,WB59SZ3341 overspeeding (40 km/h) at Library Junction,Failed,2026-03-24 11:55:58
+86,KA17GN7428,Rohan Bose,+915832157688,SYSTEM,KA17GN7428 overspeeding (39 km/h) at Main Gate,Delivered,2026-03-23 18:35:58
+87,AS39TF1535,Suresh Sharma,+916015436475,EMAIL,AS39TF1535 overspeeding (48 km/h) at GH-4 Gate,Delivered,2026-03-23 16:17:58
+88,KA26GV1325,Priya Mehta,+915506330633,EMAIL,KA26GV1325 overspeeding (62 km/h) at Hospital Road,Delivered,2026-03-24 10:56:58
+89,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (27 km/h) at Academic Block A,Failed,2026-03-24 06:10:58
+90,WB48UU1369,Arjun Kumar,+918948026518,EMAIL,WB48UU1369 overspeeding (54 km/h) at GH-4 Gate,Delivered,2026-03-24 11:58:58
+91,AS83FS6022,Kavya Mehta,+917446152331,EMAIL,AS83FS6022 overspeeding (63 km/h) at Academic Block A,Delivered,2026-03-24 05:27:58
+92,AS27RC7448,Ananya Sharma,+919232836094,EMAIL,AS27RC7448 overspeeding (26 km/h) at Hospital Road,Failed,2026-03-23 23:45:58
+93,DL74BJ4274,Suresh Verma,+912083212354,SYSTEM,DL74BJ4274 overspeeding (47 km/h) at GH-4 Gate,Delivered,2026-03-24 12:15:58
+94,AS78YT6554,Aman Nair,+915592718773,SYSTEM,AS78YT6554 overspeeding (24 km/h) at Academic Block B,Failed,2026-03-24 00:45:58
+95,ML46MM6488,Rajesh Joshi,+919322317460,SMS,ML46MM6488 overspeeding (42 km/h) at Sports Complex,Delivered,2026-03-24 10:50:58
+96,DL59QR2695,Suresh Das,+910814670689,SMS,DL59QR2695 overspeeding (40 km/h) at Main Gate,Delivered,2026-03-23 23:21:58
+97,WB59SZ3341,Rahul Bose,+917914437386,EMAIL,WB59SZ3341 overspeeding (61 km/h) at Main Gate,Failed,2026-03-23 23:40:58
+98,KA82OH1461,Neha Nair,+915236349201,SYSTEM,KA82OH1461 overspeeding (59 km/h) at Hospital Road,Delivered,2026-03-24 00:34:58
+99,AS17HA8384,Riya Verma,+917556453519,EMAIL,AS17HA8384 overspeeding (62 km/h) at GH-4 Gate,Delivered,2026-03-24 00:52:58
+100,DL99TM2873,Pooja Bose,+918396935104,SYSTEM,DL99TM2873 overspeeding (27 km/h) at Hospital Road,Delivered,2026-03-23 13:11:58
+101,KA32PF6209,Rahul Nair,+913422974948,SYSTEM,KA32PF6209 overspeeding (54 km/h) at Academic Block B,Failed,2026-03-24 09:25:58
+102,KA26GV1325,Priya Mehta,+915506330633,EMAIL,KA26GV1325 overspeeding (61 km/h) at Residential Zone,Failed,2026-03-24 09:30:58
+103,ML56BF3812,Kavya Verma,+911367302207,EMAIL,ML56BF3812 overspeeding (31 km/h) at Residential Zone,Delivered,2026-03-24 10:44:58
+104,AS56EJ1700,Pooja Verma,+914789307919,SYSTEM,AS56EJ1700 overspeeding (52 km/h) at GH-4 Gate,Failed,2026-03-24 05:47:58
+105,DL63EZ3326,Suresh Nair,+913397774947,SYSTEM,DL63EZ3326 overspeeding (38 km/h) at Academic Block B,Failed,2026-03-23 15:13:58
+106,KA91KA4712,Meena Mehta,+914977347776,SMS,KA91KA4712 overspeeding (34 km/h) at Academic Block A,Failed,2026-03-24 00:48:58
+107,ML56BF3812,Kavya Verma,+911367302207,SMS,ML56BF3812 overspeeding (25 km/h) at Library Junction,Failed,2026-03-23 14:16:58
+108,KA82OH1461,Neha Nair,+915236349201,SMS,KA82OH1461 overspeeding (54 km/h) at Sports Complex,Failed,2026-03-23 20:03:58
+109,ML28TE1153,Rajesh Gupta,+910236906726,SMS,ML28TE1153 overspeeding (31 km/h) at Academic Block B,Failed,2026-03-23 23:10:58
+110,ML53WF1442,Arjun Das,+916625753145,SYSTEM,ML53WF1442 overspeeding (44 km/h) at Library Junction,Delivered,2026-03-24 10:34:58
+111,KA11BF5605,Vikram Sharma,+911190227555,SMS,KA11BF5605 overspeeding (61 km/h) at Residential Zone,Delivered,2026-03-24 00:32:58
+112,KA48KJ3409,Aman Bose,+912160886709,EMAIL,KA48KJ3409 overspeeding (54 km/h) at Main Gate,Failed,2026-03-23 22:40:58
+113,DL59QR2695,Suresh Das,+910814670689,SYSTEM,DL59QR2695 overspeeding (28 km/h) at GH-4 Gate,Delivered,2026-03-23 18:07:58
+114,ML66DO3392,Neha Kumar,+919221505021,SMS,ML66DO3392 overspeeding (59 km/h) at Residential Zone,Delivered,2026-03-24 05:08:58
+115,KA16IA3366,Rohan Sharma,+915286067475,SMS,KA16IA3366 overspeeding (31 km/h) at Academic Block B,Failed,2026-03-23 22:01:58
+116,AS86JG9373,Suresh Mehta,+912381617150,SYSTEM,AS86JG9373 overspeeding (33 km/h) at Academic Block A,Failed,2026-03-24 04:51:58
+117,KA11BF5605,Vikram Sharma,+911190227555,SMS,KA11BF5605 overspeeding (57 km/h) at Library Junction,Failed,2026-03-24 06:27:58
+118,DL74BJ4274,Suresh Verma,+912083212354,SYSTEM,DL74BJ4274 overspeeding (46 km/h) at Hospital Road,Delivered,2026-03-24 06:29:58
+119,AS78YT6554,Aman Nair,+915592718773,SYSTEM,AS78YT6554 overspeeding (23 km/h) at Hospital Road,Failed,2026-03-23 13:01:58
+120,KA85SP8923,Sneha Iyer,+915424963059,SYSTEM,KA85SP8923 overspeeding (42 km/h) at Hospital Road,Failed,2026-03-24 05:14:58
+121,AS62CG5474,Kavya Bose,+919032494066,SMS,AS62CG5474 overspeeding (57 km/h) at Academic Block B,Delivered,2026-03-23 20:18:58
+122,AS84QL6148,Rohan Joshi,+913289615662,SYSTEM,AS84QL6148 overspeeding (48 km/h) at Sports Complex,Delivered,2026-03-23 22:54:58
+123,WB89CN6765,Riya Mehta,+913561598010,SYSTEM,WB89CN6765 overspeeding (38 km/h) at Hospital Road,Delivered,2026-03-23 21:13:58
+124,DL80AM5081,Neha Iyer,+919588170395,SMS,DL80AM5081 overspeeding (63 km/h) at Academic Block A,Delivered,2026-03-24 02:00:58
+125,DL83WU9535,Kavya Nair,+911915390504,SYSTEM,DL83WU9535 overspeeding (28 km/h) at Academic Block A,Failed,2026-03-23 20:03:58
+126,KA92JX4694,Riya Kumar,+914291031585,SYSTEM,KA92JX4694 overspeeding (31 km/h) at GH-4 Gate,Failed,2026-03-23 22:46:58
+127,DL98KR3808,Rohan Iyer,+917462868793,SMS,DL98KR3808 overspeeding (38 km/h) at Sports Complex,Failed,2026-03-23 23:43:58
+128,AS86JG9373,Suresh Mehta,+912381617150,EMAIL,AS86JG9373 overspeeding (21 km/h) at Academic Block A,Delivered,2026-03-23 23:40:58
+129,KA72NF7276,Kavya Sharma,+914958854666,SYSTEM,KA72NF7276 overspeeding (67 km/h) at Hospital Road,Failed,2026-03-23 18:18:58
+130,ML56VE5235,Rahul Bose,+916488033059,EMAIL,ML56VE5235 overspeeding (23 km/h) at Residential Zone,Delivered,2026-03-24 00:05:58
+131,KA55JD5796,Riya Gupta,+916827671617,SMS,KA55JD5796 overspeeding (24 km/h) at GH-4 Gate,Delivered,2026-03-24 12:24:58
+132,WB58WC3808,Arjun Joshi,+913635977474,SMS,WB58WC3808 overspeeding (59 km/h) at Main Gate,Failed,2026-03-24 07:11:58
+133,DL01NF5747,Arjun Verma,+911316655257,SMS,DL01NF5747 overspeeding (45 km/h) at Residential Zone,Failed,2026-03-24 03:50:58
+134,DL68JU6845,Meena Iyer,+914327603910,EMAIL,DL68JU6845 overspeeding (34 km/h) at Academic Block A,Failed,2026-03-23 20:38:58
+135,WB83EK6884,Pooja Iyer,+913168632252,EMAIL,WB83EK6884 overspeeding (21 km/h) at Residential Zone,Delivered,2026-03-23 22:42:58
+136,WB57OF5240,Arjun Iyer,+911483946013,SYSTEM,WB57OF5240 overspeeding (25 km/h) at Hospital Road,Failed,2026-03-23 20:26:58
+137,KA91KA4712,Meena Mehta,+914977347776,SYSTEM,KA91KA4712 overspeeding (54 km/h) at Main Gate,Delivered,2026-03-23 19:19:58
+138,KA97LD1716,Rajesh Gupta,+916474566939,EMAIL,KA97LD1716 overspeeding (23 km/h) at GH-4 Gate,Delivered,2026-03-24 06:19:58
+139,KA30QN3381,Sneha Sharma,+912427917146,EMAIL,KA30QN3381 overspeeding (51 km/h) at Sports Complex,Delivered,2026-03-24 03:54:58
+140,ML53WF1442,Arjun Das,+916625753145,EMAIL,ML53WF1442 overspeeding (51 km/h) at Academic Block A,Failed,2026-03-23 17:56:58
+141,WB48UU1369,Arjun Kumar,+918948026518,SMS,WB48UU1369 overspeeding (24 km/h) at Academic Block A,Failed,2026-03-23 14:04:58
+142,DL72HP6499,Kavya Iyer,+916877846731,EMAIL,DL72HP6499 overspeeding (31 km/h) at Library Junction,Failed,2026-03-24 10:07:58
+143,AS83FS6022,Kavya Mehta,+917446152331,SYSTEM,AS83FS6022 overspeeding (50 km/h) at Residential Zone,Failed,2026-03-23 21:44:58
+144,ML56BF3812,Kavya Verma,+911367302207,EMAIL,ML56BF3812 overspeeding (35 km/h) at Academic Block B,Delivered,2026-03-24 09:15:58
+145,WB19EG7034,Priya Bose,+916975237282,EMAIL,WB19EG7034 overspeeding (36 km/h) at Hospital Road,Failed,2026-03-23 16:15:58
+146,WB59SZ3341,Rahul Bose,+917914437386,SMS,WB59SZ3341 overspeeding (40 km/h) at Academic Block A,Delivered,2026-03-23 16:14:58
+147,WB34HA6278,Priya Nair,+911278416516,SYSTEM,WB34HA6278 overspeeding (35 km/h) at Hospital Road,Failed,2026-03-24 01:51:58
+148,KA91KA4712,Meena Mehta,+914977347776,SYSTEM,KA91KA4712 overspeeding (48 km/h) at Hospital Road,Delivered,2026-03-23 17:48:58
+149,AS39DD6131,Neha Nair,+917489491004,EMAIL,AS39DD6131 overspeeding (62 km/h) at GH-4 Gate,Failed,2026-03-24 08:54:58
+150,AS85BJ2738,Rohan Joshi,+910333651880,SMS,AS85BJ2738 overspeeding (56 km/h) at Sports Complex,Failed,2026-03-23 14:35:58
+151,ML28TE1153,Rajesh Gupta,+910236906726,EMAIL,ML28TE1153 overspeeding (46 km/h) at Sports Complex,Delivered,2026-03-23 16:04:58
+152,ML94LG3675,Arjun Bose,+912905214340,SYSTEM,ML94LG3675 overspeeding (50 km/h) at Hospital Road,Failed,2026-03-24 12:08:58
+153,WB48OH1391,Suresh Sharma,+914985618855,EMAIL,WB48OH1391 overspeeding (54 km/h) at Residential Zone,Failed,2026-03-24 09:25:58
+154,KA16QU5840,Ananya Kumar,+912966108850,EMAIL,KA16QU5840 overspeeding (31 km/h) at Academic Block B,Failed,2026-03-24 10:42:58
+155,WB03IY1586,Rohan Das,+919834567754,EMAIL,WB03IY1586 overspeeding (33 km/h) at Academic Block B,Delivered,2026-03-23 18:38:58
+156,DL01NF5747,Arjun Verma,+911316655257,SMS,DL01NF5747 overspeeding (50 km/h) at Residential Zone,Delivered,2026-03-24 10:44:58
+157,DL32VH5131,Ananya Nair,+916053706022,EMAIL,DL32VH5131 overspeeding (54 km/h) at Residential Zone,Failed,2026-03-24 09:59:58
+158,DL59QR2695,Suresh Das,+910814670689,SYSTEM,DL59QR2695 overspeeding (47 km/h) at Main Gate,Failed,2026-03-24 09:28:58
+159,ML32GF1928,Aman Iyer,+917798826466,SYSTEM,ML32GF1928 overspeeding (26 km/h) at Sports Complex,Failed,2026-03-24 10:41:58
+160,KA32HP4802,Kavya Gupta,+911841233946,SYSTEM,KA32HP4802 overspeeding (40 km/h) at Academic Block A,Failed,2026-03-23 16:20:58
+161,DL12UZ8203,Rahul Joshi,+910460448844,SYSTEM,DL12UZ8203 overspeeding (48 km/h) at Sports Complex,Failed,2026-03-23 21:35:58
+162,ML56VE5235,Rahul Bose,+916488033059,EMAIL,ML56VE5235 overspeeding (44 km/h) at Hospital Road,Failed,2026-03-23 23:26:58
+163,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (40 km/h) at GH-4 Gate,Delivered,2026-03-23 13:51:58
+164,WB58WC3808,Arjun Joshi,+913635977474,SMS,WB58WC3808 overspeeding (48 km/h) at Hospital Road,Delivered,2026-03-24 05:43:58
+165,WB69AZ2580,Rahul Gupta,+917864439585,SYSTEM,WB69AZ2580 overspeeding (52 km/h) at GH-4 Gate,Delivered,2026-03-23 19:22:58
+166,AS87CO8533,Arjun Kumar,+914853515621,SMS,AS87CO8533 overspeeding (29 km/h) at Residential Zone,Failed,2026-03-24 02:17:58
+167,KA91LX9133,Riya Das,+915415160089,EMAIL,KA91LX9133 overspeeding (60 km/h) at Academic Block B,Failed,2026-03-24 07:46:58
+168,DL05AZ5766,Rahul Joshi,+913347348918,EMAIL,DL05AZ5766 overspeeding (24 km/h) at Academic Block B,Failed,2026-03-23 23:17:58
+169,WB43LM1595,Sneha Gupta,+914372014242,EMAIL,WB43LM1595 overspeeding (65 km/h) at Sports Complex,Failed,2026-03-24 09:22:58
+170,ML66ZK5727,Meena Das,+917622447332,SYSTEM,ML66ZK5727 overspeeding (24 km/h) at Academic Block B,Delivered,2026-03-24 09:24:58
+171,WB66YQ5291,Riya Nair,+913398014429,SYSTEM,WB66YQ5291 overspeeding (44 km/h) at Residential Zone,Failed,2026-03-24 06:55:58
+172,WB48UU1369,Arjun Kumar,+918948026518,SMS,WB48UU1369 overspeeding (47 km/h) at Hospital Road,Failed,2026-03-23 21:29:58
+173,DL40VN4049,Rajesh Das,+915928684265,EMAIL,DL40VN4049 overspeeding (40 km/h) at GH-4 Gate,Failed,2026-03-24 05:43:58
+174,ML94LG3675,Arjun Bose,+912905214340,EMAIL,ML94LG3675 overspeeding (69 km/h) at Academic Block B,Delivered,2026-03-23 21:16:58
+175,KA85SP8923,Sneha Iyer,+915424963059,EMAIL,KA85SP8923 overspeeding (32 km/h) at Hospital Road,Failed,2026-03-24 08:48:58
+176,AS27RC7448,Ananya Sharma,+919232836094,SYSTEM,AS27RC7448 overspeeding (51 km/h) at Main Gate,Delivered,2026-03-23 15:19:58
+177,WB58WC3808,Arjun Joshi,+913635977474,SMS,WB58WC3808 overspeeding (36 km/h) at Hospital Road,Delivered,2026-03-23 18:06:58
+178,WB59SZ3341,Rahul Bose,+917914437386,EMAIL,WB59SZ3341 overspeeding (48 km/h) at Academic Block A,Failed,2026-03-23 12:31:58
+179,AS87CO8533,Arjun Kumar,+914853515621,EMAIL,AS87CO8533 overspeeding (51 km/h) at Academic Block A,Delivered,2026-03-23 19:34:58
+180,ML67AP9551,Suresh Verma,+917855402642,SYSTEM,ML67AP9551 overspeeding (21 km/h) at Main Gate,Delivered,2026-03-23 13:07:58
+181,WB03IY1586,Rohan Das,+919834567754,EMAIL,WB03IY1586 overspeeding (30 km/h) at Main Gate,Failed,2026-03-24 03:47:58
+182,KA82OH1461,Neha Nair,+915236349201,EMAIL,KA82OH1461 overspeeding (64 km/h) at Residential Zone,Delivered,2026-03-24 01:01:58
+183,ML07XQ7196,Rohan Bose,+915677490863,SMS,ML07XQ7196 overspeeding (50 km/h) at Main Gate,Delivered,2026-03-23 23:37:58
+184,DL40VN4049,Rajesh Das,+915928684265,SMS,DL40VN4049 overspeeding (70 km/h) at GH-4 Gate,Failed,2026-03-24 04:40:58
+185,DL74BJ4274,Suresh Verma,+912083212354,SMS,DL74BJ4274 overspeeding (65 km/h) at Residential Zone,Delivered,2026-03-23 13:54:58
+186,ML96SL5034,Ananya Nair,+913496992806,EMAIL,ML96SL5034 overspeeding (59 km/h) at Main Gate,Failed,2026-03-23 19:25:58
+187,ML56VE5235,Rahul Bose,+916488033059,SYSTEM,ML56VE5235 overspeeding (24 km/h) at Residential Zone,Failed,2026-03-23 15:34:58
+188,DL52IZ2550,Ananya Iyer,+918110914408,SMS,DL52IZ2550 overspeeding (66 km/h) at GH-4 Gate,Delivered,2026-03-24 01:14:58
+189,WB66YQ5291,Riya Nair,+913398014429,EMAIL,WB66YQ5291 overspeeding (35 km/h) at Sports Complex,Failed,2026-03-23 15:36:58
+190,AS17HA8384,Riya Verma,+917556453519,EMAIL,AS17HA8384 overspeeding (66 km/h) at Sports Complex,Failed,2026-03-24 02:22:58
+191,DL40VN4049,Rajesh Das,+915928684265,SMS,DL40VN4049 overspeeding (56 km/h) at Library Junction,Failed,2026-03-24 03:01:58
+192,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (70 km/h) at Sports Complex,Delivered,2026-03-24 02:01:58
+193,ML66ZK5727,Meena Das,+917622447332,SYSTEM,ML66ZK5727 overspeeding (63 km/h) at Sports Complex,Delivered,2026-03-23 13:39:58
+194,AS38TM4623,Kavya Gupta,+912540649898,SYSTEM,AS38TM4623 overspeeding (43 km/h) at Residential Zone,Delivered,2026-03-24 01:33:58
+195,KA14YZ5213,Rajesh Bose,+917500846271,SYSTEM,KA14YZ5213 overspeeding (33 km/h) at Hospital Road,Failed,2026-03-23 23:04:58
+196,DL63EZ3326,Suresh Nair,+913397774947,EMAIL,DL63EZ3326 overspeeding (29 km/h) at Academic Block A,Failed,2026-03-24 04:29:58
+197,DL98TW1231,Arjun Das,+911014027580,SYSTEM,DL98TW1231 overspeeding (46 km/h) at Main Gate,Failed,2026-03-24 11:13:58
+198,ML88RX4292,Sneha Joshi,+913910963340,EMAIL,ML88RX4292 overspeeding (44 km/h) at Library Junction,Failed,2026-03-24 09:25:58
+199,KA30QN3381,Sneha Sharma,+912427917146,EMAIL,KA30QN3381 overspeeding (53 km/h) at Library Junction,Delivered,2026-03-24 01:18:58
+200,ML96SL5034,Ananya Nair,+913496992806,SYSTEM,ML96SL5034 overspeeding (36 km/h) at Main Gate,Failed,2026-03-23 14:22:58
+201,KA82OH1461,Neha Nair,+915236349201,EMAIL,KA82OH1461 overspeeding (64 km/h) at Sports Complex,Delivered,2026-03-23 17:03:58
+202,WB59SZ3341,Rahul Bose,+917914437386,EMAIL,WB59SZ3341 overspeeding (28 km/h) at Main Gate,Delivered,2026-03-23 20:10:58
+203,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (21 km/h) at Hospital Road,Failed,2026-03-24 05:49:58
+204,ML97PM4717,Rajesh Joshi,+910225793932,SMS,ML97PM4717 overspeeding (60 km/h) at Library Junction,Delivered,2026-03-24 04:43:58
+205,KA85SP8923,Sneha Iyer,+915424963059,SMS,KA85SP8923 overspeeding (39 km/h) at Main Gate,Failed,2026-03-23 17:40:58
+206,WB58WC3808,Arjun Joshi,+913635977474,SMS,WB58WC3808 overspeeding (32 km/h) at Residential Zone,Failed,2026-03-24 00:53:58
+207,WB83EK6884,Pooja Iyer,+913168632252,SMS,WB83EK6884 overspeeding (30 km/h) at Library Junction,Delivered,2026-03-24 05:03:58
+208,WB35LG7640,Neha Verma,+911544676659,SYSTEM,WB35LG7640 overspeeding (33 km/h) at GH-4 Gate,Failed,2026-03-24 05:10:58
+209,KA67DY2024,Kavya Bose,+919877170221,EMAIL,KA67DY2024 overspeeding (30 km/h) at Main Gate,Delivered,2026-03-23 13:43:58
+210,DL98KR3808,Rohan Iyer,+917462868793,SMS,DL98KR3808 overspeeding (52 km/h) at Library Junction,Delivered,2026-03-23 15:48:58
+211,KA16IA3366,Rohan Sharma,+915286067475,SMS,KA16IA3366 overspeeding (33 km/h) at Residential Zone,Failed,2026-03-24 00:33:58
+212,DL98KR3808,Rohan Iyer,+917462868793,SYSTEM,DL98KR3808 overspeeding (66 km/h) at Academic Block B,Failed,2026-03-23 23:30:58
+213,KA91KA4712,Meena Mehta,+914977347776,SYSTEM,KA91KA4712 overspeeding (36 km/h) at Academic Block A,Delivered,2026-03-24 07:15:58
+214,AS27RC7448,Ananya Sharma,+919232836094,SYSTEM,AS27RC7448 overspeeding (48 km/h) at Main Gate,Failed,2026-03-24 09:15:58
+215,KA32HP4802,Kavya Gupta,+911841233946,EMAIL,KA32HP4802 overspeeding (29 km/h) at Academic Block B,Failed,2026-03-24 01:06:58
+216,WB55CZ1211,Neha Nair,+912736869188,SMS,WB55CZ1211 overspeeding (54 km/h) at Academic Block B,Delivered,2026-03-23 16:58:58
+217,WB59SZ3341,Rahul Bose,+917914437386,SYSTEM,WB59SZ3341 overspeeding (64 km/h) at Residential Zone,Failed,2026-03-23 17:38:58
+218,WB36BB8849,Pooja Nair,+916299069117,SMS,WB36BB8849 overspeeding (22 km/h) at Library Junction,Delivered,2026-03-24 11:44:58
+219,KA16IA3366,Rohan Sharma,+915286067475,EMAIL,KA16IA3366 overspeeding (25 km/h) at Hospital Road,Delivered,2026-03-23 16:45:58
+220,DL98KR3808,Rohan Iyer,+917462868793,SYSTEM,DL98KR3808 overspeeding (62 km/h) at Academic Block A,Failed,2026-03-23 15:26:58
+221,DL21FZ5173,Rahul Nair,+911900874208,SYSTEM,DL21FZ5173 overspeeding (46 km/h) at Academic Block B,Delivered,2026-03-23 19:51:58
+222,DL08NI4952,Vikram Nair,+912709109071,SYSTEM,DL08NI4952 overspeeding (38 km/h) at Academic Block B,Failed,2026-03-24 11:15:58
+223,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (43 km/h) at Library Junction,Delivered,2026-03-23 15:57:58
+224,WB66YQ5291,Riya Nair,+913398014429,EMAIL,WB66YQ5291 overspeeding (42 km/h) at Main Gate,Delivered,2026-03-24 06:57:58
+225,AS84QL6148,Rohan Joshi,+913289615662,SMS,AS84QL6148 overspeeding (67 km/h) at Residential Zone,Delivered,2026-03-23 21:01:58
+226,AS05UA4808,Kavya Das,+919637877610,EMAIL,AS05UA4808 overspeeding (41 km/h) at Main Gate,Failed,2026-03-23 20:21:58
+227,KA13RM5187,Vikram Nair,+914767591949,SMS,KA13RM5187 overspeeding (67 km/h) at Main Gate,Delivered,2026-03-24 02:08:58
+228,DL01NF5747,Arjun Verma,+911316655257,EMAIL,DL01NF5747 overspeeding (64 km/h) at Academic Block B,Delivered,2026-03-23 13:20:58
+229,WB48UU1369,Arjun Kumar,+918948026518,EMAIL,WB48UU1369 overspeeding (59 km/h) at Hospital Road,Delivered,2026-03-23 21:05:58
+230,DL72HP6499,Kavya Iyer,+916877846731,SYSTEM,DL72HP6499 overspeeding (22 km/h) at Hospital Road,Failed,2026-03-24 10:10:58
+231,AS86JG9373,Suresh Mehta,+912381617150,SYSTEM,AS86JG9373 overspeeding (16 km/h) at Residential Zone,Delivered,2026-03-23 19:29:58
+232,KA98NI8813,Arjun Iyer,+917883709970,EMAIL,KA98NI8813 overspeeding (59 km/h) at Academic Block A,Delivered,2026-03-23 23:44:58
+233,DL31BI3386,Kavya Verma,+919431025879,EMAIL,DL31BI3386 overspeeding (22 km/h) at GH-4 Gate,Delivered,2026-03-23 16:18:58
+234,ML28TE1153,Rajesh Gupta,+910236906726,SMS,ML28TE1153 overspeeding (24 km/h) at Residential Zone,Delivered,2026-03-24 02:39:58
+235,AS87CO8533,Arjun Kumar,+914853515621,SMS,AS87CO8533 overspeeding (42 km/h) at Academic Block A,Failed,2026-03-24 01:10:58
+236,AS39DD6131,Neha Nair,+917489491004,SYSTEM,AS39DD6131 overspeeding (41 km/h) at Hospital Road,Failed,2026-03-24 10:36:58
+237,WB67HF8236,Neha Sharma,+916210931597,EMAIL,WB67HF8236 overspeeding (67 km/h) at GH-4 Gate,Delivered,2026-03-23 17:42:58
+238,AS34EA9219,Ananya Verma,+919279012809,SYSTEM,AS34EA9219 overspeeding (22 km/h) at Library Junction,Delivered,2026-03-23 16:45:58
+239,DL72HP6499,Kavya Iyer,+916877846731,SMS,DL72HP6499 overspeeding (24 km/h) at Academic Block B,Delivered,2026-03-24 05:02:58
+240,DL32VH5131,Ananya Nair,+916053706022,EMAIL,DL32VH5131 overspeeding (62 km/h) at GH-4 Gate,Delivered,2026-03-23 22:51:58
+241,KA91KA4712,Meena Mehta,+914977347776,EMAIL,KA91KA4712 overspeeding (41 km/h) at Library Junction,Failed,2026-03-23 23:59:58
+242,DL08NI4952,Vikram Nair,+912709109071,EMAIL,DL08NI4952 overspeeding (36 km/h) at Sports Complex,Failed,2026-03-23 18:45:58
+243,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (68 km/h) at Main Gate,Failed,2026-03-23 20:30:58
+244,KA05JP7623,Meena Bose,+919000637891,EMAIL,KA05JP7623 overspeeding (67 km/h) at Hospital Road,Delivered,2026-03-23 15:31:58
+245,ML28CR1695,Suresh Mehta,+915639757890,EMAIL,ML28CR1695 overspeeding (69 km/h) at Hospital Road,Failed,2026-03-23 12:34:58
+246,ML64JM7237,Ananya Mehta,+910089925356,SMS,ML64JM7237 overspeeding (55 km/h) at Hospital Road,Delivered,2026-03-24 10:07:58
+247,DL59NA4362,Arjun Mehta,+917190273178,SMS,DL59NA4362 overspeeding (32 km/h) at GH-4 Gate,Delivered,2026-03-23 17:57:58
+248,DL49NC5997,Pooja Kumar,+913421486777,SMS,DL49NC5997 overspeeding (28 km/h) at Academic Block B,Failed,2026-03-24 05:13:58
+249,ML46MM6488,Rajesh Joshi,+919322317460,SYSTEM,ML46MM6488 overspeeding (43 km/h) at Residential Zone,Delivered,2026-03-23 13:56:58
+250,WB53AS7612,Riya Das,+915125486662,EMAIL,WB53AS7612 overspeeding (31 km/h) at Sports Complex,Delivered,2026-03-23 16:51:58
+251,DL21FZ5173,Rahul Nair,+911900874208,SYSTEM,DL21FZ5173 overspeeding (27 km/h) at Sports Complex,Failed,2026-03-24 07:20:58
+252,AS11BT4725,Priya Iyer,+918449239542,SYSTEM,AS11BT4725 overspeeding (67 km/h) at Residential Zone,Delivered,2026-03-23 17:46:58
+253,ML72BR1484,Rohan Nair,+911576202706,EMAIL,ML72BR1484 overspeeding (61 km/h) at Library Junction,Failed,2026-03-23 20:50:58
+254,WB89CN6765,Riya Mehta,+913561598010,SMS,WB89CN6765 overspeeding (53 km/h) at GH-4 Gate,Failed,2026-03-23 23:27:58
+255,KA13RM5187,Vikram Nair,+914767591949,EMAIL,KA13RM5187 overspeeding (53 km/h) at Hospital Road,Delivered,2026-03-23 15:29:58
+256,AS27RC7448,Ananya Sharma,+919232836094,EMAIL,AS27RC7448 overspeeding (27 km/h) at Residential Zone,Failed,2026-03-24 02:54:58
+257,AS84QL6148,Rohan Joshi,+913289615662,EMAIL,AS84QL6148 overspeeding (59 km/h) at Residential Zone,Delivered,2026-03-24 09:13:58
+258,WB48OH1391,Suresh Sharma,+914985618855,SMS,WB48OH1391 overspeeding (28 km/h) at GH-4 Gate,Failed,2026-03-24 00:55:58
+259,ML88RX4292,Sneha Joshi,+913910963340,SMS,ML88RX4292 overspeeding (27 km/h) at Library Junction,Failed,2026-03-23 19:01:58
+260,KA32PF6209,Rahul Nair,+913422974948,EMAIL,KA32PF6209 overspeeding (39 km/h) at Academic Block A,Delivered,2026-03-23 20:29:58
+261,KA26GV1325,Priya Mehta,+915506330633,SYSTEM,KA26GV1325 overspeeding (38 km/h) at GH-4 Gate,Failed,2026-03-23 14:12:58
+262,ML73GV9095,Rajesh Mehta,+912021048241,SYSTEM,ML73GV9095 overspeeding (40 km/h) at Sports Complex,Delivered,2026-03-23 23:12:58
+263,ML94LG3675,Arjun Bose,+912905214340,SYSTEM,ML94LG3675 overspeeding (49 km/h) at Sports Complex,Failed,2026-03-23 17:38:58
+264,AS05UA4808,Kavya Das,+919637877610,SMS,AS05UA4808 overspeeding (30 km/h) at GH-4 Gate,Failed,2026-03-24 04:12:58
+265,WB83EK6884,Pooja Iyer,+913168632252,SYSTEM,WB83EK6884 overspeeding (70 km/h) at Library Junction,Failed,2026-03-23 18:52:58
+266,DL68JU6845,Meena Iyer,+914327603910,EMAIL,DL68JU6845 overspeeding (44 km/h) at Main Gate,Delivered,2026-03-23 20:42:58
+267,ML94LG3675,Arjun Bose,+912905214340,SYSTEM,ML94LG3675 overspeeding (65 km/h) at Library Junction,Delivered,2026-03-24 11:25:58
+268,ML67AP9551,Suresh Verma,+917855402642,SYSTEM,ML67AP9551 overspeeding (56 km/h) at Sports Complex,Delivered,2026-03-24 09:42:58
+269,AS15DM4115,Kavya Bose,+912103891860,SMS,AS15DM4115 overspeeding (31 km/h) at GH-4 Gate,Failed,2026-03-24 09:54:58
+270,AS05UA4808,Kavya Das,+919637877610,SMS,AS05UA4808 overspeeding (39 km/h) at Library Junction,Failed,2026-03-23 17:42:58
+271,WB48UU1369,Arjun Kumar,+918948026518,SMS,WB48UU1369 overspeeding (38 km/h) at Hospital Road,Delivered,2026-03-23 13:10:58
+272,KA04TV4558,Vikram Bose,+917707675638,SYSTEM,KA04TV4558 overspeeding (53 km/h) at GH-4 Gate,Failed,2026-03-23 18:00:58
+273,KA05JP7623,Meena Bose,+919000637891,SYSTEM,KA05JP7623 overspeeding (45 km/h) at Sports Complex,Delivered,2026-03-23 22:09:58
+274,ML88FN3438,Neha Iyer,+911992948086,SMS,ML88FN3438 overspeeding (54 km/h) at Library Junction,Delivered,2026-03-24 05:49:58
+275,KA11BF5605,Vikram Sharma,+911190227555,SYSTEM,KA11BF5605 overspeeding (58 km/h) at GH-4 Gate,Delivered,2026-03-23 14:13:58
+276,WB66YQ5291,Riya Nair,+913398014429,EMAIL,WB66YQ5291 overspeeding (60 km/h) at Library Junction,Delivered,2026-03-24 11:13:58
+277,AS95FF9779,Arjun Sharma,+917988247351,SMS,AS95FF9779 overspeeding (23 km/h) at Hospital Road,Failed,2026-03-24 10:59:58
+278,ML66ZK5727,Meena Das,+917622447332,SYSTEM,ML66ZK5727 overspeeding (27 km/h) at Residential Zone,Delivered,2026-03-24 11:12:58
+279,KA26GV1325,Priya Mehta,+915506330633,EMAIL,KA26GV1325 overspeeding (43 km/h) at Academic Block A,Failed,2026-03-24 03:40:58
+280,WB55CZ1211,Neha Nair,+912736869188,SMS,WB55CZ1211 overspeeding (64 km/h) at Academic Block A,Delivered,2026-03-23 13:21:58
+281,WB57OF5240,Arjun Iyer,+911483946013,SYSTEM,WB57OF5240 overspeeding (35 km/h) at Academic Block B,Failed,2026-03-23 14:14:58
+282,ML28TE1153,Rajesh Gupta,+910236906726,EMAIL,ML28TE1153 overspeeding (43 km/h) at Sports Complex,Delivered,2026-03-23 14:18:58
+283,ML94LG3675,Arjun Bose,+912905214340,SMS,ML94LG3675 overspeeding (55 km/h) at Academic Block B,Delivered,2026-03-24 09:19:58
+284,DL49NC5997,Pooja Kumar,+913421486777,EMAIL,DL49NC5997 overspeeding (30 km/h) at Residential Zone,Failed,2026-03-23 21:26:58
+285,WB35LG7640,Neha Verma,+911544676659,SMS,WB35LG7640 overspeeding (39 km/h) at Hospital Road,Delivered,2026-03-23 16:44:58
+286,AS39TF1535,Suresh Sharma,+916015436475,SMS,AS39TF1535 overspeeding (49 km/h) at Library Junction,Failed,2026-03-24 12:03:58
+287,ML28CR1695,Suresh Mehta,+915639757890,SYSTEM,ML28CR1695 overspeeding (25 km/h) at Hospital Road,Delivered,2026-03-24 05:54:58
+288,ML67RX5733,Arjun Iyer,+917949777325,EMAIL,ML67RX5733 overspeeding (26 km/h) at GH-4 Gate,Delivered,2026-03-24 06:21:58
+289,ML07XQ7196,Rohan Bose,+915677490863,SMS,ML07XQ7196 overspeeding (56 km/h) at Academic Block A,Delivered,2026-03-23 14:22:58
+290,WB48UU1369,Arjun Kumar,+918948026518,EMAIL,WB48UU1369 overspeeding (57 km/h) at Sports Complex,Delivered,2026-03-24 07:55:58
+291,WB57OF5240,Arjun Iyer,+911483946013,SYSTEM,WB57OF5240 overspeeding (39 km/h) at Residential Zone,Failed,2026-03-24 04:57:58
+292,DL99TM2873,Pooja Bose,+918396935104,SMS,DL99TM2873 overspeeding (21 km/h) at Library Junction,Failed,2026-03-23 23:15:58
+293,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (47 km/h) at Academic Block B,Delivered,2026-03-23 21:07:58
+294,AS39DD6131,Neha Nair,+917489491004,EMAIL,AS39DD6131 overspeeding (69 km/h) at GH-4 Gate,Failed,2026-03-24 09:57:58
+295,DL83WU9535,Kavya Nair,+911915390504,SMS,DL83WU9535 overspeeding (48 km/h) at Residential Zone,Failed,2026-03-24 12:02:58
+296,AS56EJ1700,Pooja Verma,+914789307919,SMS,AS56EJ1700 overspeeding (63 km/h) at Academic Block A,Failed,2026-03-23 15:11:58
+297,KA32HP4802,Kavya Gupta,+911841233946,EMAIL,KA32HP4802 overspeeding (35 km/h) at Academic Block A,Delivered,2026-03-23 14:01:58
+298,KA97LD1716,Rajesh Gupta,+916474566939,SMS,KA97LD1716 overspeeding (62 km/h) at Hospital Road,Failed,2026-03-23 15:21:58
+299,AS05UA4808,Kavya Das,+919637877610,SMS,AS05UA4808 overspeeding (32 km/h) at GH-4 Gate,Failed,2026-03-24 06:11:58
+300,WB58WC3808,Arjun Joshi,+913635977474,SYSTEM,WB58WC3808 overspeeding (46 km/h) at Academic Block B,Delivered,2026-03-24 10:43:58
+301,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (50 km/h) at Residential Zone,Delivered,2026-03-23 18:19:58
+302,KA32HP4802,Kavya Gupta,+911841233946,EMAIL,KA32HP4802 overspeeding (54 km/h) at Residential Zone,Delivered,2026-03-23 18:27:58
+303,AS20XH6881,Ananya Gupta,+911468643669,SYSTEM,AS20XH6881 overspeeding (53 km/h) at Academic Block B,Failed,2026-03-24 01:58:58
+304,DL39UK9366,Pooja Bose,+918116523937,SMS,DL39UK9366 overspeeding (67 km/h) at Hospital Road,Failed,2026-03-24 06:00:58
+305,DL01NF5747,Arjun Verma,+911316655257,SYSTEM,DL01NF5747 overspeeding (36 km/h) at Hospital Road,Delivered,2026-03-23 19:14:58
+306,KA97LD1716,Rajesh Gupta,+916474566939,SYSTEM,KA97LD1716 overspeeding (70 km/h) at Main Gate,Failed,2026-03-24 08:59:58
+307,AS17HA8384,Riya Verma,+917556453519,SMS,AS17HA8384 overspeeding (27 km/h) at Academic Block B,Delivered,2026-03-23 19:04:58
+308,WB55CZ1211,Neha Nair,+912736869188,SYSTEM,WB55CZ1211 overspeeding (29 km/h) at Library Junction,Delivered,2026-03-24 06:22:58
+309,KA16IA3366,Rohan Sharma,+915286067475,EMAIL,KA16IA3366 overspeeding (57 km/h) at Academic Block A,Failed,2026-03-23 18:21:58
+310,ML72BR1484,Rohan Nair,+911576202706,SMS,ML72BR1484 overspeeding (42 km/h) at Main Gate,Delivered,2026-03-24 07:45:58
+311,WB36BB8849,Pooja Nair,+916299069117,SMS,WB36BB8849 overspeeding (64 km/h) at Hospital Road,Delivered,2026-03-24 01:33:58
+312,DL98TW1231,Arjun Das,+911014027580,SMS,DL98TW1231 overspeeding (56 km/h) at Hospital Road,Delivered,2026-03-24 10:18:58
+313,KA04TV4558,Vikram Bose,+917707675638,EMAIL,KA04TV4558 overspeeding (55 km/h) at Library Junction,Delivered,2026-03-24 11:17:58
+314,ML32GF1928,Aman Iyer,+917798826466,EMAIL,ML32GF1928 overspeeding (66 km/h) at Main Gate,Delivered,2026-03-23 12:30:58
+315,ML73GV9095,Rajesh Mehta,+912021048241,SMS,ML73GV9095 overspeeding (40 km/h) at GH-4 Gate,Failed,2026-03-24 04:29:58
+316,WB48UU1369,Arjun Kumar,+918948026518,SYSTEM,WB48UU1369 overspeeding (45 km/h) at Library Junction,Failed,2026-03-23 14:22:58
+317,WB34HA6278,Priya Nair,+911278416516,SMS,WB34HA6278 overspeeding (68 km/h) at Academic Block A,Delivered,2026-03-24 04:38:58
+318,KA32PF6209,Rahul Nair,+913422974948,EMAIL,KA32PF6209 overspeeding (28 km/h) at Academic Block B,Delivered,2026-03-24 03:04:58
+319,ML53WF1442,Arjun Das,+916625753145,SYSTEM,ML53WF1442 overspeeding (25 km/h) at Residential Zone,Failed,2026-03-23 16:35:58
+320,ML46MM6488,Rajesh Joshi,+919322317460,EMAIL,ML46MM6488 overspeeding (49 km/h) at Library Junction,Delivered,2026-03-23 15:14:58
+321,DL62KW3487,Vikram Sharma,+913688960820,EMAIL,DL62KW3487 overspeeding (68 km/h) at Academic Block A,Failed,2026-03-24 06:49:58
+322,WB48UU1369,Arjun Kumar,+918948026518,SMS,WB48UU1369 overspeeding (66 km/h) at Academic Block B,Delivered,2026-03-24 02:15:58
+323,ML34UE2374,Rohan Joshi,+914806694030,SMS,ML34UE2374 overspeeding (46 km/h) at Residential Zone,Delivered,2026-03-23 20:23:58
+324,AS05UA4808,Kavya Das,+919637877610,EMAIL,AS05UA4808 overspeeding (29 km/h) at Residential Zone,Delivered,2026-03-23 19:50:58
+325,ML34UE2374,Rohan Joshi,+914806694030,EMAIL,ML34UE2374 overspeeding (61 km/h) at Main Gate,Failed,2026-03-23 21:20:58
+326,DL08NI4952,Vikram Nair,+912709109071,SYSTEM,DL08NI4952 overspeeding (64 km/h) at Academic Block A,Delivered,2026-03-24 07:16:58
+327,DL01NF5747,Arjun Verma,+911316655257,SYSTEM,DL01NF5747 overspeeding (29 km/h) at Academic Block A,Delivered,2026-03-24 04:48:58
+328,DL05AZ5766,Rahul Joshi,+913347348918,SMS,DL05AZ5766 overspeeding (32 km/h) at Main Gate,Delivered,2026-03-23 19:12:58
+329,DL80AM5081,Neha Iyer,+919588170395,SMS,DL80AM5081 overspeeding (42 km/h) at Hospital Road,Failed,2026-03-24 05:26:58
+330,DL83RN3192,Pooja Mehta,+916710951012,SMS,DL83RN3192 overspeeding (35 km/h) at Residential Zone,Failed,2026-03-24 09:06:58
+331,ML45SH3466,Sneha Joshi,+914389074659,EMAIL,ML45SH3466 overspeeding (22 km/h) at Academic Block A,Failed,2026-03-23 16:52:58
+332,ML72BR1484,Rohan Nair,+911576202706,SMS,ML72BR1484 overspeeding (32 km/h) at Academic Block A,Delivered,2026-03-23 22:22:58
+333,WB03IY1586,Rohan Das,+919834567754,EMAIL,WB03IY1586 overspeeding (68 km/h) at Residential Zone,Failed,2026-03-23 22:09:58
+334,DL98TW1231,Arjun Das,+911014027580,SYSTEM,DL98TW1231 overspeeding (53 km/h) at Academic Block B,Delivered,2026-03-23 15:23:58
+335,DL83RN3192,Pooja Mehta,+916710951012,SYSTEM,DL83RN3192 overspeeding (28 km/h) at Academic Block B,Failed,2026-03-23 20:29:58
+336,KA98NI8813,Arjun Iyer,+917883709970,SMS,KA98NI8813 overspeeding (49 km/h) at Main Gate,Delivered,2026-03-23 17:11:58
+337,AS39DD6131,Neha Nair,+917489491004,SMS,AS39DD6131 overspeeding (33 km/h) at Residential Zone,Delivered,2026-03-23 18:00:58
+338,KA14YZ5213,Rajesh Bose,+917500846271,SYSTEM,KA14YZ5213 overspeeding (46 km/h) at Academic Block A,Failed,2026-03-24 06:11:58
+339,KA57ND7683,Rajesh Sharma,+911007590061,SMS,KA57ND7683 overspeeding (24 km/h) at Library Junction,Delivered,2026-03-23 13:12:58
+340,DL72HP6499,Kavya Iyer,+916877846731,SMS,DL72HP6499 overspeeding (68 km/h) at GH-4 Gate,Delivered,2026-03-24 00:29:58
+341,AS85BJ2738,Rohan Joshi,+910333651880,EMAIL,AS85BJ2738 overspeeding (32 km/h) at Library Junction,Delivered,2026-03-24 10:11:58
+342,WB03IY1586,Rohan Das,+919834567754,SYSTEM,WB03IY1586 overspeeding (59 km/h) at Library Junction,Delivered,2026-03-24 10:36:58
+343,AS56EJ1700,Pooja Verma,+914789307919,EMAIL,AS56EJ1700 overspeeding (30 km/h) at Sports Complex,Failed,2026-03-23 15:57:58
+344,ML66ZK5727,Meena Das,+917622447332,EMAIL,ML66ZK5727 overspeeding (65 km/h) at Hospital Road,Failed,2026-03-24 09:25:58
+345,DL59QR2695,Suresh Das,+910814670689,EMAIL,DL59QR2695 overspeeding (62 km/h) at Residential Zone,Failed,2026-03-23 21:32:58
+346,DL83RN3192,Pooja Mehta,+916710951012,SYSTEM,DL83RN3192 overspeeding (54 km/h) at Hospital Road,Failed,2026-03-24 05:56:58
+347,ML45SH3466,Sneha Joshi,+914389074659,SYSTEM,ML45SH3466 overspeeding (44 km/h) at Academic Block A,Delivered,2026-03-24 00:39:58
+348,DL59NA4362,Arjun Mehta,+917190273178,EMAIL,DL59NA4362 overspeeding (52 km/h) at Sports Complex,Failed,2026-03-24 01:56:58
+349,KA32PF6209,Rahul Nair,+913422974948,EMAIL,KA32PF6209 overspeeding (41 km/h) at Sports Complex,Delivered,2026-03-24 09:17:58
+350,AS39TF1535,Suresh Sharma,+916015436475,EMAIL,AS39TF1535 overspeeding (36 km/h) at Library Junction,Failed,2026-03-24 07:51:58
+351,WB59SZ3341,Rahul Bose,+917914437386,SMS,WB59SZ3341 overspeeding (25 km/h) at Academic Block B,Delivered,2026-03-23 13:21:58
+352,KA30QN3381,Sneha Sharma,+912427917146,SYSTEM,KA30QN3381 overspeeding (58 km/h) at Sports Complex,Delivered,2026-03-24 11:19:58
+353,WB89CN6765,Riya Mehta,+913561598010,EMAIL,WB89CN6765 overspeeding (58 km/h) at Residential Zone,Delivered,2026-03-24 04:23:58
+354,ML53WF1442,Arjun Das,+916625753145,SMS,ML53WF1442 overspeeding (30 km/h) at Residential Zone,Delivered,2026-03-23 17:38:58
+355,AS40IU3799,Rohan Nair,+910527804140,EMAIL,AS40IU3799 overspeeding (40 km/h) at Hospital Road,Delivered,2026-03-23 23:06:58
+356,ML73GV9095,Rajesh Mehta,+912021048241,SMS,ML73GV9095 overspeeding (23 km/h) at Residential Zone,Delivered,2026-03-23 12:54:58
+357,WB03IY1586,Rohan Das,+919834567754,SMS,WB03IY1586 overspeeding (47 km/h) at Academic Block A,Delivered,2026-03-23 22:54:58
+358,WB55CZ1211,Neha Nair,+912736869188,SYSTEM,WB55CZ1211 overspeeding (58 km/h) at Academic Block A,Failed,2026-03-24 04:51:58
+359,ML07XQ7196,Rohan Bose,+915677490863,EMAIL,ML07XQ7196 overspeeding (30 km/h) at Main Gate,Delivered,2026-03-23 13:08:58
+360,AS27RC7448,Ananya Sharma,+919232836094,SYSTEM,AS27RC7448 overspeeding (44 km/h) at Hospital Road,Failed,2026-03-24 01:29:58
+361,AS84QL6148,Rohan Joshi,+913289615662,SMS,AS84QL6148 overspeeding (60 km/h) at Hospital Road,Delivered,2026-03-23 14:35:58
+362,DL74BJ4274,Suresh Verma,+912083212354,SMS,DL74BJ4274 overspeeding (21 km/h) at Main Gate,Failed,2026-03-24 12:07:58
+363,DL21FZ5173,Rahul Nair,+911900874208,EMAIL,DL21FZ5173 overspeeding (54 km/h) at Main Gate,Delivered,2026-03-24 10:58:58
+364,KA85SP8923,Sneha Iyer,+915424963059,SMS,KA85SP8923 overspeeding (67 km/h) at Academic Block B,Delivered,2026-03-24 05:26:58
+365,WB84FK1524,Suresh Das,+919692463706,SYSTEM,WB84FK1524 overspeeding (41 km/h) at Academic Block B,Failed,2026-03-24 05:37:58
+366,DL49NC5997,Pooja Kumar,+913421486777,EMAIL,DL49NC5997 overspeeding (28 km/h) at GH-4 Gate,Failed,2026-03-24 02:20:58
+367,WB57OF5240,Arjun Iyer,+911483946013,EMAIL,WB57OF5240 overspeeding (36 km/h) at Residential Zone,Failed,2026-03-23 20:22:58
+368,WB43LM1595,Sneha Gupta,+914372014242,SYSTEM,WB43LM1595 overspeeding (46 km/h) at Academic Block A,Failed,2026-03-23 17:31:58
+369,DL99TM2873,Pooja Bose,+918396935104,EMAIL,DL99TM2873 overspeeding (38 km/h) at Sports Complex,Failed,2026-03-24 01:43:58
+370,DL63EZ3326,Suresh Nair,+913397774947,SYSTEM,DL63EZ3326 overspeeding (42 km/h) at Academic Block A,Failed,2026-03-24 10:44:58
+371,WB48UU1369,Arjun Kumar,+918948026518,SYSTEM,WB48UU1369 overspeeding (68 km/h) at Sports Complex,Failed,2026-03-24 10:36:58
+372,ML53WF1442,Arjun Das,+916625753145,EMAIL,ML53WF1442 overspeeding (32 km/h) at Main Gate,Failed,2026-03-24 02:46:58
+373,AS34EA9219,Ananya Verma,+919279012809,SMS,AS34EA9219 overspeeding (32 km/h) at GH-4 Gate,Failed,2026-03-24 08:14:58
+374,KA85SP8923,Sneha Iyer,+915424963059,SYSTEM,KA85SP8923 overspeeding (62 km/h) at Residential Zone,Delivered,2026-03-24 03:05:58
+375,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (60 km/h) at Main Gate,Delivered,2026-03-24 06:06:58
+376,DL31BI3386,Kavya Verma,+919431025879,SMS,DL31BI3386 overspeeding (68 km/h) at Academic Block A,Delivered,2026-03-24 01:49:58
+377,AS40IU3799,Rohan Nair,+910527804140,SYSTEM,AS40IU3799 overspeeding (32 km/h) at Academic Block B,Failed,2026-03-24 11:05:58
+378,KA91KA4712,Meena Mehta,+914977347776,EMAIL,KA91KA4712 overspeeding (66 km/h) at Hospital Road,Failed,2026-03-23 22:56:58
+379,KA82OH1461,Neha Nair,+915236349201,EMAIL,KA82OH1461 overspeeding (30 km/h) at Main Gate,Delivered,2026-03-23 12:31:58
+380,KA85SP8923,Sneha Iyer,+915424963059,SYSTEM,KA85SP8923 overspeeding (62 km/h) at Library Junction,Delivered,2026-03-24 10:00:58
+381,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (69 km/h) at Sports Complex,Failed,2026-03-24 12:00:58
+382,ML94LG3675,Arjun Bose,+912905214340,EMAIL,ML94LG3675 overspeeding (60 km/h) at Academic Block A,Delivered,2026-03-23 17:00:58
+383,WB58WC3808,Arjun Joshi,+913635977474,SYSTEM,WB58WC3808 overspeeding (59 km/h) at Hospital Road,Failed,2026-03-24 00:23:58
+384,WB91KK4291,Sneha Verma,+918987479903,SMS,WB91KK4291 overspeeding (70 km/h) at Library Junction,Failed,2026-03-23 14:59:58
+385,DL86SZ9423,Meena Joshi,+919354767148,SYSTEM,DL86SZ9423 overspeeding (58 km/h) at Library Junction,Delivered,2026-03-23 15:52:58
+386,ML37VL7728,Sneha Nair,+915564478958,SYSTEM,ML37VL7728 overspeeding (63 km/h) at Sports Complex,Failed,2026-03-23 22:39:58
+387,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (63 km/h) at Hospital Road,Failed,2026-03-24 05:53:58
+388,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (29 km/h) at Sports Complex,Delivered,2026-03-23 16:12:58
+389,ML96SL5034,Ananya Nair,+913496992806,SMS,ML96SL5034 overspeeding (26 km/h) at GH-4 Gate,Failed,2026-03-24 12:07:58
+390,DL98KR3808,Rohan Iyer,+917462868793,SMS,DL98KR3808 overspeeding (62 km/h) at Library Junction,Failed,2026-03-23 15:08:58
+391,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (65 km/h) at Academic Block B,Failed,2026-03-23 19:51:58
+392,ML28CR1695,Suresh Mehta,+915639757890,EMAIL,ML28CR1695 overspeeding (58 km/h) at Academic Block A,Failed,2026-03-23 12:41:58
+393,AS34EA9219,Ananya Verma,+919279012809,SYSTEM,AS34EA9219 overspeeding (38 km/h) at Academic Block B,Failed,2026-03-23 23:25:58
+394,DL49NC5997,Pooja Kumar,+913421486777,EMAIL,DL49NC5997 overspeeding (55 km/h) at Residential Zone,Failed,2026-03-24 05:17:58
+395,WB35LG7640,Neha Verma,+911544676659,EMAIL,WB35LG7640 overspeeding (51 km/h) at Hospital Road,Failed,2026-03-24 03:13:58
+396,WB89CN6765,Riya Mehta,+913561598010,SMS,WB89CN6765 overspeeding (41 km/h) at GH-4 Gate,Delivered,2026-03-23 19:09:58
+397,KA16IA3366,Rohan Sharma,+915286067475,SMS,KA16IA3366 overspeeding (31 km/h) at Library Junction,Delivered,2026-03-24 02:53:58
+398,KA48KJ3409,Aman Bose,+912160886709,SMS,KA48KJ3409 overspeeding (66 km/h) at Main Gate,Delivered,2026-03-23 18:32:58
+399,DL08NI4952,Vikram Nair,+912709109071,EMAIL,DL08NI4952 overspeeding (33 km/h) at Academic Block A,Delivered,2026-03-24 09:44:58
+400,DL59QR2695,Suresh Das,+910814670689,SMS,DL59QR2695 overspeeding (61 km/h) at Residential Zone,Delivered,2026-03-23 14:15:58
+401,ML34UE2374,Rohan Joshi,+914806694030,SYSTEM,ML34UE2374 overspeeding (65 km/h) at Academic Block A,Delivered,2026-03-23 21:11:58
+402,AS85BJ2738,Rohan Joshi,+910333651880,SYSTEM,AS85BJ2738 overspeeding (40 km/h) at Main Gate,Failed,2026-03-23 23:51:58
+403,ML37VL7728,Sneha Nair,+915564478958,SMS,ML37VL7728 overspeeding (51 km/h) at Sports Complex,Delivered,2026-03-24 10:07:58
+404,ML67RX5733,Arjun Iyer,+917949777325,SYSTEM,ML67RX5733 overspeeding (35 km/h) at Academic Block A,Delivered,2026-03-23 14:58:58
+405,WB89CN6765,Riya Mehta,+913561598010,EMAIL,WB89CN6765 overspeeding (54 km/h) at Main Gate,Delivered,2026-03-24 11:03:58
+406,KA55JD5796,Riya Gupta,+916827671617,EMAIL,KA55JD5796 overspeeding (61 km/h) at Main Gate,Delivered,2026-03-23 20:26:58
+407,ML88RX4292,Sneha Joshi,+913910963340,EMAIL,ML88RX4292 overspeeding (63 km/h) at Library Junction,Failed,2026-03-24 12:03:58
+408,ML88FN3438,Neha Iyer,+911992948086,SMS,ML88FN3438 overspeeding (51 km/h) at Residential Zone,Delivered,2026-03-24 05:54:58
+409,DL98TW1231,Arjun Das,+911014027580,SMS,DL98TW1231 overspeeding (34 km/h) at Main Gate,Delivered,2026-03-24 10:51:58
+410,KA48KJ3409,Aman Bose,+912160886709,SYSTEM,KA48KJ3409 overspeeding (51 km/h) at Main Gate,Failed,2026-03-23 19:16:58
+411,KA97LD1716,Rajesh Gupta,+916474566939,SYSTEM,KA97LD1716 overspeeding (55 km/h) at Academic Block B,Failed,2026-03-23 13:52:58
+412,AS27RC7448,Ananya Sharma,+919232836094,SYSTEM,AS27RC7448 overspeeding (56 km/h) at GH-4 Gate,Failed,2026-03-24 02:17:58
+413,KA72NF7276,Kavya Sharma,+914958854666,SMS,KA72NF7276 overspeeding (33 km/h) at Main Gate,Failed,2026-03-23 13:13:58
+414,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (34 km/h) at Academic Block B,Delivered,2026-03-23 17:53:58
+415,WB89CN6765,Riya Mehta,+913561598010,SMS,WB89CN6765 overspeeding (24 km/h) at Academic Block A,Delivered,2026-03-23 17:53:58
+416,KA16QU5840,Ananya Kumar,+912966108850,EMAIL,KA16QU5840 overspeeding (52 km/h) at Academic Block B,Failed,2026-03-24 02:01:58
+417,DL83WU9535,Kavya Nair,+911915390504,EMAIL,DL83WU9535 overspeeding (30 km/h) at Hospital Road,Failed,2026-03-24 03:10:58
+418,ML66ZK5727,Meena Das,+917622447332,SYSTEM,ML66ZK5727 overspeeding (58 km/h) at Academic Block A,Failed,2026-03-23 14:44:58
+419,KA32PF6209,Rahul Nair,+913422974948,SYSTEM,KA32PF6209 overspeeding (50 km/h) at GH-4 Gate,Delivered,2026-03-23 14:29:58
+420,KA54JI4942,Neha Nair,+918675014564,SYSTEM,KA54JI4942 overspeeding (18 km/h) at Residential Zone,Delivered,2026-03-23 16:49:58
+421,ML56VE5235,Rahul Bose,+916488033059,EMAIL,ML56VE5235 overspeeding (62 km/h) at Hospital Road,Delivered,2026-03-24 01:34:58
+422,ML32GF1928,Aman Iyer,+917798826466,EMAIL,ML32GF1928 overspeeding (50 km/h) at GH-4 Gate,Failed,2026-03-23 18:07:58
+423,DL62KW3487,Vikram Sharma,+913688960820,SYSTEM,DL62KW3487 overspeeding (62 km/h) at Hospital Road,Failed,2026-03-24 10:51:58
+424,KA14YZ5213,Rajesh Bose,+917500846271,EMAIL,KA14YZ5213 overspeeding (54 km/h) at Library Junction,Delivered,2026-03-24 02:43:58
+425,DL72HP6499,Kavya Iyer,+916877846731,SYSTEM,DL72HP6499 overspeeding (70 km/h) at Library Junction,Delivered,2026-03-23 16:56:58
+426,WB15EK7276,Neha Gupta,+916521010367,SYSTEM,WB15EK7276 overspeeding (54 km/h) at Residential Zone,Failed,2026-03-23 15:38:58
+427,AS34EA9219,Ananya Verma,+919279012809,SYSTEM,AS34EA9219 overspeeding (47 km/h) at Hospital Road,Delivered,2026-03-23 16:13:58
+428,KA26GV1325,Priya Mehta,+915506330633,SMS,KA26GV1325 overspeeding (64 km/h) at GH-4 Gate,Delivered,2026-03-23 18:49:58
+429,ML08KZ2169,Meena Kumar,+910547945931,SMS,ML08KZ2169 overspeeding (30 km/h) at Sports Complex,Delivered,2026-03-23 23:44:58
+430,AS85BJ2738,Rohan Joshi,+910333651880,SYSTEM,AS85BJ2738 overspeeding (30 km/h) at Main Gate,Failed,2026-03-23 22:51:58
+431,ML88RX4292,Sneha Joshi,+913910963340,EMAIL,ML88RX4292 overspeeding (42 km/h) at Academic Block A,Failed,2026-03-23 18:59:58
+432,KA16QU5840,Ananya Kumar,+912966108850,EMAIL,KA16QU5840 overspeeding (54 km/h) at Academic Block B,Failed,2026-03-24 09:17:58
+433,DL72HP6499,Kavya Iyer,+916877846731,EMAIL,DL72HP6499 overspeeding (40 km/h) at GH-4 Gate,Delivered,2026-03-24 06:11:58
+434,KA05JP7623,Meena Bose,+919000637891,EMAIL,KA05JP7623 overspeeding (35 km/h) at Library Junction,Failed,2026-03-24 11:47:58
+435,ML45SH3466,Sneha Joshi,+914389074659,SMS,ML45SH3466 overspeeding (51 km/h) at GH-4 Gate,Failed,2026-03-24 00:45:58
+436,WB84FK1524,Suresh Das,+919692463706,SMS,WB84FK1524 overspeeding (61 km/h) at Main Gate,Delivered,2026-03-23 17:14:58
+437,ML08KZ2169,Meena Kumar,+910547945931,SYSTEM,ML08KZ2169 overspeeding (38 km/h) at Sports Complex,Failed,2026-03-24 07:18:58
+438,DL49NC5997,Pooja Kumar,+913421486777,SMS,DL49NC5997 overspeeding (55 km/h) at Main Gate,Failed,2026-03-24 11:45:58
+439,AS66CQ3987,Neha Das,+911025854153,SMS,AS66CQ3987 overspeeding (62 km/h) at Academic Block A,Delivered,2026-03-24 04:59:58
+440,DL32VH5131,Ananya Nair,+916053706022,SYSTEM,DL32VH5131 overspeeding (42 km/h) at Library Junction,Failed,2026-03-24 04:07:58
+441,AS40IU3799,Rohan Nair,+910527804140,SMS,AS40IU3799 overspeeding (18 km/h) at Residential Zone,Failed,2026-03-23 23:44:58
+442,ML66DO3392,Neha Kumar,+919221505021,SMS,ML66DO3392 overspeeding (50 km/h) at Hospital Road,Failed,2026-03-24 04:32:58
+443,KA85SP8923,Sneha Iyer,+915424963059,SMS,KA85SP8923 overspeeding (68 km/h) at Academic Block A,Failed,2026-03-23 15:23:58
+444,WB57OF5240,Arjun Iyer,+911483946013,EMAIL,WB57OF5240 overspeeding (19 km/h) at Residential Zone,Failed,2026-03-24 11:30:58
+445,ML66DO3392,Neha Kumar,+919221505021,EMAIL,ML66DO3392 overspeeding (48 km/h) at Academic Block A,Delivered,2026-03-23 14:20:58
+446,DL62KW3487,Vikram Sharma,+913688960820,SMS,DL62KW3487 overspeeding (41 km/h) at Academic Block A,Delivered,2026-03-24 02:04:58
+447,DL83WU9535,Kavya Nair,+911915390504,SYSTEM,DL83WU9535 overspeeding (25 km/h) at Main Gate,Failed,2026-03-24 05:34:58
+448,AS39TF1535,Suresh Sharma,+916015436475,SMS,AS39TF1535 overspeeding (22 km/h) at Library Junction,Delivered,2026-03-23 22:18:58
+449,AS56EJ1700,Pooja Verma,+914789307919,EMAIL,AS56EJ1700 overspeeding (50 km/h) at Academic Block A,Failed,2026-03-23 18:21:58
+450,KA92JX4694,Riya Kumar,+914291031585,SMS,KA92JX4694 overspeeding (63 km/h) at Main Gate,Delivered,2026-03-24 06:07:58
+451,WB67HF8236,Neha Sharma,+916210931597,EMAIL,WB67HF8236 overspeeding (28 km/h) at Library Junction,Delivered,2026-03-24 02:24:58
+452,WB89CN6765,Riya Mehta,+913561598010,SYSTEM,WB89CN6765 overspeeding (30 km/h) at Main Gate,Delivered,2026-03-23 13:37:58
+453,KA26GV1325,Priya Mehta,+915506330633,SYSTEM,KA26GV1325 overspeeding (52 km/h) at GH-4 Gate,Failed,2026-03-23 12:51:58
+454,ML96SL5034,Ananya Nair,+913496992806,SYSTEM,ML96SL5034 overspeeding (27 km/h) at Sports Complex,Delivered,2026-03-24 09:13:58
+455,AS20XH6881,Ananya Gupta,+911468643669,SMS,AS20XH6881 overspeeding (25 km/h) at Library Junction,Delivered,2026-03-24 07:16:58
+456,KA91LX9133,Riya Das,+915415160089,SMS,KA91LX9133 overspeeding (64 km/h) at Residential Zone,Delivered,2026-03-24 07:47:58
+457,DL62KW3487,Vikram Sharma,+913688960820,SMS,DL62KW3487 overspeeding (52 km/h) at Residential Zone,Delivered,2026-03-24 05:10:58
+458,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (22 km/h) at Library Junction,Delivered,2026-03-24 10:08:58
+459,AS35MP2924,Sneha Mehta,+914556580308,SMS,AS35MP2924 overspeeding (67 km/h) at Library Junction,Failed,2026-03-24 08:43:58
+460,ML34UE2374,Rohan Joshi,+914806694030,EMAIL,ML34UE2374 overspeeding (62 km/h) at GH-4 Gate,Failed,2026-03-23 15:45:58
+461,DL01NF5747,Arjun Verma,+911316655257,SYSTEM,DL01NF5747 overspeeding (34 km/h) at Residential Zone,Failed,2026-03-24 06:22:58
+462,AS35MP2924,Sneha Mehta,+914556580308,SYSTEM,AS35MP2924 overspeeding (51 km/h) at Main Gate,Failed,2026-03-24 01:30:58
+463,AS84QL6148,Rohan Joshi,+913289615662,SYSTEM,AS84QL6148 overspeeding (59 km/h) at Academic Block B,Failed,2026-03-24 11:33:58
+464,DL63EZ3326,Suresh Nair,+913397774947,EMAIL,DL63EZ3326 overspeeding (31 km/h) at Main Gate,Failed,2026-03-24 11:45:58
+465,AS39DD6131,Neha Nair,+917489491004,EMAIL,AS39DD6131 overspeeding (23 km/h) at Main Gate,Failed,2026-03-23 23:00:58
+466,WB58WC3808,Arjun Joshi,+913635977474,EMAIL,WB58WC3808 overspeeding (21 km/h) at Residential Zone,Delivered,2026-03-23 16:45:58
+467,ML72BR1484,Rohan Nair,+911576202706,SYSTEM,ML72BR1484 overspeeding (21 km/h) at Academic Block B,Failed,2026-03-24 05:30:58
+468,KA82OH1461,Neha Nair,+915236349201,SYSTEM,KA82OH1461 overspeeding (40 km/h) at Main Gate,Delivered,2026-03-24 08:09:58
+469,KA26GV1325,Priya Mehta,+915506330633,SMS,KA26GV1325 overspeeding (22 km/h) at Academic Block B,Failed,2026-03-24 05:11:58
+470,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (63 km/h) at Residential Zone,Failed,2026-03-23 17:55:58
+471,AS40IU3799,Rohan Nair,+910527804140,SYSTEM,AS40IU3799 overspeeding (63 km/h) at Academic Block A,Failed,2026-03-23 17:20:58
+472,AS39TF1535,Suresh Sharma,+916015436475,SYSTEM,AS39TF1535 overspeeding (70 km/h) at Sports Complex,Delivered,2026-03-23 21:24:58
+473,DL80AM5081,Neha Iyer,+919588170395,SMS,DL80AM5081 overspeeding (45 km/h) at Sports Complex,Delivered,2026-03-24 10:40:58
+474,DL83RN3192,Pooja Mehta,+916710951012,SYSTEM,DL83RN3192 overspeeding (61 km/h) at Library Junction,Delivered,2026-03-23 19:13:58
+475,WB34HA6278,Priya Nair,+911278416516,SYSTEM,WB34HA6278 overspeeding (40 km/h) at Academic Block A,Delivered,2026-03-23 17:40:58
+476,DL15VL1668,Arjun Mehta,+918492100012,SYSTEM,DL15VL1668 overspeeding (63 km/h) at Library Junction,Failed,2026-03-23 15:41:58
+477,WB55CZ1211,Neha Nair,+912736869188,EMAIL,WB55CZ1211 overspeeding (58 km/h) at Main Gate,Delivered,2026-03-23 13:57:58
+478,ML72BR1484,Rohan Nair,+911576202706,SYSTEM,ML72BR1484 overspeeding (53 km/h) at Academic Block B,Delivered,2026-03-23 13:10:58
+479,KA55JD5796,Riya Gupta,+916827671617,SMS,KA55JD5796 overspeeding (50 km/h) at Sports Complex,Delivered,2026-03-23 15:54:58
+480,KA16QU5840,Ananya Kumar,+912966108850,SMS,KA16QU5840 overspeeding (62 km/h) at Academic Block B,Delivered,2026-03-24 05:37:58
+481,ML96SL5034,Ananya Nair,+913496992806,SYSTEM,ML96SL5034 overspeeding (60 km/h) at GH-4 Gate,Failed,2026-03-23 13:41:58
+482,WB84FK1524,Suresh Das,+919692463706,SMS,WB84FK1524 overspeeding (69 km/h) at Academic Block A,Delivered,2026-03-23 18:01:58
+483,DL32VH5131,Ananya Nair,+916053706022,EMAIL,DL32VH5131 overspeeding (35 km/h) at Sports Complex,Failed,2026-03-24 07:12:58
+484,ML66ZK5727,Meena Das,+917622447332,SMS,ML66ZK5727 overspeeding (27 km/h) at Main Gate,Failed,2026-03-24 07:59:58
+485,AS11BT4725,Priya Iyer,+918449239542,SMS,AS11BT4725 overspeeding (21 km/h) at Academic Block B,Delivered,2026-03-23 13:19:58
+486,ML94LG3675,Arjun Bose,+912905214340,EMAIL,ML94LG3675 overspeeding (28 km/h) at Residential Zone,Failed,2026-03-23 18:26:58
+487,KA16QU5840,Ananya Kumar,+912966108850,SYSTEM,KA16QU5840 overspeeding (27 km/h) at Main Gate,Delivered,2026-03-24 11:54:58
+488,KA55JD5796,Riya Gupta,+916827671617,EMAIL,KA55JD5796 overspeeding (67 km/h) at Hospital Road,Failed,2026-03-23 17:43:58
+489,WB59SZ3341,Rahul Bose,+917914437386,EMAIL,WB59SZ3341 overspeeding (55 km/h) at Sports Complex,Delivered,2026-03-24 02:42:58
+490,ML64JM7237,Ananya Mehta,+910089925356,SYSTEM,ML64JM7237 overspeeding (41 km/h) at Library Junction,Delivered,2026-03-23 21:51:58
+491,AS39DD6131,Neha Nair,+917489491004,SMS,AS39DD6131 overspeeding (36 km/h) at GH-4 Gate,Failed,2026-03-23 17:24:58
+492,DL99TM2873,Pooja Bose,+918396935104,EMAIL,DL99TM2873 overspeeding (67 km/h) at GH-4 Gate,Failed,2026-03-24 01:53:58
+493,KA67DY2024,Kavya Bose,+919877170221,SMS,KA67DY2024 overspeeding (48 km/h) at Hospital Road,Delivered,2026-03-24 08:51:58
+494,ML07XQ7196,Rohan Bose,+915677490863,SYSTEM,ML07XQ7196 overspeeding (46 km/h) at Residential Zone,Failed,2026-03-24 02:09:58
+495,KA32HP4802,Kavya Gupta,+911841233946,SMS,KA32HP4802 overspeeding (62 km/h) at Academic Block A,Delivered,2026-03-24 06:49:58
+496,DL63EZ3326,Suresh Nair,+913397774947,EMAIL,DL63EZ3326 overspeeding (67 km/h) at Academic Block A,Failed,2026-03-24 05:24:58
+497,ML64JM7237,Ananya Mehta,+910089925356,SMS,ML64JM7237 overspeeding (35 km/h) at Main Gate,Delivered,2026-03-23 13:06:58
+498,KA98NI8813,Arjun Iyer,+917883709970,SMS,KA98NI8813 overspeeding (52 km/h) at Hospital Road,Delivered,2026-03-24 08:42:58
+499,AS85BJ2738,Rohan Joshi,+910333651880,EMAIL,AS85BJ2738 overspeeding (55 km/h) at Main Gate,Failed,2026-03-24 05:02:58
+500,DL99TM2873,Pooja Bose,+918396935104,EMAIL,DL99TM2873 overspeeding (47 km/h) at Academic Block A,Delivered,2026-03-24 06:13:58
+501,WB83EK6884,Pooja Iyer,+913168632252,SMS,WB83EK6884 overspeeding (26 km/h) at Academic Block A,Failed,2026-03-23 12:30:58
+502,AS05UA4808,Kavya Das,+919637877610,SMS,AS05UA4808 overspeeding (42 km/h) at Academic Block A,Delivered,2026-03-24 07:04:58
+503,KA72NF7276,Kavya Sharma,+914958854666,EMAIL,KA72NF7276 overspeeding (66 km/h) at GH-4 Gate,Failed,2026-03-24 04:27:58
+504,ML66ZK5727,Meena Das,+917622447332,SYSTEM,ML66ZK5727 overspeeding (64 km/h) at Residential Zone,Delivered,2026-03-23 14:07:58
+505,WB53AS7612,Riya Das,+915125486662,SMS,WB53AS7612 overspeeding (47 km/h) at Main Gate,Failed,2026-03-24 03:34:58
+506,WB83EK6884,Pooja Iyer,+913168632252,SYSTEM,WB83EK6884 overspeeding (51 km/h) at Sports Complex,Failed,2026-03-23 16:02:58
+507,AS62CG5474,Kavya Bose,+919032494066,SYSTEM,AS62CG5474 overspeeding (49 km/h) at Academic Block B,Failed,2026-03-23 23:47:58
+508,DL40VN4049,Rajesh Das,+915928684265,EMAIL,DL40VN4049 overspeeding (26 km/h) at Library Junction,Delivered,2026-03-23 16:25:58
+509,KA30QN3381,Sneha Sharma,+912427917146,SYSTEM,KA30QN3381 overspeeding (21 km/h) at Library Junction,Delivered,2026-03-24 08:39:58
+510,ML53WF1442,Arjun Das,+916625753145,EMAIL,ML53WF1442 overspeeding (39 km/h) at Residential Zone,Delivered,2026-03-24 00:19:58
+511,WB59SZ3341,Rahul Bose,+917914437386,EMAIL,WB59SZ3341 overspeeding (61 km/h) at Academic Block B,Failed,2026-03-24 11:27:58
+512,DL01NF5747,Arjun Verma,+911316655257,SYSTEM,DL01NF5747 overspeeding (62 km/h) at Academic Block B,Failed,2026-03-23 19:07:58
+513,KA98NI8813,Arjun Iyer,+917883709970,EMAIL,KA98NI8813 overspeeding (66 km/h) at Sports Complex,Failed,2026-03-23 23:07:58
+514,AS34EA9219,Ananya Verma,+919279012809,SMS,AS34EA9219 overspeeding (59 km/h) at Academic Block B,Failed,2026-03-24 05:02:58
+515,KA32PF6209,Rahul Nair,+913422974948,SMS,KA32PF6209 overspeeding (40 km/h) at Academic Block A,Failed,2026-03-23 21:29:58
+516,AS87CO8533,Arjun Kumar,+914853515621,EMAIL,AS87CO8533 overspeeding (24 km/h) at Main Gate,Delivered,2026-03-23 16:56:58
+517,DL63EZ3326,Suresh Nair,+913397774947,EMAIL,DL63EZ3326 overspeeding (63 km/h) at Residential Zone,Failed,2026-03-23 22:00:58
+518,DL39UK9366,Pooja Bose,+918116523937,SYSTEM,DL39UK9366 overspeeding (38 km/h) at Sports Complex,Delivered,2026-03-24 00:24:58
+519,AS56EJ1700,Pooja Verma,+914789307919,EMAIL,AS56EJ1700 overspeeding (33 km/h) at Main Gate,Failed,2026-03-23 16:31:58
+520,DL72HP6499,Kavya Iyer,+916877846731,SYSTEM,DL72HP6499 overspeeding (67 km/h) at Academic Block A,Delivered,2026-03-24 06:00:58
+521,DL15VL1668,Arjun Mehta,+918492100012,SMS,DL15VL1668 overspeeding (49 km/h) at Residential Zone,Delivered,2026-03-24 07:01:58
+522,DL59QR2695,Suresh Das,+910814670689,EMAIL,DL59QR2695 overspeeding (50 km/h) at Residential Zone,Failed,2026-03-24 08:01:58
+523,DL59QR2695,Suresh Das,+910814670689,SYSTEM,DL59QR2695 overspeeding (39 km/h) at Sports Complex,Delivered,2026-03-24 07:29:58
+524,AS83FS6022,Kavya Mehta,+917446152331,EMAIL,AS83FS6022 overspeeding (41 km/h) at Library Junction,Failed,2026-03-23 16:31:58
+525,KA57ND7683,Rajesh Sharma,+911007590061,EMAIL,KA57ND7683 overspeeding (32 km/h) at Library Junction,Failed,2026-03-23 12:48:58
+526,WB15EK7276,Neha Gupta,+916521010367,SYSTEM,WB15EK7276 overspeeding (21 km/h) at Library Junction,Delivered,2026-03-24 00:26:58
+527,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (35 km/h) at Academic Block A,Failed,2026-03-24 11:14:58
+528,KA05JP7623,Meena Bose,+919000637891,SYSTEM,KA05JP7623 overspeeding (28 km/h) at Residential Zone,Failed,2026-03-24 06:04:58
+529,ML28CR1695,Suresh Mehta,+915639757890,EMAIL,ML28CR1695 overspeeding (42 km/h) at Academic Block A,Failed,2026-03-24 02:29:58
+530,WB48OH1391,Suresh Sharma,+914985618855,SYSTEM,WB48OH1391 overspeeding (25 km/h) at Hospital Road,Delivered,2026-03-23 17:23:58
+531,ML37VL7728,Sneha Nair,+915564478958,EMAIL,ML37VL7728 overspeeding (56 km/h) at Academic Block A,Failed,2026-03-23 19:12:58
+532,WB15EK7276,Neha Gupta,+916521010367,SYSTEM,WB15EK7276 overspeeding (62 km/h) at Library Junction,Failed,2026-03-24 09:54:58
+533,KA05JP7623,Meena Bose,+919000637891,EMAIL,KA05JP7623 overspeeding (51 km/h) at Sports Complex,Failed,2026-03-24 11:18:58
+534,KA16QU5840,Ananya Kumar,+912966108850,SYSTEM,KA16QU5840 overspeeding (39 km/h) at Library Junction,Delivered,2026-03-23 22:45:58
+535,DL86SZ9423,Meena Joshi,+919354767148,SYSTEM,DL86SZ9423 overspeeding (39 km/h) at Academic Block B,Delivered,2026-03-23 23:02:58
+536,WB34HA6278,Priya Nair,+911278416516,SMS,WB34HA6278 overspeeding (56 km/h) at Academic Block B,Failed,2026-03-24 06:51:58
+537,KA11BF5605,Vikram Sharma,+911190227555,SMS,KA11BF5605 overspeeding (34 km/h) at Sports Complex,Failed,2026-03-23 14:03:58
+538,KA13RM5187,Vikram Nair,+914767591949,EMAIL,KA13RM5187 overspeeding (61 km/h) at Academic Block B,Delivered,2026-03-23 19:04:58
+539,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (45 km/h) at Residential Zone,Failed,2026-03-23 13:34:58
+540,WB67HF8236,Neha Sharma,+916210931597,SYSTEM,WB67HF8236 overspeeding (56 km/h) at GH-4 Gate,Failed,2026-03-24 03:07:58
+541,KA32HP4802,Kavya Gupta,+911841233946,SYSTEM,KA32HP4802 overspeeding (60 km/h) at Sports Complex,Delivered,2026-03-23 17:41:58
+542,ML67AP9551,Suresh Verma,+917855402642,SYSTEM,ML67AP9551 overspeeding (58 km/h) at Library Junction,Delivered,2026-03-23 19:39:58
+543,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (55 km/h) at Academic Block B,Delivered,2026-03-24 08:18:58
+544,WB35LG7640,Neha Verma,+911544676659,EMAIL,WB35LG7640 overspeeding (34 km/h) at Library Junction,Failed,2026-03-23 15:00:58
+545,DL09RM3079,Rajesh Gupta,+910414389408,SMS,DL09RM3079 overspeeding (30 km/h) at GH-4 Gate,Failed,2026-03-24 02:32:58
+546,DL83WU9535,Kavya Nair,+911915390504,SYSTEM,DL83WU9535 overspeeding (31 km/h) at Academic Block A,Delivered,2026-03-24 05:25:58
+547,KA57ND7683,Rajesh Sharma,+911007590061,EMAIL,KA57ND7683 overspeeding (67 km/h) at Main Gate,Delivered,2026-03-24 00:38:58
+548,DL68JU6845,Meena Iyer,+914327603910,EMAIL,DL68JU6845 overspeeding (68 km/h) at GH-4 Gate,Failed,2026-03-23 23:57:58
+549,KA82OH1461,Neha Nair,+915236349201,SYSTEM,KA82OH1461 overspeeding (47 km/h) at Library Junction,Failed,2026-03-23 19:50:58
+550,DL52IZ2550,Ananya Iyer,+918110914408,EMAIL,DL52IZ2550 overspeeding (39 km/h) at Academic Block B,Failed,2026-03-24 03:59:58
+551,WB67HF8236,Neha Sharma,+916210931597,EMAIL,WB67HF8236 overspeeding (41 km/h) at Academic Block B,Delivered,2026-03-24 01:10:58
+552,AS35MP2924,Sneha Mehta,+914556580308,EMAIL,AS35MP2924 overspeeding (51 km/h) at Main Gate,Failed,2026-03-24 11:14:58
+553,AS86JG9373,Suresh Mehta,+912381617150,SYSTEM,AS86JG9373 overspeeding (28 km/h) at Hospital Road,Delivered,2026-03-23 14:19:58
+554,AS34EA9219,Ananya Verma,+919279012809,EMAIL,AS34EA9219 overspeeding (64 km/h) at Library Junction,Failed,2026-03-24 05:05:58
+555,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (24 km/h) at Residential Zone,Delivered,2026-03-23 19:03:58
+556,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (36 km/h) at Library Junction,Delivered,2026-03-24 07:20:58
+557,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (39 km/h) at Academic Block B,Failed,2026-03-24 02:02:58
+558,DL32VH5131,Ananya Nair,+916053706022,SYSTEM,DL32VH5131 overspeeding (57 km/h) at Sports Complex,Delivered,2026-03-23 23:47:58
+559,ML66ZK5727,Meena Das,+917622447332,EMAIL,ML66ZK5727 overspeeding (64 km/h) at Academic Block B,Delivered,2026-03-23 17:31:58
+560,DL32VH5131,Ananya Nair,+916053706022,SYSTEM,DL32VH5131 overspeeding (36 km/h) at Academic Block A,Delivered,2026-03-23 17:36:58
+561,DL83WU9535,Kavya Nair,+911915390504,SYSTEM,DL83WU9535 overspeeding (56 km/h) at Academic Block A,Delivered,2026-03-23 18:22:58
+562,ML34UE2374,Rohan Joshi,+914806694030,SYSTEM,ML34UE2374 overspeeding (45 km/h) at Residential Zone,Failed,2026-03-24 08:37:58
+563,DL21FZ5173,Rahul Nair,+911900874208,SYSTEM,DL21FZ5173 overspeeding (57 km/h) at Residential Zone,Delivered,2026-03-23 15:39:58
+564,AS40IU3799,Rohan Nair,+910527804140,SYSTEM,AS40IU3799 overspeeding (25 km/h) at Main Gate,Failed,2026-03-23 21:30:58
+565,DL32VH5131,Ananya Nair,+916053706022,SMS,DL32VH5131 overspeeding (38 km/h) at Sports Complex,Failed,2026-03-23 13:52:58
+566,DL39UK9366,Pooja Bose,+918116523937,SYSTEM,DL39UK9366 overspeeding (29 km/h) at Sports Complex,Failed,2026-03-23 22:22:58
+567,DL99TM2873,Pooja Bose,+918396935104,SYSTEM,DL99TM2873 overspeeding (29 km/h) at Academic Block A,Delivered,2026-03-23 23:12:58
+568,DL83RN3192,Pooja Mehta,+916710951012,EMAIL,DL83RN3192 overspeeding (68 km/h) at Academic Block B,Delivered,2026-03-23 17:25:58
+569,KA16QU5840,Ananya Kumar,+912966108850,SYSTEM,KA16QU5840 overspeeding (48 km/h) at Academic Block B,Delivered,2026-03-24 12:22:58
+570,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (26 km/h) at Residential Zone,Failed,2026-03-23 13:12:58
+571,ML88FN3438,Neha Iyer,+911992948086,SYSTEM,ML88FN3438 overspeeding (52 km/h) at Main Gate,Delivered,2026-03-23 18:32:58
+572,ML56BF3812,Kavya Verma,+911367302207,SMS,ML56BF3812 overspeeding (68 km/h) at Academic Block A,Delivered,2026-03-23 20:12:58
+573,ML28TE1153,Rajesh Gupta,+910236906726,SYSTEM,ML28TE1153 overspeeding (28 km/h) at Academic Block A,Failed,2026-03-23 20:25:58
+574,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (57 km/h) at Main Gate,Delivered,2026-03-23 18:57:58
+575,AS05UA4808,Kavya Das,+919637877610,EMAIL,AS05UA4808 overspeeding (30 km/h) at Main Gate,Failed,2026-03-24 03:51:58
+576,DL15VL1668,Arjun Mehta,+918492100012,SMS,DL15VL1668 overspeeding (59 km/h) at Library Junction,Failed,2026-03-23 12:42:58
+577,KA54JI4942,Neha Nair,+918675014564,EMAIL,KA54JI4942 overspeeding (39 km/h) at Sports Complex,Delivered,2026-03-23 23:46:58
+578,DL83RN3192,Pooja Mehta,+916710951012,SMS,DL83RN3192 overspeeding (64 km/h) at Sports Complex,Delivered,2026-03-24 05:27:58
+579,WB83EK6884,Pooja Iyer,+913168632252,SMS,WB83EK6884 overspeeding (32 km/h) at Residential Zone,Delivered,2026-03-24 00:30:58
+580,KA67DY2024,Kavya Bose,+919877170221,SMS,KA67DY2024 overspeeding (30 km/h) at Academic Block A,Delivered,2026-03-23 14:02:58
+581,ML67AP9551,Suresh Verma,+917855402642,SMS,ML67AP9551 overspeeding (65 km/h) at Main Gate,Delivered,2026-03-23 15:45:58
+582,ML07XQ7196,Rohan Bose,+915677490863,SMS,ML07XQ7196 overspeeding (23 km/h) at GH-4 Gate,Failed,2026-03-23 13:00:58
+583,DL05AZ5766,Rahul Joshi,+913347348918,SMS,DL05AZ5766 overspeeding (51 km/h) at Academic Block A,Delivered,2026-03-24 08:40:58
+584,ML46MM6488,Rajesh Joshi,+919322317460,SYSTEM,ML46MM6488 overspeeding (31 km/h) at Academic Block A,Delivered,2026-03-23 14:16:58
+585,AS38TM4623,Kavya Gupta,+912540649898,SMS,AS38TM4623 overspeeding (63 km/h) at Residential Zone,Failed,2026-03-24 12:11:58
+586,WB67HF8236,Neha Sharma,+916210931597,SYSTEM,WB67HF8236 overspeeding (52 km/h) at Sports Complex,Delivered,2026-03-24 01:36:58
+587,AS27RC7448,Ananya Sharma,+919232836094,SMS,AS27RC7448 overspeeding (57 km/h) at Sports Complex,Failed,2026-03-24 05:02:58
+588,WB15EK7276,Neha Gupta,+916521010367,SYSTEM,WB15EK7276 overspeeding (45 km/h) at Library Junction,Failed,2026-03-23 20:23:58
+589,WB35LG7640,Neha Verma,+911544676659,SMS,WB35LG7640 overspeeding (30 km/h) at Library Junction,Delivered,2026-03-23 19:43:58
+590,ML28CR1695,Suresh Mehta,+915639757890,SYSTEM,ML28CR1695 overspeeding (29 km/h) at Hospital Road,Delivered,2026-03-23 15:40:58
+591,AS56EJ1700,Pooja Verma,+914789307919,EMAIL,AS56EJ1700 overspeeding (24 km/h) at GH-4 Gate,Delivered,2026-03-24 06:33:58
+592,ML37VL7728,Sneha Nair,+915564478958,EMAIL,ML37VL7728 overspeeding (65 km/h) at Academic Block A,Delivered,2026-03-24 08:53:58
+593,AS35MP2924,Sneha Mehta,+914556580308,SYSTEM,AS35MP2924 overspeeding (59 km/h) at Academic Block A,Delivered,2026-03-23 13:59:58
+594,DL59QR2695,Suresh Das,+910814670689,EMAIL,DL59QR2695 overspeeding (53 km/h) at Academic Block B,Failed,2026-03-24 09:58:58
+595,ML32GF1928,Aman Iyer,+917798826466,SYSTEM,ML32GF1928 overspeeding (25 km/h) at GH-4 Gate,Failed,2026-03-24 01:46:58
+596,DL98KR3808,Rohan Iyer,+917462868793,EMAIL,DL98KR3808 overspeeding (45 km/h) at Academic Block A,Failed,2026-03-24 04:55:58
+597,AS35MP2924,Sneha Mehta,+914556580308,SMS,AS35MP2924 overspeeding (38 km/h) at Hospital Road,Delivered,2026-03-24 10:50:58
+598,AS66CQ3987,Neha Das,+911025854153,SYSTEM,AS66CQ3987 overspeeding (69 km/h) at Residential Zone,Failed,2026-03-24 10:27:58
+599,KA55JD5796,Riya Gupta,+916827671617,SMS,KA55JD5796 overspeeding (22 km/h) at Hospital Road,Delivered,2026-03-23 17:23:58
+600,KA48KJ3409,Aman Bose,+912160886709,SYSTEM,KA48KJ3409 overspeeding (26 km/h) at Main Gate,Delivered,2026-03-23 22:45:58
+601,AS17HA8384,Riya Verma,+917556453519,EMAIL,AS17HA8384 overspeeding (59 km/h) at Residential Zone,Delivered,2026-03-24 08:22:58
+602,KA32PF6209,Rahul Nair,+913422974948,SYSTEM,KA32PF6209 overspeeding (45 km/h) at Academic Block A,Delivered,2026-03-24 06:55:58
+603,ML94LG3675,Arjun Bose,+912905214340,SMS,ML94LG3675 overspeeding (21 km/h) at Main Gate,Failed,2026-03-24 06:19:58
+604,ML66ZK5727,Meena Das,+917622447332,EMAIL,ML66ZK5727 overspeeding (34 km/h) at Sports Complex,Failed,2026-03-23 23:19:58
+605,KA85SP8923,Sneha Iyer,+915424963059,EMAIL,KA85SP8923 overspeeding (30 km/h) at Main Gate,Failed,2026-03-23 14:07:58
+606,AS84QL6148,Rohan Joshi,+913289615662,SYSTEM,AS84QL6148 overspeeding (65 km/h) at Residential Zone,Failed,2026-03-24 03:00:58
+607,KA91KA4712,Meena Mehta,+914977347776,SMS,KA91KA4712 overspeeding (25 km/h) at Hospital Road,Failed,2026-03-24 06:47:58
+608,KA26GV1325,Priya Mehta,+915506330633,SMS,KA26GV1325 overspeeding (57 km/h) at Library Junction,Failed,2026-03-24 10:44:58
+609,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (54 km/h) at Main Gate,Failed,2026-03-24 06:23:58
+610,ML28CR1695,Suresh Mehta,+915639757890,SMS,ML28CR1695 overspeeding (55 km/h) at Academic Block A,Failed,2026-03-23 15:11:58
+611,AS66CQ3987,Neha Das,+911025854153,SMS,AS66CQ3987 overspeeding (55 km/h) at GH-4 Gate,Delivered,2026-03-23 13:24:58
+612,ML64JM7237,Ananya Mehta,+910089925356,SYSTEM,ML64JM7237 overspeeding (53 km/h) at Hospital Road,Failed,2026-03-23 19:41:58
+613,AS39TF1535,Suresh Sharma,+916015436475,EMAIL,AS39TF1535 overspeeding (49 km/h) at Library Junction,Delivered,2026-03-24 01:04:58
+614,KA16IA3366,Rohan Sharma,+915286067475,SMS,KA16IA3366 overspeeding (44 km/h) at Academic Block A,Delivered,2026-03-24 04:41:58
+615,ML64JM7237,Ananya Mehta,+910089925356,EMAIL,ML64JM7237 overspeeding (70 km/h) at Library Junction,Delivered,2026-03-24 02:09:58
+616,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (44 km/h) at Sports Complex,Failed,2026-03-23 16:07:58
+617,DL08NI4952,Vikram Nair,+912709109071,EMAIL,DL08NI4952 overspeeding (49 km/h) at Hospital Road,Failed,2026-03-23 23:00:58
+618,DL49NC5997,Pooja Kumar,+913421486777,SMS,DL49NC5997 overspeeding (53 km/h) at Academic Block B,Delivered,2026-03-24 03:48:58
+619,ML45SH3466,Sneha Joshi,+914389074659,SMS,ML45SH3466 overspeeding (47 km/h) at GH-4 Gate,Failed,2026-03-23 19:01:58
+620,AS39TF1535,Suresh Sharma,+916015436475,SYSTEM,AS39TF1535 overspeeding (51 km/h) at Residential Zone,Delivered,2026-03-23 15:50:58
+621,WB83EK6884,Pooja Iyer,+913168632252,EMAIL,WB83EK6884 overspeeding (59 km/h) at Academic Block A,Delivered,2026-03-23 18:16:58
+622,AS78YT6554,Aman Nair,+915592718773,SMS,AS78YT6554 overspeeding (55 km/h) at Library Junction,Delivered,2026-03-24 03:59:58
+623,KA85SP8923,Sneha Iyer,+915424963059,SYSTEM,KA85SP8923 overspeeding (26 km/h) at Main Gate,Failed,2026-03-23 13:15:58
+624,DL05AZ5766,Rahul Joshi,+913347348918,EMAIL,DL05AZ5766 overspeeding (60 km/h) at Library Junction,Failed,2026-03-24 08:21:58
+625,AS87CO8533,Arjun Kumar,+914853515621,SMS,AS87CO8533 overspeeding (63 km/h) at Sports Complex,Failed,2026-03-24 01:31:58
+626,KA97LD1716,Rajesh Gupta,+916474566939,SYSTEM,KA97LD1716 overspeeding (54 km/h) at Residential Zone,Failed,2026-03-24 07:28:58
+627,ML64JM7237,Ananya Mehta,+910089925356,SMS,ML64JM7237 overspeeding (56 km/h) at Library Junction,Failed,2026-03-24 01:24:58
+628,KA92JX4694,Riya Kumar,+914291031585,SYSTEM,KA92JX4694 overspeeding (33 km/h) at Library Junction,Failed,2026-03-23 15:13:58
+629,DL98TW1231,Arjun Das,+911014027580,SYSTEM,DL98TW1231 overspeeding (39 km/h) at Main Gate,Delivered,2026-03-24 04:47:58
+630,ML64JM7237,Ananya Mehta,+910089925356,SMS,ML64JM7237 overspeeding (52 km/h) at Library Junction,Failed,2026-03-23 15:25:58
+631,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (30 km/h) at Hospital Road,Failed,2026-03-24 00:13:58
+632,ML28TE1153,Rajesh Gupta,+910236906726,SYSTEM,ML28TE1153 overspeeding (56 km/h) at Main Gate,Failed,2026-03-23 15:21:58
+633,WB53AS7612,Riya Das,+915125486662,SYSTEM,WB53AS7612 overspeeding (69 km/h) at Sports Complex,Failed,2026-03-23 13:57:58
+634,AS39DD6131,Neha Nair,+917489491004,SMS,AS39DD6131 overspeeding (53 km/h) at Sports Complex,Failed,2026-03-24 02:29:58
+635,WB03IY1586,Rohan Das,+919834567754,SYSTEM,WB03IY1586 overspeeding (25 km/h) at Main Gate,Delivered,2026-03-23 20:16:58
+636,DL31BI3386,Kavya Verma,+919431025879,SMS,DL31BI3386 overspeeding (25 km/h) at Hospital Road,Delivered,2026-03-24 10:39:58
+637,ML96SL5034,Ananya Nair,+913496992806,SYSTEM,ML96SL5034 overspeeding (49 km/h) at Academic Block B,Failed,2026-03-23 22:07:58
+638,DL74BJ4274,Suresh Verma,+912083212354,EMAIL,DL74BJ4274 overspeeding (35 km/h) at Academic Block B,Failed,2026-03-24 01:34:58
+639,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (48 km/h) at Hospital Road,Failed,2026-03-24 02:22:58
+640,KA48KJ3409,Aman Bose,+912160886709,SMS,KA48KJ3409 overspeeding (26 km/h) at Academic Block B,Delivered,2026-03-23 16:54:58
+641,ML28CR1695,Suresh Mehta,+915639757890,SMS,ML28CR1695 overspeeding (68 km/h) at GH-4 Gate,Failed,2026-03-23 19:14:58
+642,KA72NF7276,Kavya Sharma,+914958854666,SMS,KA72NF7276 overspeeding (54 km/h) at Hospital Road,Failed,2026-03-23 17:14:58
+643,ML66DO3392,Neha Kumar,+919221505021,SYSTEM,ML66DO3392 overspeeding (49 km/h) at Academic Block A,Failed,2026-03-24 02:53:58
+644,DL40VN4049,Rajesh Das,+915928684265,SMS,DL40VN4049 overspeeding (38 km/h) at Hospital Road,Delivered,2026-03-23 13:30:58
+645,KA54JI4942,Neha Nair,+918675014564,EMAIL,KA54JI4942 overspeeding (29 km/h) at Residential Zone,Delivered,2026-03-24 03:42:58
+646,DL83RN3192,Pooja Mehta,+916710951012,SMS,DL83RN3192 overspeeding (29 km/h) at Residential Zone,Failed,2026-03-24 09:30:58
+647,ML32GF1928,Aman Iyer,+917798826466,SYSTEM,ML32GF1928 overspeeding (52 km/h) at Main Gate,Delivered,2026-03-23 22:49:58
+648,AS34EA9219,Ananya Verma,+919279012809,SYSTEM,AS34EA9219 overspeeding (51 km/h) at GH-4 Gate,Failed,2026-03-23 15:01:58
+649,AS78YT6554,Aman Nair,+915592718773,SMS,AS78YT6554 overspeeding (66 km/h) at GH-4 Gate,Delivered,2026-03-23 21:14:58
+650,WB53AS7612,Riya Das,+915125486662,EMAIL,WB53AS7612 overspeeding (57 km/h) at Sports Complex,Failed,2026-03-23 16:53:58
+651,KA55JD5796,Riya Gupta,+916827671617,SMS,KA55JD5796 overspeeding (43 km/h) at Main Gate,Failed,2026-03-23 15:47:58
+652,KA16IA3366,Rohan Sharma,+915286067475,EMAIL,KA16IA3366 overspeeding (27 km/h) at Sports Complex,Delivered,2026-03-24 01:52:58
+653,AS39TF1535,Suresh Sharma,+916015436475,EMAIL,AS39TF1535 overspeeding (50 km/h) at GH-4 Gate,Failed,2026-03-24 11:33:58
+654,KA04TV4558,Vikram Bose,+917707675638,SMS,KA04TV4558 overspeeding (25 km/h) at Hospital Road,Failed,2026-03-24 11:21:58
+655,KA85SP8923,Sneha Iyer,+915424963059,SYSTEM,KA85SP8923 overspeeding (66 km/h) at Residential Zone,Delivered,2026-03-23 22:05:58
+656,AS86JG9373,Suresh Mehta,+912381617150,SMS,AS86JG9373 overspeeding (29 km/h) at Main Gate,Delivered,2026-03-24 03:51:58
+657,WB55CZ1211,Neha Nair,+912736869188,SYSTEM,WB55CZ1211 overspeeding (27 km/h) at Residential Zone,Failed,2026-03-23 15:02:58
+658,ML96SL5034,Ananya Nair,+913496992806,SYSTEM,ML96SL5034 overspeeding (35 km/h) at Hospital Road,Delivered,2026-03-23 12:54:58
+659,KA32PF6209,Rahul Nair,+913422974948,EMAIL,KA32PF6209 overspeeding (50 km/h) at Sports Complex,Delivered,2026-03-23 14:06:58
+660,DL98TW1231,Arjun Das,+911014027580,EMAIL,DL98TW1231 overspeeding (33 km/h) at Academic Block A,Failed,2026-03-23 22:28:58
+661,WB91KK4291,Sneha Verma,+918987479903,EMAIL,WB91KK4291 overspeeding (66 km/h) at Hospital Road,Failed,2026-03-23 14:54:58
+662,AS34EA9219,Ananya Verma,+919279012809,SMS,AS34EA9219 overspeeding (49 km/h) at GH-4 Gate,Failed,2026-03-24 07:11:58
+663,KA54JI4942,Neha Nair,+918675014564,EMAIL,KA54JI4942 overspeeding (22 km/h) at Main Gate,Delivered,2026-03-23 14:44:58
+664,WB67HF8236,Neha Sharma,+916210931597,SYSTEM,WB67HF8236 overspeeding (54 km/h) at Main Gate,Failed,2026-03-24 06:56:58
+665,AS20GA9785,Rahul Iyer,+913620715201,EMAIL,AS20GA9785 overspeeding (27 km/h) at Main Gate,Delivered,2026-03-24 06:44:58
+666,ML28CR1695,Suresh Mehta,+915639757890,SMS,ML28CR1695 overspeeding (42 km/h) at Academic Block A,Delivered,2026-03-23 23:31:58
+667,KA04TV4558,Vikram Bose,+917707675638,SYSTEM,KA04TV4558 overspeeding (53 km/h) at Hospital Road,Failed,2026-03-24 01:06:58
+668,WB83EK6884,Pooja Iyer,+913168632252,SYSTEM,WB83EK6884 overspeeding (31 km/h) at Academic Block B,Delivered,2026-03-24 12:02:58
+669,KA67DY2024,Kavya Bose,+919877170221,SMS,KA67DY2024 overspeeding (25 km/h) at Academic Block B,Failed,2026-03-24 08:47:58
+670,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (28 km/h) at Hospital Road,Failed,2026-03-24 09:28:58
+671,DL12UZ8203,Rahul Joshi,+910460448844,SMS,DL12UZ8203 overspeeding (25 km/h) at Hospital Road,Failed,2026-03-23 14:49:58
+672,KA72NF7276,Kavya Sharma,+914958854666,SMS,KA72NF7276 overspeeding (24 km/h) at Academic Block A,Delivered,2026-03-24 07:34:58
+673,DL21FZ5173,Rahul Nair,+911900874208,EMAIL,DL21FZ5173 overspeeding (62 km/h) at Sports Complex,Failed,2026-03-23 17:18:58
+674,AS15DM4115,Kavya Bose,+912103891860,EMAIL,AS15DM4115 overspeeding (22 km/h) at Library Junction,Failed,2026-03-23 14:28:58
+675,KA16QU5840,Ananya Kumar,+912966108850,SMS,KA16QU5840 overspeeding (40 km/h) at Academic Block B,Delivered,2026-03-24 11:08:58
+676,AS05UA4808,Kavya Das,+919637877610,SMS,AS05UA4808 overspeeding (32 km/h) at Sports Complex,Delivered,2026-03-23 22:09:58
+677,WB69AZ2580,Rahul Gupta,+917864439585,SYSTEM,WB69AZ2580 overspeeding (57 km/h) at Academic Block B,Failed,2026-03-23 19:06:58
+678,ML67RX5733,Arjun Iyer,+917949777325,EMAIL,ML67RX5733 overspeeding (63 km/h) at Residential Zone,Failed,2026-03-24 02:23:58
+679,WB43LM1595,Sneha Gupta,+914372014242,SYSTEM,WB43LM1595 overspeeding (44 km/h) at Library Junction,Delivered,2026-03-24 03:58:58
+680,DL52IZ2550,Ananya Iyer,+918110914408,SMS,DL52IZ2550 overspeeding (34 km/h) at Academic Block B,Failed,2026-03-24 06:15:58
+681,DL31BI3386,Kavya Verma,+919431025879,SYSTEM,DL31BI3386 overspeeding (40 km/h) at GH-4 Gate,Delivered,2026-03-23 14:41:58
+682,AS39DD6131,Neha Nair,+917489491004,EMAIL,AS39DD6131 overspeeding (36 km/h) at Academic Block B,Delivered,2026-03-24 00:13:58
+683,DL98TW1231,Arjun Das,+911014027580,SMS,DL98TW1231 overspeeding (40 km/h) at Hospital Road,Failed,2026-03-23 21:07:58
+684,KA98NI8813,Arjun Iyer,+917883709970,SMS,KA98NI8813 overspeeding (29 km/h) at Residential Zone,Failed,2026-03-24 11:02:58
+685,KA55JD5796,Riya Gupta,+916827671617,SYSTEM,KA55JD5796 overspeeding (25 km/h) at Residential Zone,Failed,2026-03-23 18:41:58
+686,WB43LM1595,Sneha Gupta,+914372014242,SYSTEM,WB43LM1595 overspeeding (69 km/h) at Academic Block A,Delivered,2026-03-24 06:45:58
+687,DL01NF5747,Arjun Verma,+911316655257,SMS,DL01NF5747 overspeeding (31 km/h) at Hospital Road,Failed,2026-03-24 02:24:58
+688,DL83WU9535,Kavya Nair,+911915390504,EMAIL,DL83WU9535 overspeeding (68 km/h) at Academic Block A,Failed,2026-03-24 03:21:58
+689,AS11BT4725,Priya Iyer,+918449239542,SYSTEM,AS11BT4725 overspeeding (67 km/h) at Main Gate,Failed,2026-03-24 10:39:58
+690,AS56EJ1700,Pooja Verma,+914789307919,SMS,AS56EJ1700 overspeeding (24 km/h) at Residential Zone,Delivered,2026-03-23 14:48:58
+691,ML56BF3812,Kavya Verma,+911367302207,SMS,ML56BF3812 overspeeding (69 km/h) at Sports Complex,Failed,2026-03-24 05:26:58
+692,ML28TE1153,Rajesh Gupta,+910236906726,SMS,ML28TE1153 overspeeding (55 km/h) at Library Junction,Delivered,2026-03-24 00:22:58
+693,DL15VL1668,Arjun Mehta,+918492100012,SYSTEM,DL15VL1668 overspeeding (34 km/h) at Hospital Road,Failed,2026-03-23 18:00:58
+694,ML45SH3466,Sneha Joshi,+914389074659,SYSTEM,ML45SH3466 overspeeding (60 km/h) at GH-4 Gate,Failed,2026-03-24 01:35:58
+695,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (28 km/h) at Academic Block A,Delivered,2026-03-23 13:15:58
+696,ML64JM7237,Ananya Mehta,+910089925356,EMAIL,ML64JM7237 overspeeding (64 km/h) at Residential Zone,Failed,2026-03-24 06:05:58
+697,DL05AZ5766,Rahul Joshi,+913347348918,EMAIL,DL05AZ5766 overspeeding (51 km/h) at Hospital Road,Failed,2026-03-23 20:21:58
+698,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (66 km/h) at Hospital Road,Failed,2026-03-24 05:10:58
+699,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (25 km/h) at Academic Block B,Delivered,2026-03-23 21:39:58
+700,WB15EK7276,Neha Gupta,+916521010367,EMAIL,WB15EK7276 overspeeding (45 km/h) at GH-4 Gate,Delivered,2026-03-24 04:48:58
+701,ML56VE5235,Rahul Bose,+916488033059,EMAIL,ML56VE5235 overspeeding (70 km/h) at Residential Zone,Delivered,2026-03-23 12:47:58
+702,KA54JI4942,Neha Nair,+918675014564,EMAIL,KA54JI4942 overspeeding (59 km/h) at Main Gate,Failed,2026-03-23 21:07:58
+703,WB84FK1524,Suresh Das,+919692463706,SMS,WB84FK1524 overspeeding (54 km/h) at Academic Block A,Failed,2026-03-23 20:01:58
+704,WB43LM1595,Sneha Gupta,+914372014242,EMAIL,WB43LM1595 overspeeding (58 km/h) at GH-4 Gate,Failed,2026-03-23 15:34:58
+705,DL59NA4362,Arjun Mehta,+917190273178,SYSTEM,DL59NA4362 overspeeding (36 km/h) at Library Junction,Failed,2026-03-24 02:55:58
+706,AS17HA8384,Riya Verma,+917556453519,EMAIL,AS17HA8384 overspeeding (41 km/h) at Library Junction,Delivered,2026-03-23 20:09:58
+707,ML73GV9095,Rajesh Mehta,+912021048241,SMS,ML73GV9095 overspeeding (70 km/h) at GH-4 Gate,Delivered,2026-03-24 02:27:58
+708,KA17GN7428,Rohan Bose,+915832157688,SYSTEM,KA17GN7428 overspeeding (36 km/h) at Hospital Road,Delivered,2026-03-24 01:54:58
+709,KA26GV1325,Priya Mehta,+915506330633,EMAIL,KA26GV1325 overspeeding (60 km/h) at Residential Zone,Delivered,2026-03-23 17:19:58
+710,DL59QR2695,Suresh Das,+910814670689,SMS,DL59QR2695 overspeeding (34 km/h) at Academic Block B,Delivered,2026-03-23 14:40:58
+711,ML97PM4717,Rajesh Joshi,+910225793932,EMAIL,ML97PM4717 overspeeding (21 km/h) at Academic Block A,Failed,2026-03-23 21:35:58
+712,WB43LM1595,Sneha Gupta,+914372014242,EMAIL,WB43LM1595 overspeeding (26 km/h) at Sports Complex,Delivered,2026-03-24 07:47:58
+713,DL98TW1231,Arjun Das,+911014027580,EMAIL,DL98TW1231 overspeeding (51 km/h) at GH-4 Gate,Delivered,2026-03-24 03:36:58
+714,KA32PF6209,Rahul Nair,+913422974948,SMS,KA32PF6209 overspeeding (63 km/h) at Library Junction,Delivered,2026-03-23 15:55:58
+715,KA82OH1461,Neha Nair,+915236349201,SYSTEM,KA82OH1461 overspeeding (36 km/h) at Residential Zone,Failed,2026-03-24 08:47:58
+716,ML97PM4717,Rajesh Joshi,+910225793932,EMAIL,ML97PM4717 overspeeding (39 km/h) at Academic Block A,Delivered,2026-03-23 20:24:58
+717,DL40VN4049,Rajesh Das,+915928684265,EMAIL,DL40VN4049 overspeeding (63 km/h) at Academic Block B,Failed,2026-03-24 01:23:58
+718,KA54JI4942,Neha Nair,+918675014564,SMS,KA54JI4942 overspeeding (32 km/h) at Library Junction,Delivered,2026-03-23 18:56:58
+719,KA72NF7276,Kavya Sharma,+914958854666,SMS,KA72NF7276 overspeeding (38 km/h) at Library Junction,Failed,2026-03-24 10:37:58
+720,ML88FN3438,Neha Iyer,+911992948086,SMS,ML88FN3438 overspeeding (17 km/h) at Residential Zone,Failed,2026-03-24 06:20:58
+721,DL98TW1231,Arjun Das,+911014027580,SMS,DL98TW1231 overspeeding (60 km/h) at Hospital Road,Failed,2026-03-23 23:04:58
+722,ML66ZK5727,Meena Das,+917622447332,SMS,ML66ZK5727 overspeeding (70 km/h) at Academic Block B,Failed,2026-03-23 13:39:58
+723,WB59SZ3341,Rahul Bose,+917914437386,SMS,WB59SZ3341 overspeeding (68 km/h) at Residential Zone,Failed,2026-03-23 23:35:58
+724,ML56BF3812,Kavya Verma,+911367302207,SMS,ML56BF3812 overspeeding (51 km/h) at Hospital Road,Failed,2026-03-23 22:20:58
+725,KA30QN3381,Sneha Sharma,+912427917146,SMS,KA30QN3381 overspeeding (31 km/h) at Sports Complex,Failed,2026-03-23 16:14:58
+726,ML88FN3438,Neha Iyer,+911992948086,SYSTEM,ML88FN3438 overspeeding (21 km/h) at GH-4 Gate,Delivered,2026-03-23 15:26:58
+727,ML88RX4292,Sneha Joshi,+913910963340,EMAIL,ML88RX4292 overspeeding (64 km/h) at Library Junction,Failed,2026-03-24 04:08:58
+728,KA48KJ3409,Aman Bose,+912160886709,SYSTEM,KA48KJ3409 overspeeding (41 km/h) at Library Junction,Delivered,2026-03-24 08:13:58
+729,WB34HA6278,Priya Nair,+911278416516,SYSTEM,WB34HA6278 overspeeding (34 km/h) at Residential Zone,Failed,2026-03-24 06:27:58
+730,AS34EA9219,Ananya Verma,+919279012809,SMS,AS34EA9219 overspeeding (22 km/h) at GH-4 Gate,Failed,2026-03-23 22:15:58
+731,DL80AM5081,Neha Iyer,+919588170395,SYSTEM,DL80AM5081 overspeeding (18 km/h) at Residential Zone,Failed,2026-03-24 00:30:58
+732,AS11BT4725,Priya Iyer,+918449239542,EMAIL,AS11BT4725 overspeeding (29 km/h) at Sports Complex,Delivered,2026-03-23 17:02:58
+733,KA14YZ5213,Rajesh Bose,+917500846271,SYSTEM,KA14YZ5213 overspeeding (39 km/h) at Academic Block A,Delivered,2026-03-24 08:20:58
+734,ML34UE2374,Rohan Joshi,+914806694030,SMS,ML34UE2374 overspeeding (34 km/h) at Library Junction,Failed,2026-03-24 03:30:58
+735,DL05AZ5766,Rahul Joshi,+913347348918,SYSTEM,DL05AZ5766 overspeeding (59 km/h) at Hospital Road,Delivered,2026-03-24 10:20:58
+736,DL59QR2695,Suresh Das,+910814670689,EMAIL,DL59QR2695 overspeeding (69 km/h) at Residential Zone,Failed,2026-03-23 18:00:58
+737,DL86SZ9423,Meena Joshi,+919354767148,SMS,DL86SZ9423 overspeeding (31 km/h) at Academic Block A,Delivered,2026-03-24 02:28:58
+738,ML66DO3392,Neha Kumar,+919221505021,SMS,ML66DO3392 overspeeding (28 km/h) at Main Gate,Delivered,2026-03-24 01:10:58
+739,WB36BB8849,Pooja Nair,+916299069117,SMS,WB36BB8849 overspeeding (52 km/h) at Library Junction,Failed,2026-03-24 06:41:58
+740,AS86JG9373,Suresh Mehta,+912381617150,SMS,AS86JG9373 overspeeding (60 km/h) at Academic Block A,Delivered,2026-03-23 13:56:58
+741,ML88FN3438,Neha Iyer,+911992948086,EMAIL,ML88FN3438 overspeeding (57 km/h) at GH-4 Gate,Failed,2026-03-24 06:32:58
+742,WB83EK6884,Pooja Iyer,+913168632252,SMS,WB83EK6884 overspeeding (59 km/h) at Main Gate,Failed,2026-03-23 20:38:58
+743,ML28TE1153,Rajesh Gupta,+910236906726,EMAIL,ML28TE1153 overspeeding (68 km/h) at Academic Block A,Delivered,2026-03-24 11:24:58
+744,AS86JG9373,Suresh Mehta,+912381617150,SMS,AS86JG9373 overspeeding (56 km/h) at Main Gate,Failed,2026-03-23 16:05:58
+745,DL21FZ5173,Rahul Nair,+911900874208,SYSTEM,DL21FZ5173 overspeeding (61 km/h) at Academic Block A,Delivered,2026-03-24 04:53:58
+746,AS15DM4115,Kavya Bose,+912103891860,EMAIL,AS15DM4115 overspeeding (46 km/h) at Library Junction,Delivered,2026-03-24 02:57:58
+747,KA16IA3366,Rohan Sharma,+915286067475,SYSTEM,KA16IA3366 overspeeding (36 km/h) at Main Gate,Delivered,2026-03-24 01:39:58
+748,KA67DY2024,Kavya Bose,+919877170221,SYSTEM,KA67DY2024 overspeeding (67 km/h) at Sports Complex,Failed,2026-03-24 02:18:58
+749,AS11BT4725,Priya Iyer,+918449239542,EMAIL,AS11BT4725 overspeeding (61 km/h) at Hospital Road,Failed,2026-03-23 22:17:58
+750,WB48UU1369,Arjun Kumar,+918948026518,EMAIL,WB48UU1369 overspeeding (64 km/h) at Residential Zone,Delivered,2026-03-24 09:48:58
+751,ML07XQ7196,Rohan Bose,+915677490863,SMS,ML07XQ7196 overspeeding (31 km/h) at Residential Zone,Failed,2026-03-23 13:40:58
+752,KA14YZ5213,Rajesh Bose,+917500846271,SYSTEM,KA14YZ5213 overspeeding (17 km/h) at Residential Zone,Delivered,2026-03-23 22:11:58
+753,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (40 km/h) at Sports Complex,Failed,2026-03-24 06:04:58
+754,AS17HA8384,Riya Verma,+917556453519,SYSTEM,AS17HA8384 overspeeding (50 km/h) at Main Gate,Failed,2026-03-23 18:32:58
+755,AS17HA8384,Riya Verma,+917556453519,SMS,AS17HA8384 overspeeding (24 km/h) at Academic Block A,Delivered,2026-03-23 13:03:58
+756,DL21FZ5173,Rahul Nair,+911900874208,SYSTEM,DL21FZ5173 overspeeding (41 km/h) at Sports Complex,Delivered,2026-03-24 09:42:58
+757,DL52IZ2550,Ananya Iyer,+918110914408,EMAIL,DL52IZ2550 overspeeding (54 km/h) at Academic Block B,Delivered,2026-03-24 07:50:58
+758,ML34UE2374,Rohan Joshi,+914806694030,SMS,ML34UE2374 overspeeding (39 km/h) at Academic Block B,Delivered,2026-03-24 00:52:58
+759,ML96SL5034,Ananya Nair,+913496992806,EMAIL,ML96SL5034 overspeeding (56 km/h) at Academic Block A,Delivered,2026-03-23 15:20:58
+760,ML28CR1695,Suresh Mehta,+915639757890,SYSTEM,ML28CR1695 overspeeding (43 km/h) at Main Gate,Delivered,2026-03-24 05:41:58
+761,WB89CN6765,Riya Mehta,+913561598010,SYSTEM,WB89CN6765 overspeeding (36 km/h) at Hospital Road,Delivered,2026-03-24 08:02:58
+762,ML73GV9095,Rajesh Mehta,+912021048241,SMS,ML73GV9095 overspeeding (24 km/h) at Library Junction,Failed,2026-03-24 05:49:58
+763,DL01NF5747,Arjun Verma,+911316655257,SMS,DL01NF5747 overspeeding (58 km/h) at Sports Complex,Failed,2026-03-23 13:55:58
+764,KA13RM5187,Vikram Nair,+914767591949,SYSTEM,KA13RM5187 overspeeding (59 km/h) at Academic Block B,Delivered,2026-03-24 07:45:58
+765,DL72HP6499,Kavya Iyer,+916877846731,EMAIL,DL72HP6499 overspeeding (68 km/h) at Academic Block B,Delivered,2026-03-24 06:14:58
+766,ML37VL7728,Sneha Nair,+915564478958,SMS,ML37VL7728 overspeeding (52 km/h) at Sports Complex,Delivered,2026-03-24 11:26:58
+767,AS35MP2924,Sneha Mehta,+914556580308,SMS,AS35MP2924 overspeeding (58 km/h) at Hospital Road,Delivered,2026-03-23 20:41:58
+768,KA14YZ5213,Rajesh Bose,+917500846271,SMS,KA14YZ5213 overspeeding (46 km/h) at Residential Zone,Failed,2026-03-24 02:40:58
+769,DL01NF5747,Arjun Verma,+911316655257,SYSTEM,DL01NF5747 overspeeding (32 km/h) at Academic Block A,Delivered,2026-03-24 02:06:58
+770,ML46MM6488,Rajesh Joshi,+919322317460,SMS,ML46MM6488 overspeeding (37 km/h) at Academic Block B,Delivered,2026-03-24 04:58:58
+771,DL63EZ3326,Suresh Nair,+913397774947,SMS,DL63EZ3326 overspeeding (37 km/h) at Library Junction,Failed,2026-03-23 17:55:58
+772,ML96SL5034,Ananya Nair,+913496992806,SMS,ML96SL5034 overspeeding (39 km/h) at Residential Zone,Delivered,2026-03-23 13:12:58
+773,AS15DM4115,Kavya Bose,+912103891860,EMAIL,AS15DM4115 overspeeding (27 km/h) at Academic Block B,Delivered,2026-03-23 17:32:58
+774,KA05JP7623,Meena Bose,+919000637891,SMS,KA05JP7623 overspeeding (50 km/h) at Residential Zone,Failed,2026-03-24 09:26:58
+775,ML56BF3812,Kavya Verma,+911367302207,SMS,ML56BF3812 overspeeding (56 km/h) at Sports Complex,Failed,2026-03-24 00:35:58
+776,KA32HP4802,Kavya Gupta,+911841233946,SYSTEM,KA32HP4802 overspeeding (69 km/h) at Hospital Road,Failed,2026-03-23 15:40:58
+777,ML88RX4292,Sneha Joshi,+913910963340,SMS,ML88RX4292 overspeeding (30 km/h) at GH-4 Gate,Delivered,2026-03-24 01:05:58
+778,AS56EJ1700,Pooja Verma,+914789307919,EMAIL,AS56EJ1700 overspeeding (41 km/h) at Academic Block B,Delivered,2026-03-24 11:45:58
+779,KA14YZ5213,Rajesh Bose,+917500846271,SMS,KA14YZ5213 overspeeding (44 km/h) at Sports Complex,Failed,2026-03-24 09:28:58
+780,KA17GN7428,Rohan Bose,+915832157688,SMS,KA17GN7428 overspeeding (32 km/h) at Hospital Road,Failed,2026-03-24 10:26:58
+781,ML67AP9551,Suresh Verma,+917855402642,EMAIL,ML67AP9551 overspeeding (47 km/h) at Library Junction,Delivered,2026-03-23 12:30:58
+782,KA92JX4694,Riya Kumar,+914291031585,SMS,KA92JX4694 overspeeding (56 km/h) at Residential Zone,Delivered,2026-03-24 00:05:58
+783,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (48 km/h) at Hospital Road,Delivered,2026-03-24 12:04:58
+784,KA05JP7623,Meena Bose,+919000637891,EMAIL,KA05JP7623 overspeeding (64 km/h) at Main Gate,Delivered,2026-03-23 19:30:58
+785,ML66DO3392,Neha Kumar,+919221505021,EMAIL,ML66DO3392 overspeeding (31 km/h) at Residential Zone,Delivered,2026-03-24 06:46:58
+786,WB19EG7034,Priya Bose,+916975237282,EMAIL,WB19EG7034 overspeeding (35 km/h) at Residential Zone,Delivered,2026-03-23 13:33:58
+787,WB48UU1369,Arjun Kumar,+918948026518,SYSTEM,WB48UU1369 overspeeding (49 km/h) at Main Gate,Delivered,2026-03-23 16:12:58
+788,KA17GN7428,Rohan Bose,+915832157688,EMAIL,KA17GN7428 overspeeding (32 km/h) at Academic Block B,Failed,2026-03-24 07:42:58
+789,WB83EK6884,Pooja Iyer,+913168632252,SYSTEM,WB83EK6884 overspeeding (45 km/h) at Main Gate,Delivered,2026-03-24 09:30:58
+790,KA32HP4802,Kavya Gupta,+911841233946,SMS,KA32HP4802 overspeeding (65 km/h) at Residential Zone,Delivered,2026-03-24 10:54:58
+791,AS05UA4808,Kavya Das,+919637877610,EMAIL,AS05UA4808 overspeeding (61 km/h) at Sports Complex,Delivered,2026-03-23 21:19:58
+792,DL15VL1668,Arjun Mehta,+918492100012,EMAIL,DL15VL1668 overspeeding (51 km/h) at Sports Complex,Failed,2026-03-23 18:35:58
+793,DL31BI3386,Kavya Verma,+919431025879,SMS,DL31BI3386 overspeeding (51 km/h) at Academic Block B,Delivered,2026-03-24 02:29:58
+794,WB89CN6765,Riya Mehta,+913561598010,SYSTEM,WB89CN6765 overspeeding (27 km/h) at Academic Block B,Failed,2026-03-23 22:17:58
+795,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (53 km/h) at Residential Zone,Delivered,2026-03-23 13:52:58
+796,WB69AZ2580,Rahul Gupta,+917864439585,SYSTEM,WB69AZ2580 overspeeding (46 km/h) at Sports Complex,Failed,2026-03-23 19:11:58
+797,WB55CZ1211,Neha Nair,+912736869188,SYSTEM,WB55CZ1211 overspeeding (48 km/h) at Hospital Road,Delivered,2026-03-23 21:07:58
+798,WB67HF8236,Neha Sharma,+916210931597,SYSTEM,WB67HF8236 overspeeding (17 km/h) at Residential Zone,Failed,2026-03-24 10:28:58
+799,WB57OF5240,Arjun Iyer,+911483946013,EMAIL,WB57OF5240 overspeeding (56 km/h) at Academic Block A,Failed,2026-03-23 16:57:58
+800,WB34HA6278,Priya Nair,+911278416516,EMAIL,WB34HA6278 overspeeding (48 km/h) at Hospital Road,Delivered,2026-03-24 07:03:58
+801,KA30QN3381,Sneha Sharma,+912427917146,SYSTEM,KA30QN3381 overspeeding (54 km/h) at GH-4 Gate,Failed,2026-03-24 06:19:58
+802,WB84FK1524,Suresh Das,+919692463706,SMS,WB84FK1524 overspeeding (53 km/h) at Sports Complex,Failed,2026-03-24 07:08:58
+803,KA32PF6209,Rahul Nair,+913422974948,SYSTEM,KA32PF6209 overspeeding (35 km/h) at Library Junction,Failed,2026-03-24 10:49:58
+804,ML67AP9551,Suresh Verma,+917855402642,EMAIL,ML67AP9551 overspeeding (28 km/h) at Academic Block A,Delivered,2026-03-23 17:05:58
+805,AS27RC7448,Ananya Sharma,+919232836094,SYSTEM,AS27RC7448 overspeeding (50 km/h) at Main Gate,Failed,2026-03-24 10:25:58
+806,KA55JD5796,Riya Gupta,+916827671617,EMAIL,KA55JD5796 overspeeding (26 km/h) at Academic Block B,Delivered,2026-03-23 21:11:58
+807,WB15EK7276,Neha Gupta,+916521010367,SMS,WB15EK7276 overspeeding (22 km/h) at Academic Block A,Delivered,2026-03-24 01:02:58
+808,DL32VH5131,Ananya Nair,+916053706022,SMS,DL32VH5131 overspeeding (55 km/h) at Sports Complex,Failed,2026-03-23 15:53:58
+809,ML97PM4717,Rajesh Joshi,+910225793932,EMAIL,ML97PM4717 overspeeding (27 km/h) at Library Junction,Delivered,2026-03-24 10:49:58
+810,WB91KK4291,Sneha Verma,+918987479903,EMAIL,WB91KK4291 overspeeding (50 km/h) at Residential Zone,Failed,2026-03-23 16:05:58
+811,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (63 km/h) at GH-4 Gate,Failed,2026-03-23 15:24:58
+812,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (24 km/h) at Library Junction,Delivered,2026-03-24 04:35:58
+813,ML64JM7237,Ananya Mehta,+910089925356,SYSTEM,ML64JM7237 overspeeding (41 km/h) at GH-4 Gate,Delivered,2026-03-24 06:22:58
+814,DL99TM2873,Pooja Bose,+918396935104,SMS,DL99TM2873 overspeeding (52 km/h) at Hospital Road,Delivered,2026-03-24 03:32:58
+815,DL62KW3487,Vikram Sharma,+913688960820,EMAIL,DL62KW3487 overspeeding (26 km/h) at Residential Zone,Failed,2026-03-23 17:48:58
+816,DL31BI3386,Kavya Verma,+919431025879,SYSTEM,DL31BI3386 overspeeding (63 km/h) at Main Gate,Delivered,2026-03-24 10:33:58
+817,KA91KA4712,Meena Mehta,+914977347776,SMS,KA91KA4712 overspeeding (50 km/h) at Academic Block B,Delivered,2026-03-23 14:42:58
+818,AS83FS6022,Kavya Mehta,+917446152331,SYSTEM,AS83FS6022 overspeeding (65 km/h) at Academic Block B,Failed,2026-03-23 23:12:58
+819,ML45SH3466,Sneha Joshi,+914389074659,SMS,ML45SH3466 overspeeding (62 km/h) at Academic Block A,Failed,2026-03-24 09:12:58
+820,ML45SH3466,Sneha Joshi,+914389074659,SMS,ML45SH3466 overspeeding (68 km/h) at Residential Zone,Failed,2026-03-24 05:35:58
+821,KA26GV1325,Priya Mehta,+915506330633,SYSTEM,KA26GV1325 overspeeding (31 km/h) at Main Gate,Delivered,2026-03-24 11:06:58
+822,AS05UA4808,Kavya Das,+919637877610,EMAIL,AS05UA4808 overspeeding (24 km/h) at Hospital Road,Delivered,2026-03-23 21:14:58
+823,ML97PM4717,Rajesh Joshi,+910225793932,SMS,ML97PM4717 overspeeding (55 km/h) at Library Junction,Failed,2026-03-23 17:54:58
+824,DL05AZ5766,Rahul Joshi,+913347348918,SYSTEM,DL05AZ5766 overspeeding (40 km/h) at Main Gate,Failed,2026-03-24 01:44:58
+825,ML45SH3466,Sneha Joshi,+914389074659,SMS,ML45SH3466 overspeeding (43 km/h) at Residential Zone,Failed,2026-03-24 06:13:58
+826,DL40VN4049,Rajesh Das,+915928684265,EMAIL,DL40VN4049 overspeeding (34 km/h) at Academic Block A,Delivered,2026-03-23 22:49:58
+827,AS40IU3799,Rohan Nair,+910527804140,SMS,AS40IU3799 overspeeding (29 km/h) at Academic Block A,Delivered,2026-03-24 08:12:58
+828,KA97LD1716,Rajesh Gupta,+916474566939,SMS,KA97LD1716 overspeeding (48 km/h) at Sports Complex,Delivered,2026-03-23 21:48:58
+829,AS20XH6881,Ananya Gupta,+911468643669,EMAIL,AS20XH6881 overspeeding (68 km/h) at Hospital Road,Failed,2026-03-24 09:30:58
+830,AS15DM4115,Kavya Bose,+912103891860,SYSTEM,AS15DM4115 overspeeding (46 km/h) at GH-4 Gate,Failed,2026-03-24 00:30:58
+831,WB55CZ1211,Neha Nair,+912736869188,EMAIL,WB55CZ1211 overspeeding (55 km/h) at Hospital Road,Failed,2026-03-24 05:57:58
+832,AS84QL6148,Rohan Joshi,+913289615662,SMS,AS84QL6148 overspeeding (51 km/h) at Main Gate,Failed,2026-03-24 02:53:58
+833,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (25 km/h) at Hospital Road,Failed,2026-03-24 07:02:58
+834,DL01NF5747,Arjun Verma,+911316655257,SYSTEM,DL01NF5747 overspeeding (34 km/h) at Sports Complex,Failed,2026-03-24 08:02:58
+835,DL32VH5131,Ananya Nair,+916053706022,SMS,DL32VH5131 overspeeding (65 km/h) at Residential Zone,Failed,2026-03-24 07:55:58
+836,DL72HP6499,Kavya Iyer,+916877846731,SMS,DL72HP6499 overspeeding (56 km/h) at GH-4 Gate,Failed,2026-03-24 09:51:58
+837,DL40VN4049,Rajesh Das,+915928684265,SYSTEM,DL40VN4049 overspeeding (39 km/h) at Sports Complex,Failed,2026-03-24 04:43:58
+838,AS56EJ1700,Pooja Verma,+914789307919,EMAIL,AS56EJ1700 overspeeding (57 km/h) at Library Junction,Delivered,2026-03-23 22:12:58
+839,WB89CN6765,Riya Mehta,+913561598010,EMAIL,WB89CN6765 overspeeding (29 km/h) at Academic Block A,Delivered,2026-03-23 14:06:58
+840,KA05JP7623,Meena Bose,+919000637891,SYSTEM,KA05JP7623 overspeeding (59 km/h) at Academic Block A,Delivered,2026-03-24 08:17:58
+841,DL40VN4049,Rajesh Das,+915928684265,SYSTEM,DL40VN4049 overspeeding (47 km/h) at Sports Complex,Delivered,2026-03-24 03:32:58
+842,DL59QR2695,Suresh Das,+910814670689,SYSTEM,DL59QR2695 overspeeding (56 km/h) at Sports Complex,Delivered,2026-03-23 22:09:58
+843,AS85BJ2738,Rohan Joshi,+910333651880,EMAIL,AS85BJ2738 overspeeding (66 km/h) at Hospital Road,Delivered,2026-03-23 15:54:58
+844,AS38TM4623,Kavya Gupta,+912540649898,SMS,AS38TM4623 overspeeding (36 km/h) at Main Gate,Failed,2026-03-23 19:19:58
+845,ML73GV9095,Rajesh Mehta,+912021048241,SYSTEM,ML73GV9095 overspeeding (34 km/h) at Academic Block B,Delivered,2026-03-23 19:25:58
+846,AS05UA4808,Kavya Das,+919637877610,SYSTEM,AS05UA4808 overspeeding (42 km/h) at Residential Zone,Failed,2026-03-23 21:36:58
+847,WB57OF5240,Arjun Iyer,+911483946013,EMAIL,WB57OF5240 overspeeding (41 km/h) at Hospital Road,Failed,2026-03-24 03:03:58
+848,WB69AZ2580,Rahul Gupta,+917864439585,SMS,WB69AZ2580 overspeeding (54 km/h) at Residential Zone,Delivered,2026-03-23 17:09:58
+849,AS83FS6022,Kavya Mehta,+917446152331,SYSTEM,AS83FS6022 overspeeding (54 km/h) at GH-4 Gate,Delivered,2026-03-24 04:38:58
+850,DL83RN3192,Pooja Mehta,+916710951012,SMS,DL83RN3192 overspeeding (24 km/h) at Academic Block A,Delivered,2026-03-23 20:40:58
+851,WB66YQ5291,Riya Nair,+913398014429,EMAIL,WB66YQ5291 overspeeding (39 km/h) at Sports Complex,Failed,2026-03-23 21:32:58
+852,DL83WU9535,Kavya Nair,+911915390504,SMS,DL83WU9535 overspeeding (51 km/h) at Library Junction,Delivered,2026-03-24 02:09:58
+853,AS17HA8384,Riya Verma,+917556453519,EMAIL,AS17HA8384 overspeeding (30 km/h) at Residential Zone,Failed,2026-03-23 21:31:58
+854,ML34UE2374,Rohan Joshi,+914806694030,SYSTEM,ML34UE2374 overspeeding (39 km/h) at Sports Complex,Failed,2026-03-24 00:10:58
+855,AS38TM4623,Kavya Gupta,+912540649898,SYSTEM,AS38TM4623 overspeeding (48 km/h) at GH-4 Gate,Failed,2026-03-23 18:06:58
+856,KA17GN7428,Rohan Bose,+915832157688,SYSTEM,KA17GN7428 overspeeding (47 km/h) at Residential Zone,Failed,2026-03-23 12:57:58
+857,AS27RC7448,Ananya Sharma,+919232836094,EMAIL,AS27RC7448 overspeeding (54 km/h) at Academic Block B,Failed,2026-03-24 02:54:58
+858,AS56EJ1700,Pooja Verma,+914789307919,SMS,AS56EJ1700 overspeeding (24 km/h) at Academic Block A,Failed,2026-03-24 11:48:58
+859,DL52IZ2550,Ananya Iyer,+918110914408,SYSTEM,DL52IZ2550 overspeeding (36 km/h) at Main Gate,Delivered,2026-03-23 13:52:58
+860,DL39UK9366,Pooja Bose,+918116523937,SYSTEM,DL39UK9366 overspeeding (59 km/h) at Academic Block A,Failed,2026-03-24 03:05:58
+861,KA48KJ3409,Aman Bose,+912160886709,EMAIL,KA48KJ3409 overspeeding (40 km/h) at Library Junction,Delivered,2026-03-23 18:30:58
+862,ML72BR1484,Rohan Nair,+911576202706,SYSTEM,ML72BR1484 overspeeding (26 km/h) at Main Gate,Delivered,2026-03-24 05:15:58
+863,AS39DD6131,Neha Nair,+917489491004,EMAIL,AS39DD6131 overspeeding (34 km/h) at Library Junction,Failed,2026-03-24 06:05:58
+864,DL59NA4362,Arjun Mehta,+917190273178,SYSTEM,DL59NA4362 overspeeding (55 km/h) at Residential Zone,Delivered,2026-03-23 13:11:58
+865,DL52IZ2550,Ananya Iyer,+918110914408,SYSTEM,DL52IZ2550 overspeeding (69 km/h) at GH-4 Gate,Failed,2026-03-23 12:40:58
+866,DL63EZ3326,Suresh Nair,+913397774947,EMAIL,DL63EZ3326 overspeeding (30 km/h) at Main Gate,Delivered,2026-03-24 11:20:58
+867,ML97PM4717,Rajesh Joshi,+910225793932,SMS,ML97PM4717 overspeeding (57 km/h) at Academic Block B,Failed,2026-03-23 12:45:58
+868,WB48UU1369,Arjun Kumar,+918948026518,SYSTEM,WB48UU1369 overspeeding (38 km/h) at Hospital Road,Failed,2026-03-24 12:18:58
+869,AS27RC7448,Ananya Sharma,+919232836094,EMAIL,AS27RC7448 overspeeding (42 km/h) at Academic Block A,Delivered,2026-03-24 10:49:58
+870,DL72HP6499,Kavya Iyer,+916877846731,EMAIL,DL72HP6499 overspeeding (39 km/h) at Residential Zone,Failed,2026-03-24 03:01:58
+871,DL86SZ9423,Meena Joshi,+919354767148,SMS,DL86SZ9423 overspeeding (58 km/h) at Hospital Road,Failed,2026-03-24 04:44:58
+872,ML56VE5235,Rahul Bose,+916488033059,SMS,ML56VE5235 overspeeding (44 km/h) at Sports Complex,Delivered,2026-03-24 04:36:58
+873,ML66DO3392,Neha Kumar,+919221505021,SMS,ML66DO3392 overspeeding (39 km/h) at Hospital Road,Delivered,2026-03-23 20:43:58
+874,DL05AZ5766,Rahul Joshi,+913347348918,SMS,DL05AZ5766 overspeeding (49 km/h) at Library Junction,Failed,2026-03-23 12:39:58
+875,KA05JP7623,Meena Bose,+919000637891,SYSTEM,KA05JP7623 overspeeding (43 km/h) at Academic Block A,Failed,2026-03-24 11:20:58
+876,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (35 km/h) at GH-4 Gate,Delivered,2026-03-24 03:38:58
+877,ML56VE5235,Rahul Bose,+916488033059,SMS,ML56VE5235 overspeeding (45 km/h) at Academic Block A,Delivered,2026-03-23 22:43:58
+878,KA48KJ3409,Aman Bose,+912160886709,EMAIL,KA48KJ3409 overspeeding (66 km/h) at Academic Block A,Failed,2026-03-23 23:18:58
+879,AS85BJ2738,Rohan Joshi,+910333651880,SMS,AS85BJ2738 overspeeding (30 km/h) at GH-4 Gate,Failed,2026-03-23 12:39:58
+880,KA30QN3381,Sneha Sharma,+912427917146,SYSTEM,KA30QN3381 overspeeding (37 km/h) at Sports Complex,Failed,2026-03-24 07:06:58
+881,DL05AZ5766,Rahul Joshi,+913347348918,SYSTEM,DL05AZ5766 overspeeding (42 km/h) at Residential Zone,Failed,2026-03-24 03:15:58
+882,WB03IY1586,Rohan Das,+919834567754,SMS,WB03IY1586 overspeeding (43 km/h) at Residential Zone,Delivered,2026-03-24 00:47:58
+883,WB36BB8849,Pooja Nair,+916299069117,EMAIL,WB36BB8849 overspeeding (57 km/h) at Sports Complex,Failed,2026-03-23 21:08:58
+884,KA72NF7276,Kavya Sharma,+914958854666,SMS,KA72NF7276 overspeeding (51 km/h) at Main Gate,Failed,2026-03-24 03:37:58
+885,WB67HF8236,Neha Sharma,+916210931597,SMS,WB67HF8236 overspeeding (62 km/h) at Academic Block A,Delivered,2026-03-23 20:57:58
+886,ML73GV9095,Rajesh Mehta,+912021048241,EMAIL,ML73GV9095 overspeeding (58 km/h) at Main Gate,Failed,2026-03-23 14:40:58
+887,WB35LG7640,Neha Verma,+911544676659,EMAIL,WB35LG7640 overspeeding (64 km/h) at Library Junction,Failed,2026-03-23 19:02:58
+888,ML94LG3675,Arjun Bose,+912905214340,EMAIL,ML94LG3675 overspeeding (24 km/h) at Academic Block B,Failed,2026-03-23 23:44:58
+889,ML94LG3675,Arjun Bose,+912905214340,SMS,ML94LG3675 overspeeding (33 km/h) at Academic Block A,Delivered,2026-03-24 12:14:58
+890,ML66DO3392,Neha Kumar,+919221505021,SYSTEM,ML66DO3392 overspeeding (33 km/h) at Main Gate,Delivered,2026-03-23 19:20:58
+891,DL83RN3192,Pooja Mehta,+916710951012,SMS,DL83RN3192 overspeeding (26 km/h) at Academic Block A,Delivered,2026-03-23 12:30:58
+892,DL98TW1231,Arjun Das,+911014027580,EMAIL,DL98TW1231 overspeeding (43 km/h) at Hospital Road,Failed,2026-03-23 14:53:58
+893,DL59NA4362,Arjun Mehta,+917190273178,SYSTEM,DL59NA4362 overspeeding (41 km/h) at Residential Zone,Delivered,2026-03-24 09:35:58
+894,AS34EA9219,Ananya Verma,+919279012809,SYSTEM,AS34EA9219 overspeeding (34 km/h) at GH-4 Gate,Delivered,2026-03-23 13:49:58
+895,KA92JX4694,Riya Kumar,+914291031585,SYSTEM,KA92JX4694 overspeeding (47 km/h) at Academic Block B,Failed,2026-03-24 09:28:58
+896,KA91KA4712,Meena Mehta,+914977347776,EMAIL,KA91KA4712 overspeeding (43 km/h) at Hospital Road,Failed,2026-03-24 08:39:58
+897,ML72BR1484,Rohan Nair,+911576202706,EMAIL,ML72BR1484 overspeeding (40 km/h) at Academic Block A,Failed,2026-03-24 03:10:58
+898,AS95FF9779,Arjun Sharma,+917988247351,EMAIL,AS95FF9779 overspeeding (33 km/h) at Academic Block A,Failed,2026-03-23 15:14:58
+899,ML67RX5733,Arjun Iyer,+917949777325,EMAIL,ML67RX5733 overspeeding (24 km/h) at Residential Zone,Failed,2026-03-24 05:03:58
+900,ML66ZK5727,Meena Das,+917622447332,EMAIL,ML66ZK5727 overspeeding (38 km/h) at Library Junction,Delivered,2026-03-24 07:56:58
+901,ML34UE2374,Rohan Joshi,+914806694030,SMS,ML34UE2374 overspeeding (34 km/h) at Academic Block A,Failed,2026-03-23 21:47:58
+902,KA97LD1716,Rajesh Gupta,+916474566939,SMS,KA97LD1716 overspeeding (30 km/h) at Sports Complex,Delivered,2026-03-23 15:35:58
+903,AS38TM4623,Kavya Gupta,+912540649898,EMAIL,AS38TM4623 overspeeding (57 km/h) at Academic Block A,Delivered,2026-03-24 09:34:58
+904,ML67RX5733,Arjun Iyer,+917949777325,EMAIL,ML67RX5733 overspeeding (54 km/h) at Main Gate,Failed,2026-03-24 10:50:58
+905,AS38TM4623,Kavya Gupta,+912540649898,EMAIL,AS38TM4623 overspeeding (54 km/h) at Main Gate,Failed,2026-03-23 14:26:58
+906,KA30QN3381,Sneha Sharma,+912427917146,EMAIL,KA30QN3381 overspeeding (67 km/h) at Academic Block B,Delivered,2026-03-23 22:29:58
+907,ML08KZ2169,Meena Kumar,+910547945931,SYSTEM,ML08KZ2169 overspeeding (33 km/h) at Academic Block A,Delivered,2026-03-24 03:17:58
+908,ML56BF3812,Kavya Verma,+911367302207,SYSTEM,ML56BF3812 overspeeding (51 km/h) at Residential Zone,Failed,2026-03-23 18:19:58
+909,DL01NF5747,Arjun Verma,+911316655257,SMS,DL01NF5747 overspeeding (67 km/h) at Academic Block B,Delivered,2026-03-24 12:14:58
+910,DL86SZ9423,Meena Joshi,+919354767148,EMAIL,DL86SZ9423 overspeeding (28 km/h) at Hospital Road,Failed,2026-03-24 07:25:58
+911,KA16IA3366,Rohan Sharma,+915286067475,SMS,KA16IA3366 overspeeding (41 km/h) at Hospital Road,Delivered,2026-03-23 18:09:58
+912,ML72BR1484,Rohan Nair,+911576202706,SMS,ML72BR1484 overspeeding (21 km/h) at Academic Block B,Failed,2026-03-23 21:28:58
+913,DL32VH5131,Ananya Nair,+916053706022,EMAIL,DL32VH5131 overspeeding (63 km/h) at Residential Zone,Delivered,2026-03-23 23:31:58
+914,ML53WF1442,Arjun Das,+916625753145,SMS,ML53WF1442 overspeeding (62 km/h) at GH-4 Gate,Delivered,2026-03-24 09:13:58
+915,KA98NI8813,Arjun Iyer,+917883709970,SYSTEM,KA98NI8813 overspeeding (59 km/h) at Library Junction,Delivered,2026-03-24 09:19:58
+916,ML64JM7237,Ananya Mehta,+910089925356,SYSTEM,ML64JM7237 overspeeding (23 km/h) at Academic Block B,Delivered,2026-03-24 02:04:58
+917,DL83RN3192,Pooja Mehta,+916710951012,SMS,DL83RN3192 overspeeding (54 km/h) at GH-4 Gate,Delivered,2026-03-24 03:03:58
+918,KA82OH1461,Neha Nair,+915236349201,SYSTEM,KA82OH1461 overspeeding (25 km/h) at Academic Block A,Failed,2026-03-24 06:15:58
+919,ML45SH3466,Sneha Joshi,+914389074659,SYSTEM,ML45SH3466 overspeeding (69 km/h) at GH-4 Gate,Failed,2026-03-23 23:29:58
+920,WB66YQ5291,Riya Nair,+913398014429,SYSTEM,WB66YQ5291 overspeeding (30 km/h) at Sports Complex,Delivered,2026-03-24 12:16:58
+921,WB69AZ2580,Rahul Gupta,+917864439585,SYSTEM,WB69AZ2580 overspeeding (68 km/h) at Residential Zone,Delivered,2026-03-24 00:34:58
+922,KA82OH1461,Neha Nair,+915236349201,SYSTEM,KA82OH1461 overspeeding (55 km/h) at Academic Block B,Delivered,2026-03-24 03:26:58
+923,DL63EZ3326,Suresh Nair,+913397774947,SMS,DL63EZ3326 overspeeding (53 km/h) at Academic Block A,Failed,2026-03-23 23:53:58
+924,DL83WU9535,Kavya Nair,+911915390504,EMAIL,DL83WU9535 overspeeding (35 km/h) at Main Gate,Delivered,2026-03-23 17:59:58
+925,DL83WU9535,Kavya Nair,+911915390504,SMS,DL83WU9535 overspeeding (54 km/h) at Main Gate,Failed,2026-03-24 06:55:58
+926,KA55JD5796,Riya Gupta,+916827671617,SMS,KA55JD5796 overspeeding (27 km/h) at Residential Zone,Failed,2026-03-23 23:03:58
+927,AS20GA9785,Rahul Iyer,+913620715201,SMS,AS20GA9785 overspeeding (37 km/h) at Residential Zone,Delivered,2026-03-24 12:00:58
+928,ML67AP9551,Suresh Verma,+917855402642,EMAIL,ML67AP9551 overspeeding (46 km/h) at Main Gate,Failed,2026-03-23 23:52:58
+929,KA16IA3366,Rohan Sharma,+915286067475,SMS,KA16IA3366 overspeeding (23 km/h) at Academic Block B,Delivered,2026-03-24 10:30:58
+930,WB48OH1391,Suresh Sharma,+914985618855,EMAIL,WB48OH1391 overspeeding (46 km/h) at Library Junction,Failed,2026-03-24 07:11:58
+931,ML88RX4292,Sneha Joshi,+913910963340,SYSTEM,ML88RX4292 overspeeding (42 km/h) at Main Gate,Failed,2026-03-24 03:36:58
+932,WB91KK4291,Sneha Verma,+918987479903,EMAIL,WB91KK4291 overspeeding (23 km/h) at Hospital Road,Delivered,2026-03-23 13:29:58
+933,WB03IY1586,Rohan Das,+919834567754,SMS,WB03IY1586 overspeeding (56 km/h) at Library Junction,Delivered,2026-03-23 15:40:58
+934,KA30QN3381,Sneha Sharma,+912427917146,SYSTEM,KA30QN3381 overspeeding (37 km/h) at Academic Block B,Delivered,2026-03-24 10:32:58
+935,DL59NA4362,Arjun Mehta,+917190273178,EMAIL,DL59NA4362 overspeeding (59 km/h) at Academic Block B,Delivered,2026-03-24 09:36:58
+936,ML67AP9551,Suresh Verma,+917855402642,SYSTEM,ML67AP9551 overspeeding (55 km/h) at Hospital Road,Delivered,2026-03-24 04:29:58
+937,DL59QR2695,Suresh Das,+910814670689,SMS,DL59QR2695 overspeeding (63 km/h) at Sports Complex,Failed,2026-03-24 00:52:58
+938,DL68JU6845,Meena Iyer,+914327603910,SYSTEM,DL68JU6845 overspeeding (68 km/h) at GH-4 Gate,Delivered,2026-03-24 11:36:58
+939,AS83FS6022,Kavya Mehta,+917446152331,EMAIL,AS83FS6022 overspeeding (54 km/h) at Hospital Road,Delivered,2026-03-23 16:05:58
+940,ML88RX4292,Sneha Joshi,+913910963340,SMS,ML88RX4292 overspeeding (37 km/h) at Academic Block B,Delivered,2026-03-23 16:27:58
+941,KA72NF7276,Kavya Sharma,+914958854666,SYSTEM,KA72NF7276 overspeeding (45 km/h) at Sports Complex,Failed,2026-03-23 18:15:58
+942,WB35LG7640,Neha Verma,+911544676659,SYSTEM,WB35LG7640 overspeeding (28 km/h) at Sports Complex,Delivered,2026-03-23 14:44:58
+943,DL98TW1231,Arjun Das,+911014027580,SYSTEM,DL98TW1231 overspeeding (27 km/h) at Academic Block B,Failed,2026-03-24 12:00:58
+944,AS95FF9779,Arjun Sharma,+917988247351,SYSTEM,AS95FF9779 overspeeding (28 km/h) at Library Junction,Failed,2026-03-23 18:53:58
+945,KA55JD5796,Riya Gupta,+916827671617,EMAIL,KA55JD5796 overspeeding (24 km/h) at Main Gate,Delivered,2026-03-23 22:14:58
+946,WB91KK4291,Sneha Verma,+918987479903,EMAIL,WB91KK4291 overspeeding (28 km/h) at Academic Block B,Failed,2026-03-23 14:11:58
+947,WB53AS7612,Riya Das,+915125486662,SYSTEM,WB53AS7612 overspeeding (33 km/h) at Sports Complex,Failed,2026-03-24 07:40:58
+948,DL68JU6845,Meena Iyer,+914327603910,SYSTEM,DL68JU6845 overspeeding (57 km/h) at Academic Block B,Failed,2026-03-24 02:20:58
+949,DL40VN4049,Rajesh Das,+915928684265,SYSTEM,DL40VN4049 overspeeding (70 km/h) at Residential Zone,Delivered,2026-03-23 18:11:58
+950,WB58WC3808,Arjun Joshi,+913635977474,EMAIL,WB58WC3808 overspeeding (55 km/h) at Sports Complex,Failed,2026-03-24 02:16:58
+951,DL05AZ5766,Rahul Joshi,+913347348918,SMS,DL05AZ5766 overspeeding (69 km/h) at Sports Complex,Delivered,2026-03-24 09:02:58
+952,AS39TF1535,Suresh Sharma,+916015436475,EMAIL,AS39TF1535 overspeeding (68 km/h) at Academic Block A,Failed,2026-03-23 18:56:58
+953,AS56EJ1700,Pooja Verma,+914789307919,EMAIL,AS56EJ1700 overspeeding (66 km/h) at Hospital Road,Delivered,2026-03-24 01:36:58
+954,KA04TV4558,Vikram Bose,+917707675638,EMAIL,KA04TV4558 overspeeding (36 km/h) at Main Gate,Failed,2026-03-24 08:06:58
+955,AS05UA4808,Kavya Das,+919637877610,SYSTEM,AS05UA4808 overspeeding (63 km/h) at GH-4 Gate,Delivered,2026-03-24 05:00:58
+956,KA82OH1461,Neha Nair,+915236349201,SYSTEM,KA82OH1461 overspeeding (44 km/h) at Residential Zone,Failed,2026-03-24 12:13:58
+957,WB59SZ3341,Rahul Bose,+917914437386,EMAIL,WB59SZ3341 overspeeding (21 km/h) at GH-4 Gate,Delivered,2026-03-23 15:51:58
+958,WB58WC3808,Arjun Joshi,+913635977474,SYSTEM,WB58WC3808 overspeeding (26 km/h) at Sports Complex,Delivered,2026-03-23 17:25:58
+959,ML66ZK5727,Meena Das,+917622447332,SYSTEM,ML66ZK5727 overspeeding (57 km/h) at Library Junction,Delivered,2026-03-24 01:37:58
+960,AS27RC7448,Ananya Sharma,+919232836094,EMAIL,AS27RC7448 overspeeding (55 km/h) at Academic Block A,Failed,2026-03-23 13:47:58
+961,DL31BI3386,Kavya Verma,+919431025879,SMS,DL31BI3386 overspeeding (32 km/h) at Library Junction,Delivered,2026-03-24 04:01:58
+962,ML56BF3812,Kavya Verma,+911367302207,SMS,ML56BF3812 overspeeding (70 km/h) at Sports Complex,Delivered,2026-03-23 20:11:58
+963,WB36BB8849,Pooja Nair,+916299069117,SMS,WB36BB8849 overspeeding (61 km/h) at GH-4 Gate,Delivered,2026-03-24 11:36:58
+964,ML97PM4717,Rajesh Joshi,+910225793932,SYSTEM,ML97PM4717 overspeeding (51 km/h) at Hospital Road,Failed,2026-03-23 21:49:58
+965,WB66YQ5291,Riya Nair,+913398014429,SYSTEM,WB66YQ5291 overspeeding (31 km/h) at Academic Block B,Failed,2026-03-23 20:25:58
+966,ML66ZK5727,Meena Das,+917622447332,EMAIL,ML66ZK5727 overspeeding (64 km/h) at Sports Complex,Failed,2026-03-23 14:30:58
+967,KA57ND7683,Rajesh Sharma,+911007590061,SMS,KA57ND7683 overspeeding (39 km/h) at Hospital Road,Failed,2026-03-23 15:56:58
+968,ML66ZK5727,Meena Das,+917622447332,SMS,ML66ZK5727 overspeeding (68 km/h) at Academic Block B,Delivered,2026-03-23 23:11:58
+969,ML56BF3812,Kavya Verma,+911367302207,EMAIL,ML56BF3812 overspeeding (57 km/h) at Academic Block A,Failed,2026-03-23 21:31:58
+970,DL72HP6499,Kavya Iyer,+916877846731,SYSTEM,DL72HP6499 overspeeding (66 km/h) at Sports Complex,Failed,2026-03-24 04:23:58
+971,AS86JG9373,Suresh Mehta,+912381617150,SMS,AS86JG9373 overspeeding (56 km/h) at Academic Block A,Delivered,2026-03-23 16:04:58
+972,KA82OH1461,Neha Nair,+915236349201,SMS,KA82OH1461 overspeeding (64 km/h) at Sports Complex,Failed,2026-03-23 15:30:58
+973,AS66CQ3987,Neha Das,+911025854153,EMAIL,AS66CQ3987 overspeeding (25 km/h) at Library Junction,Failed,2026-03-23 21:53:58
+974,ML94LG3675,Arjun Bose,+912905214340,EMAIL,ML94LG3675 overspeeding (69 km/h) at Academic Block B,Failed,2026-03-24 04:34:58
+975,DL83RN3192,Pooja Mehta,+916710951012,EMAIL,DL83RN3192 overspeeding (69 km/h) at Academic Block A,Delivered,2026-03-24 05:01:58
+976,AS35MP2924,Sneha Mehta,+914556580308,SMS,AS35MP2924 overspeeding (44 km/h) at Hospital Road,Failed,2026-03-23 19:58:58
+977,KA32HP4802,Kavya Gupta,+911841233946,SYSTEM,KA32HP4802 overspeeding (39 km/h) at Academic Block B,Delivered,2026-03-23 13:53:58
+978,AS56EJ1700,Pooja Verma,+914789307919,SMS,AS56EJ1700 overspeeding (65 km/h) at Main Gate,Delivered,2026-03-23 22:54:58
+979,DL31BI3386,Kavya Verma,+919431025879,EMAIL,DL31BI3386 overspeeding (59 km/h) at Residential Zone,Delivered,2026-03-24 04:05:58
+980,WB15EK7276,Neha Gupta,+916521010367,EMAIL,WB15EK7276 overspeeding (60 km/h) at Residential Zone,Delivered,2026-03-23 23:06:58
+981,WB55CZ1211,Neha Nair,+912736869188,SMS,WB55CZ1211 overspeeding (44 km/h) at Main Gate,Failed,2026-03-23 22:56:58
+982,DL49NC5997,Pooja Kumar,+913421486777,EMAIL,DL49NC5997 overspeeding (31 km/h) at Academic Block B,Delivered,2026-03-24 03:55:58
+983,AS39TF1535,Suresh Sharma,+916015436475,SYSTEM,AS39TF1535 overspeeding (69 km/h) at Residential Zone,Delivered,2026-03-23 17:04:58
+984,AS84QL6148,Rohan Joshi,+913289615662,SMS,AS84QL6148 overspeeding (59 km/h) at Hospital Road,Failed,2026-03-23 20:57:58
+985,DL39UK9366,Pooja Bose,+918116523937,SYSTEM,DL39UK9366 overspeeding (30 km/h) at Main Gate,Failed,2026-03-24 04:08:58
+986,ML32GF1928,Aman Iyer,+917798826466,SYSTEM,ML32GF1928 overspeeding (49 km/h) at Hospital Road,Delivered,2026-03-24 02:10:58
+987,DL59NA4362,Arjun Mehta,+917190273178,SMS,DL59NA4362 overspeeding (51 km/h) at Residential Zone,Failed,2026-03-24 02:49:58
+988,WB35LG7640,Neha Verma,+911544676659,EMAIL,WB35LG7640 overspeeding (37 km/h) at Hospital Road,Delivered,2026-03-23 18:22:58
+989,ML72BR1484,Rohan Nair,+911576202706,SYSTEM,ML72BR1484 overspeeding (31 km/h) at Academic Block A,Delivered,2026-03-24 05:51:58
+990,DL08NI4952,Vikram Nair,+912709109071,EMAIL,DL08NI4952 overspeeding (40 km/h) at Residential Zone,Delivered,2026-03-23 23:38:58
+991,KA92JX4694,Riya Kumar,+914291031585,SYSTEM,KA92JX4694 overspeeding (69 km/h) at GH-4 Gate,Failed,2026-03-24 00:17:58
+992,WB59SZ3341,Rahul Bose,+917914437386,SYSTEM,WB59SZ3341 overspeeding (58 km/h) at Academic Block B,Failed,2026-03-24 06:57:58
+993,ML67RX5733,Arjun Iyer,+917949777325,SMS,ML67RX5733 overspeeding (61 km/h) at GH-4 Gate,Failed,2026-03-23 14:45:58
+994,ML66DO3392,Neha Kumar,+919221505021,EMAIL,ML66DO3392 overspeeding (48 km/h) at Library Junction,Failed,2026-03-24 12:17:58
+995,AS05UA4808,Kavya Das,+919637877610,SMS,AS05UA4808 overspeeding (63 km/h) at Main Gate,Failed,2026-03-24 00:37:58
+996,DL63EZ3326,Suresh Nair,+913397774947,SYSTEM,DL63EZ3326 overspeeding (21 km/h) at Hospital Road,Failed,2026-03-23 19:21:58
+997,AS87CO8533,Arjun Kumar,+914853515621,SMS,AS87CO8533 overspeeding (32 km/h) at GH-4 Gate,Failed,2026-03-24 06:27:58
+998,AS20GA9785,Rahul Iyer,+913620715201,SYSTEM,AS20GA9785 overspeeding (70 km/h) at Hospital Road,Delivered,2026-03-24 01:39:58
+999,KA04TV4558,Vikram Bose,+917707675638,EMAIL,KA04TV4558 overspeeding (53 km/h) at Residential Zone,Delivered,2026-03-24 00:44:58
+1000,KA32HP4802,Kavya Gupta,+911841233946,EMAIL,KA32HP4802 overspeeding (25 km/h) at Residential Zone,Delivered,2026-03-24 10:07:58
+1001,ML64JM7237,Ananya Mehta,+910089925356,SMS,ML64JM7237 overspeeding (23 km/h) at Library Junction,Failed,2026-03-23 17:57:58
+1002,AS95FF9779,Arjun Sharma,+917988247351,SMS,AS95FF9779 overspeeding (30 km/h) at Academic Block A,Delivered,2026-03-24 01:37:58
+1003,ML34UE2374,Rohan Joshi,+914806694030,SYSTEM,ML34UE2374 overspeeding (54 km/h) at Academic Block B,Failed,2026-03-24 01:23:58
+1004,DL72HP6499,Kavya Iyer,+916877846731,SYSTEM,DL72HP6499 overspeeding (31 km/h) at Residential Zone,Delivered,2026-03-24 08:07:58
+1005,KA05JP7623,Meena Bose,+919000637891,EMAIL,KA05JP7623 overspeeding (53 km/h) at Main Gate,Delivered,2026-03-24 12:27:58
+1006,KA16IA3366,Rohan Sharma,+915286067475,EMAIL,KA16IA3366 overspeeding (33 km/h) at Academic Block A,Delivered,2026-03-23 13:25:58
+1007,DL12UZ8203,Rahul Joshi,+910460448844,EMAIL,DL12UZ8203 overspeeding (31 km/h) at Academic Block B,Delivered,2026-03-24 12:12:58
+1008,KA04TV4558,Vikram Bose,+917707675638,EMAIL,KA04TV4558 overspeeding (60 km/h) at Main Gate,Delivered,2026-03-23 21:25:58
+1009,KA05JP7623,Meena Bose,+919000637891,EMAIL,KA05JP7623 overspeeding (54 km/h) at Sports Complex,Delivered,2026-03-23 14:39:58
+1010,DL49NC5997,Pooja Kumar,+913421486777,SMS,DL49NC5997 overspeeding (24 km/h) at Library Junction,Failed,2026-03-23 13:42:58
+1011,WB91KK4291,Sneha Verma,+918987479903,SMS,WB91KK4291 overspeeding (22 km/h) at Main Gate,Delivered,2026-03-24 06:34:58
+1012,KA13RM5187,Vikram Nair,+914767591949,SYSTEM,KA13RM5187 overspeeding (67 km/h) at Main Gate,Delivered,2026-03-23 21:17:58
+1013,DL72HP6499,Kavya Iyer,+916877846731,SMS,DL72HP6499 overspeeding (67 km/h) at Residential Zone,Failed,2026-03-24 02:33:58
+1014,ML64JM7237,Ananya Mehta,+910089925356,EMAIL,ML64JM7237 overspeeding (40 km/h) at Library Junction,Delivered,2026-03-24 06:44:58
+1015,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (49 km/h) at GH-4 Gate,Failed,2026-03-23 20:31:58
+1016,WB43LM1595,Sneha Gupta,+914372014242,EMAIL,WB43LM1595 overspeeding (66 km/h) at Main Gate,Delivered,2026-03-24 04:14:58
+1017,WB59SZ3341,Rahul Bose,+917914437386,EMAIL,WB59SZ3341 overspeeding (46 km/h) at Academic Block A,Failed,2026-03-24 01:33:58
+1018,ML46MM6488,Rajesh Joshi,+919322317460,EMAIL,ML46MM6488 overspeeding (49 km/h) at Academic Block A,Failed,2026-03-23 21:53:58
+1019,DL59QR2695,Suresh Das,+910814670689,EMAIL,DL59QR2695 overspeeding (52 km/h) at Academic Block B,Delivered,2026-03-24 12:11:58
+1020,DL72HP6499,Kavya Iyer,+916877846731,EMAIL,DL72HP6499 overspeeding (33 km/h) at Library Junction,Delivered,2026-03-23 14:56:58
+1021,KA54JI4942,Neha Nair,+918675014564,SMS,KA54JI4942 overspeeding (25 km/h) at Academic Block A,Delivered,2026-03-24 06:15:58
+1022,ML34UE2374,Rohan Joshi,+914806694030,EMAIL,ML34UE2374 overspeeding (31 km/h) at GH-4 Gate,Delivered,2026-03-23 13:30:58
+1023,WB91KK4291,Sneha Verma,+918987479903,SYSTEM,WB91KK4291 overspeeding (61 km/h) at Main Gate,Delivered,2026-03-24 08:19:58
+1024,KA13RM5187,Vikram Nair,+914767591949,EMAIL,KA13RM5187 overspeeding (42 km/h) at Residential Zone,Failed,2026-03-23 15:17:58
+1025,DL72HP6499,Kavya Iyer,+916877846731,EMAIL,DL72HP6499 overspeeding (59 km/h) at Main Gate,Delivered,2026-03-24 02:31:58
+1026,DL99TM2873,Pooja Bose,+918396935104,SMS,DL99TM2873 overspeeding (53 km/h) at Sports Complex,Delivered,2026-03-23 13:51:58
+1027,AS17HA8384,Riya Verma,+917556453519,SMS,AS17HA8384 overspeeding (42 km/h) at Hospital Road,Failed,2026-03-23 23:27:58
+1028,AS20GA9785,Rahul Iyer,+913620715201,EMAIL,AS20GA9785 overspeeding (70 km/h) at Residential Zone,Delivered,2026-03-24 05:06:58
+1029,KA55JD5796,Riya Gupta,+916827671617,EMAIL,KA55JD5796 overspeeding (23 km/h) at Academic Block A,Failed,2026-03-24 05:55:58
+1030,DL49NC5997,Pooja Kumar,+913421486777,SYSTEM,DL49NC5997 overspeeding (31 km/h) at Library Junction,Failed,2026-03-23 20:35:58
+1031,AS85BJ2738,Rohan Joshi,+910333651880,SMS,AS85BJ2738 overspeeding (42 km/h) at GH-4 Gate,Delivered,2026-03-24 03:30:58
+1032,AS40IU3799,Rohan Nair,+910527804140,SMS,AS40IU3799 overspeeding (39 km/h) at Hospital Road,Failed,2026-03-23 17:44:58
+1033,KA67DY2024,Kavya Bose,+919877170221,SMS,KA67DY2024 overspeeding (29 km/h) at Hospital Road,Failed,2026-03-23 15:17:58
+1034,WB83EK6884,Pooja Iyer,+913168632252,EMAIL,WB83EK6884 overspeeding (65 km/h) at Academic Block A,Failed,2026-03-24 07:16:58
+1035,KA26GV1325,Priya Mehta,+915506330633,SMS,KA26GV1325 overspeeding (25 km/h) at Academic Block A,Failed,2026-03-23 18:23:58
+1036,AS56EJ1700,Pooja Verma,+914789307919,SMS,AS56EJ1700 overspeeding (52 km/h) at Academic Block A,Failed,2026-03-24 05:11:58
+1037,ML28TE1153,Rajesh Gupta,+910236906726,SYSTEM,ML28TE1153 overspeeding (54 km/h) at Hospital Road,Failed,2026-03-24 04:37:58
+1038,KA05JP7623,Meena Bose,+919000637891,EMAIL,KA05JP7623 overspeeding (45 km/h) at Main Gate,Delivered,2026-03-23 13:31:58
+1039,KA30QN3381,Sneha Sharma,+912427917146,SMS,KA30QN3381 overspeeding (42 km/h) at Residential Zone,Delivered,2026-03-23 18:42:58
+1040,DL83WU9535,Kavya Nair,+911915390504,SMS,DL83WU9535 overspeeding (35 km/h) at Hospital Road,Delivered,2026-03-23 18:10:58
+1041,AS20GA9785,Rahul Iyer,+913620715201,SYSTEM,AS20GA9785 overspeeding (58 km/h) at Hospital Road,Failed,2026-03-24 05:26:58
+1042,KA67DY2024,Kavya Bose,+919877170221,SYSTEM,KA67DY2024 overspeeding (48 km/h) at GH-4 Gate,Failed,2026-03-23 16:43:58
+1043,KA72NF7276,Kavya Sharma,+914958854666,SYSTEM,KA72NF7276 overspeeding (65 km/h) at Academic Block A,Failed,2026-03-24 01:03:58
+1044,KA11BF5605,Vikram Sharma,+911190227555,EMAIL,KA11BF5605 overspeeding (54 km/h) at Residential Zone,Delivered,2026-03-23 22:47:58
+1045,ML32GF1928,Aman Iyer,+917798826466,SYSTEM,ML32GF1928 overspeeding (47 km/h) at Sports Complex,Failed,2026-03-24 11:13:58
+1046,AS11BT4725,Priya Iyer,+918449239542,EMAIL,AS11BT4725 overspeeding (61 km/h) at Academic Block A,Delivered,2026-03-23 21:16:58
+1047,KA85SP8923,Sneha Iyer,+915424963059,EMAIL,KA85SP8923 overspeeding (29 km/h) at Residential Zone,Delivered,2026-03-24 05:42:58
+1048,WB55CZ1211,Neha Nair,+912736869188,SYSTEM,WB55CZ1211 overspeeding (59 km/h) at GH-4 Gate,Delivered,2026-03-24 08:20:58
+1049,DL74BJ4274,Suresh Verma,+912083212354,SMS,DL74BJ4274 overspeeding (47 km/h) at GH-4 Gate,Delivered,2026-03-24 04:52:58
+1050,AS87CO8533,Arjun Kumar,+914853515621,SMS,AS87CO8533 overspeeding (68 km/h) at Residential Zone,Delivered,2026-03-23 15:06:58
+1051,WB89CN6765,Riya Mehta,+913561598010,EMAIL,WB89CN6765 overspeeding (66 km/h) at Residential Zone,Delivered,2026-03-23 15:50:58
+1052,DL49NC5997,Pooja Kumar,+913421486777,EMAIL,DL49NC5997 overspeeding (26 km/h) at Academic Block B,Delivered,2026-03-23 19:47:58
+1053,DL59QR2695,Suresh Das,+910814670689,SYSTEM,DL59QR2695 overspeeding (50 km/h) at Sports Complex,Delivered,2026-03-23 22:57:58
+1054,AS39DD6131,Neha Nair,+917489491004,SYSTEM,AS39DD6131 overspeeding (34 km/h) at Residential Zone,Delivered,2026-03-24 09:57:58
+1055,DL83WU9535,Kavya Nair,+911915390504,SMS,DL83WU9535 overspeeding (55 km/h) at Main Gate,Delivered,2026-03-23 16:46:58
+1056,ML28TE1153,Rajesh Gupta,+910236906726,EMAIL,ML28TE1153 overspeeding (59 km/h) at Academic Block A,Delivered,2026-03-23 22:37:58
+1057,DL83WU9535,Kavya Nair,+911915390504,SYSTEM,DL83WU9535 overspeeding (44 km/h) at Academic Block B,Delivered,2026-03-23 21:23:58
+1058,WB55CZ1211,Neha Nair,+912736869188,EMAIL,WB55CZ1211 overspeeding (58 km/h) at Main Gate,Failed,2026-03-24 05:57:58
+1059,KA98NI8813,Arjun Iyer,+917883709970,EMAIL,KA98NI8813 overspeeding (50 km/h) at Sports Complex,Delivered,2026-03-23 23:11:58
+1060,WB48UU1369,Arjun Kumar,+918948026518,EMAIL,WB48UU1369 overspeeding (45 km/h) at Academic Block B,Delivered,2026-03-23 13:58:58
+1061,ML28CR1695,Suresh Mehta,+915639757890,SYSTEM,ML28CR1695 overspeeding (67 km/h) at Residential Zone,Delivered,2026-03-23 17:37:58
+1062,KA13RM5187,Vikram Nair,+914767591949,SMS,KA13RM5187 overspeeding (45 km/h) at Academic Block A,Failed,2026-03-23 19:27:58
+1063,WB66YQ5291,Riya Nair,+913398014429,EMAIL,WB66YQ5291 overspeeding (30 km/h) at GH-4 Gate,Failed,2026-03-24 04:00:58
+1064,WB03IY1586,Rohan Das,+919834567754,SYSTEM,WB03IY1586 overspeeding (30 km/h) at Library Junction,Delivered,2026-03-24 12:07:58
+1065,DL59QR2695,Suresh Das,+910814670689,SMS,DL59QR2695 overspeeding (51 km/h) at Sports Complex,Delivered,2026-03-23 23:11:58
+1066,DL31BI3386,Kavya Verma,+919431025879,SYSTEM,DL31BI3386 overspeeding (45 km/h) at Library Junction,Failed,2026-03-24 08:09:58
+1067,DL86SZ9423,Meena Joshi,+919354767148,SYSTEM,DL86SZ9423 overspeeding (34 km/h) at Main Gate,Delivered,2026-03-23 15:43:58
+1068,AS39TF1535,Suresh Sharma,+916015436475,EMAIL,AS39TF1535 overspeeding (60 km/h) at Academic Block B,Failed,2026-03-24 10:33:58
+1069,KA91LX9133,Riya Das,+915415160089,SMS,KA91LX9133 overspeeding (50 km/h) at Hospital Road,Failed,2026-03-24 04:13:58
+1070,KA82OH1461,Neha Nair,+915236349201,SMS,KA82OH1461 overspeeding (31 km/h) at Sports Complex,Failed,2026-03-24 01:28:58
+1071,DL74BJ4274,Suresh Verma,+912083212354,SMS,DL74BJ4274 overspeeding (21 km/h) at Hospital Road,Failed,2026-03-23 20:58:58
+1072,ML56VE5235,Rahul Bose,+916488033059,EMAIL,ML56VE5235 overspeeding (51 km/h) at Hospital Road,Delivered,2026-03-24 11:44:58
+1073,WB36BB8849,Pooja Nair,+916299069117,SMS,WB36BB8849 overspeeding (45 km/h) at Main Gate,Delivered,2026-03-23 20:17:58
+1074,ML28CR1695,Suresh Mehta,+915639757890,SMS,ML28CR1695 overspeeding (31 km/h) at Academic Block B,Delivered,2026-03-24 07:39:58
+1075,DL21FZ5173,Rahul Nair,+911900874208,SMS,DL21FZ5173 overspeeding (59 km/h) at Academic Block A,Delivered,2026-03-23 21:02:58
+1076,KA48KJ3409,Aman Bose,+912160886709,SYSTEM,KA48KJ3409 overspeeding (58 km/h) at Main Gate,Failed,2026-03-24 09:56:58
+1077,WB19EG7034,Priya Bose,+916975237282,SYSTEM,WB19EG7034 overspeeding (66 km/h) at Main Gate,Failed,2026-03-24 02:15:58
+1078,WB84FK1524,Suresh Das,+919692463706,SYSTEM,WB84FK1524 overspeeding (46 km/h) at Sports Complex,Delivered,2026-03-23 23:51:58
+1079,KA48KJ3409,Aman Bose,+912160886709,SYSTEM,KA48KJ3409 overspeeding (44 km/h) at Academic Block B,Delivered,2026-03-23 23:37:58
+1080,KA92JX4694,Riya Kumar,+914291031585,SYSTEM,KA92JX4694 overspeeding (65 km/h) at Main Gate,Delivered,2026-03-23 17:32:58
+1081,KA85SP8923,Sneha Iyer,+915424963059,SMS,KA85SP8923 overspeeding (64 km/h) at Sports Complex,Delivered,2026-03-24 07:36:58
+1082,WB19EG7034,Priya Bose,+916975237282,EMAIL,WB19EG7034 overspeeding (34 km/h) at Sports Complex,Delivered,2026-03-23 16:40:58
+1083,DL74BJ4274,Suresh Verma,+912083212354,EMAIL,DL74BJ4274 overspeeding (39 km/h) at Academic Block B,Failed,2026-03-23 18:32:58
+1084,DL01NF5747,Arjun Verma,+911316655257,SMS,DL01NF5747 overspeeding (36 km/h) at Academic Block A,Failed,2026-03-24 11:25:58
+1085,ML73GV9095,Rajesh Mehta,+912021048241,EMAIL,ML73GV9095 overspeeding (67 km/h) at Academic Block A,Failed,2026-03-23 14:26:58
+1086,WB48OH1391,Suresh Sharma,+914985618855,SMS,WB48OH1391 overspeeding (44 km/h) at Sports Complex,Failed,2026-03-23 21:54:58
+1087,WB57OF5240,Arjun Iyer,+911483946013,EMAIL,WB57OF5240 overspeeding (33 km/h) at Academic Block A,Delivered,2026-03-23 19:50:58
+1088,KA17GN7428,Rohan Bose,+915832157688,EMAIL,KA17GN7428 overspeeding (64 km/h) at Academic Block B,Delivered,2026-03-24 00:37:58
+1089,KA85SP8923,Sneha Iyer,+915424963059,SMS,KA85SP8923 overspeeding (69 km/h) at Main Gate,Failed,2026-03-24 04:00:58
+1090,ML67RX5733,Arjun Iyer,+917949777325,SMS,ML67RX5733 overspeeding (36 km/h) at Academic Block A,Failed,2026-03-23 15:43:58
+1091,DL31BI3386,Kavya Verma,+919431025879,EMAIL,DL31BI3386 overspeeding (58 km/h) at Hospital Road,Failed,2026-03-24 07:08:58
+1092,ML66DO3392,Neha Kumar,+919221505021,EMAIL,ML66DO3392 overspeeding (69 km/h) at Library Junction,Delivered,2026-03-23 15:47:58
+1093,DL63EZ3326,Suresh Nair,+913397774947,SMS,DL63EZ3326 overspeeding (55 km/h) at Residential Zone,Delivered,2026-03-24 00:07:58
+1094,ML34UE2374,Rohan Joshi,+914806694030,SYSTEM,ML34UE2374 overspeeding (50 km/h) at Academic Block A,Delivered,2026-03-24 05:42:58
+1095,AS34EA9219,Ananya Verma,+919279012809,EMAIL,AS34EA9219 overspeeding (38 km/h) at Academic Block A,Delivered,2026-03-24 06:54:58
+1096,KA26GV1325,Priya Mehta,+915506330633,SYSTEM,KA26GV1325 overspeeding (30 km/h) at Hospital Road,Failed,2026-03-23 22:46:58
+1097,AS87CO8533,Arjun Kumar,+914853515621,SYSTEM,AS87CO8533 overspeeding (31 km/h) at GH-4 Gate,Delivered,2026-03-24 11:26:58
+1098,DL05AZ5766,Rahul Joshi,+913347348918,SYSTEM,DL05AZ5766 overspeeding (65 km/h) at Residential Zone,Failed,2026-03-23 14:11:58
+1099,DL98TW1231,Arjun Das,+911014027580,SYSTEM,DL98TW1231 overspeeding (65 km/h) at Main Gate,Failed,2026-03-24 02:13:58
+1100,ML28TE1153,Rajesh Gupta,+910236906726,SMS,ML28TE1153 overspeeding (31 km/h) at GH-4 Gate,Delivered,2026-03-23 15:29:58
+1101,WB66YQ5291,Riya Nair,+913398014429,EMAIL,WB66YQ5291 overspeeding (21 km/h) at Residential Zone,Failed,2026-03-24 03:12:58
+1102,DL12UZ8203,Rahul Joshi,+910460448844,EMAIL,DL12UZ8203 overspeeding (67 km/h) at GH-4 Gate,Delivered,2026-03-24 05:25:58
+1103,WB59SZ3341,Rahul Bose,+917914437386,SMS,WB59SZ3341 overspeeding (55 km/h) at Academic Block B,Delivered,2026-03-23 12:29:58
+1104,DL05AZ5766,Rahul Joshi,+913347348918,EMAIL,DL05AZ5766 overspeeding (66 km/h) at GH-4 Gate,Delivered,2026-03-24 00:39:58
+1105,WB84FK1524,Suresh Das,+919692463706,EMAIL,WB84FK1524 overspeeding (36 km/h) at Residential Zone,Failed,2026-03-23 15:00:58
+1106,ML73GV9095,Rajesh Mehta,+912021048241,SYSTEM,ML73GV9095 overspeeding (60 km/h) at Residential Zone,Failed,2026-03-23 17:24:58
+1107,AS95FF9779,Arjun Sharma,+917988247351,SYSTEM,AS95FF9779 overspeeding (42 km/h) at GH-4 Gate,Failed,2026-03-24 06:32:58
+1108,AS17HA8384,Riya Verma,+917556453519,SYSTEM,AS17HA8384 overspeeding (65 km/h) at Academic Block A,Failed,2026-03-24 00:36:58
+1109,KA17GN7428,Rohan Bose,+915832157688,SYSTEM,KA17GN7428 overspeeding (55 km/h) at Hospital Road,Delivered,2026-03-23 19:29:58
+1110,WB15EK7276,Neha Gupta,+916521010367,SYSTEM,WB15EK7276 overspeeding (40 km/h) at Sports Complex,Delivered,2026-03-24 00:53:58
+1111,ML28CR1695,Suresh Mehta,+915639757890,SYSTEM,ML28CR1695 overspeeding (62 km/h) at Main Gate,Delivered,2026-03-23 17:59:58
+1112,AS20XH6881,Ananya Gupta,+911468643669,SMS,AS20XH6881 overspeeding (66 km/h) at Sports Complex,Failed,2026-03-23 13:05:58
+1113,WB55CZ1211,Neha Nair,+912736869188,EMAIL,WB55CZ1211 overspeeding (51 km/h) at GH-4 Gate,Delivered,2026-03-24 07:52:58
+1114,WB84FK1524,Suresh Das,+919692463706,SMS,WB84FK1524 overspeeding (68 km/h) at Sports Complex,Failed,2026-03-23 14:42:58
+1115,AS86JG9373,Suresh Mehta,+912381617150,EMAIL,AS86JG9373 overspeeding (38 km/h) at Academic Block B,Failed,2026-03-23 22:27:58
+1116,ML32GF1928,Aman Iyer,+917798826466,SMS,ML32GF1928 overspeeding (52 km/h) at Academic Block A,Delivered,2026-03-24 02:09:58
+1117,AS39DD6131,Neha Nair,+917489491004,SMS,AS39DD6131 overspeeding (23 km/h) at Academic Block B,Failed,2026-03-24 08:13:58
+1118,KA82OH1461,Neha Nair,+915236349201,EMAIL,KA82OH1461 overspeeding (38 km/h) at Library Junction,Delivered,2026-03-23 23:14:58
+1119,ML67RX5733,Arjun Iyer,+917949777325,SYSTEM,ML67RX5733 overspeeding (34 km/h) at GH-4 Gate,Delivered,2026-03-24 09:39:58
+1120,AS39DD6131,Neha Nair,+917489491004,SYSTEM,AS39DD6131 overspeeding (69 km/h) at Main Gate,Delivered,2026-03-24 07:09:58
+1121,DL15VL1668,Arjun Mehta,+918492100012,EMAIL,DL15VL1668 overspeeding (52 km/h) at Academic Block A,Failed,2026-03-24 06:58:58
+1122,AS39TF1535,Suresh Sharma,+916015436475,SMS,AS39TF1535 overspeeding (70 km/h) at Library Junction,Failed,2026-03-23 15:19:58
+1123,DL09RM3079,Rajesh Gupta,+910414389408,EMAIL,DL09RM3079 overspeeding (53 km/h) at Residential Zone,Delivered,2026-03-23 22:59:58
+1124,ML08KZ2169,Meena Kumar,+910547945931,SMS,ML08KZ2169 overspeeding (26 km/h) at Academic Block A,Failed,2026-03-23 18:46:58
+1125,AS40IU3799,Rohan Nair,+910527804140,EMAIL,AS40IU3799 overspeeding (58 km/h) at GH-4 Gate,Failed,2026-03-23 15:43:58
+1126,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (56 km/h) at Hospital Road,Delivered,2026-03-23 14:19:58
+1127,DL63EZ3326,Suresh Nair,+913397774947,SMS,DL63EZ3326 overspeeding (41 km/h) at Residential Zone,Failed,2026-03-23 14:28:58
+1128,KA91LX9133,Riya Das,+915415160089,SMS,KA91LX9133 overspeeding (26 km/h) at GH-4 Gate,Delivered,2026-03-23 14:10:58
+1129,DL83WU9535,Kavya Nair,+911915390504,SMS,DL83WU9535 overspeeding (53 km/h) at Residential Zone,Failed,2026-03-24 12:20:58
+1130,WB34HA6278,Priya Nair,+911278416516,EMAIL,WB34HA6278 overspeeding (69 km/h) at Academic Block A,Delivered,2026-03-23 23:04:58
+1131,AS38TM4623,Kavya Gupta,+912540649898,SMS,AS38TM4623 overspeeding (65 km/h) at Hospital Road,Delivered,2026-03-23 22:15:58
+1132,ML08KZ2169,Meena Kumar,+910547945931,SMS,ML08KZ2169 overspeeding (21 km/h) at Main Gate,Delivered,2026-03-24 05:23:58
+1133,DL83RN3192,Pooja Mehta,+916710951012,SMS,DL83RN3192 overspeeding (39 km/h) at Hospital Road,Failed,2026-03-24 04:44:58
+1134,WB35LG7640,Neha Verma,+911544676659,EMAIL,WB35LG7640 overspeeding (65 km/h) at Academic Block B,Delivered,2026-03-24 05:38:58
+1135,KA04TV4558,Vikram Bose,+917707675638,EMAIL,KA04TV4558 overspeeding (30 km/h) at Residential Zone,Failed,2026-03-23 23:43:58
+1136,KA55JD5796,Riya Gupta,+916827671617,EMAIL,KA55JD5796 overspeeding (40 km/h) at Academic Block B,Delivered,2026-03-23 13:42:58
+1137,KA92JX4694,Riya Kumar,+914291031585,SYSTEM,KA92JX4694 overspeeding (40 km/h) at Academic Block B,Failed,2026-03-24 04:53:58
+1138,DL68JU6845,Meena Iyer,+914327603910,EMAIL,DL68JU6845 overspeeding (60 km/h) at Hospital Road,Delivered,2026-03-24 00:33:58
+1139,WB59SZ3341,Rahul Bose,+917914437386,SYSTEM,WB59SZ3341 overspeeding (21 km/h) at Library Junction,Failed,2026-03-23 23:54:58
+1140,WB48UU1369,Arjun Kumar,+918948026518,SYSTEM,WB48UU1369 overspeeding (48 km/h) at Sports Complex,Failed,2026-03-23 21:31:58
+1141,WB48UU1369,Arjun Kumar,+918948026518,SYSTEM,WB48UU1369 overspeeding (57 km/h) at Residential Zone,Delivered,2026-03-24 05:18:58
+1142,ML73GV9095,Rajesh Mehta,+912021048241,SMS,ML73GV9095 overspeeding (62 km/h) at Hospital Road,Delivered,2026-03-24 04:54:58
+1143,DL99TM2873,Pooja Bose,+918396935104,SMS,DL99TM2873 overspeeding (57 km/h) at Library Junction,Delivered,2026-03-23 17:11:58
+1144,WB43LM1595,Sneha Gupta,+914372014242,SYSTEM,WB43LM1595 overspeeding (44 km/h) at Academic Block B,Failed,2026-03-24 11:54:58
+1145,ML73GV9095,Rajesh Mehta,+912021048241,SYSTEM,ML73GV9095 overspeeding (39 km/h) at Academic Block B,Failed,2026-03-24 02:05:58
+1146,AS20GA9785,Rahul Iyer,+913620715201,EMAIL,AS20GA9785 overspeeding (45 km/h) at Main Gate,Failed,2026-03-23 23:29:58
+1147,KA13RM5187,Vikram Nair,+914767591949,EMAIL,KA13RM5187 overspeeding (38 km/h) at Sports Complex,Delivered,2026-03-24 04:49:58
+1148,ML46MM6488,Rajesh Joshi,+919322317460,SMS,ML46MM6488 overspeeding (68 km/h) at Residential Zone,Failed,2026-03-23 22:27:58
+1149,KA13RM5187,Vikram Nair,+914767591949,EMAIL,KA13RM5187 overspeeding (24 km/h) at GH-4 Gate,Delivered,2026-03-23 15:13:58
+1150,ML45SH3466,Sneha Joshi,+914389074659,SYSTEM,ML45SH3466 overspeeding (29 km/h) at GH-4 Gate,Failed,2026-03-24 06:35:58
+1151,WB57OF5240,Arjun Iyer,+911483946013,EMAIL,WB57OF5240 overspeeding (42 km/h) at Main Gate,Failed,2026-03-24 10:12:58
+1152,ML37VL7728,Sneha Nair,+915564478958,SMS,ML37VL7728 overspeeding (54 km/h) at Library Junction,Failed,2026-03-24 01:43:58
+1153,AS15DM4115,Kavya Bose,+912103891860,SYSTEM,AS15DM4115 overspeeding (65 km/h) at Main Gate,Failed,2026-03-24 08:07:58
+1154,DL01NF5747,Arjun Verma,+911316655257,EMAIL,DL01NF5747 overspeeding (48 km/h) at GH-4 Gate,Delivered,2026-03-23 23:21:58
+1155,KA17GN7428,Rohan Bose,+915832157688,SMS,KA17GN7428 overspeeding (40 km/h) at Main Gate,Delivered,2026-03-24 06:40:58
+1156,ML67AP9551,Suresh Verma,+917855402642,EMAIL,ML67AP9551 overspeeding (22 km/h) at Academic Block A,Failed,2026-03-24 01:02:58
+1157,AS62CG5474,Kavya Bose,+919032494066,EMAIL,AS62CG5474 overspeeding (68 km/h) at Library Junction,Failed,2026-03-23 19:35:58
+1158,ML88RX4292,Sneha Joshi,+913910963340,EMAIL,ML88RX4292 overspeeding (27 km/h) at Library Junction,Delivered,2026-03-24 01:55:58
+1159,DL39UK9366,Pooja Bose,+918116523937,EMAIL,DL39UK9366 overspeeding (33 km/h) at Academic Block A,Delivered,2026-03-23 17:31:58
+1160,KA11BF5605,Vikram Sharma,+911190227555,SYSTEM,KA11BF5605 overspeeding (42 km/h) at Sports Complex,Failed,2026-03-23 15:12:58
+1161,WB55CZ1211,Neha Nair,+912736869188,SMS,WB55CZ1211 overspeeding (40 km/h) at Academic Block A,Failed,2026-03-24 03:14:58
+1162,ML73GV9095,Rajesh Mehta,+912021048241,SMS,ML73GV9095 overspeeding (56 km/h) at Sports Complex,Delivered,2026-03-23 17:38:58
+1163,KA55JD5796,Riya Gupta,+916827671617,SYSTEM,KA55JD5796 overspeeding (64 km/h) at Main Gate,Delivered,2026-03-24 07:32:58
+1164,AS20GA9785,Rahul Iyer,+913620715201,EMAIL,AS20GA9785 overspeeding (47 km/h) at Academic Block A,Delivered,2026-03-24 00:21:58
+1165,WB48OH1391,Suresh Sharma,+914985618855,EMAIL,WB48OH1391 overspeeding (68 km/h) at Library Junction,Delivered,2026-03-23 16:57:58
+1166,ML88FN3438,Neha Iyer,+911992948086,EMAIL,ML88FN3438 overspeeding (47 km/h) at Hospital Road,Failed,2026-03-24 12:02:58
+1167,DL52IZ2550,Ananya Iyer,+918110914408,SYSTEM,DL52IZ2550 overspeeding (52 km/h) at GH-4 Gate,Failed,2026-03-23 23:16:58
+1168,ML08KZ2169,Meena Kumar,+910547945931,EMAIL,ML08KZ2169 overspeeding (60 km/h) at Residential Zone,Failed,2026-03-24 10:52:58
+1169,DL52IZ2550,Ananya Iyer,+918110914408,SMS,DL52IZ2550 overspeeding (31 km/h) at Hospital Road,Delivered,2026-03-24 05:42:58
+1170,WB19EG7034,Priya Bose,+916975237282,EMAIL,WB19EG7034 overspeeding (50 km/h) at Hospital Road,Failed,2026-03-24 00:16:58
+1171,KA14YZ5213,Rajesh Bose,+917500846271,EMAIL,KA14YZ5213 overspeeding (29 km/h) at GH-4 Gate,Failed,2026-03-24 12:21:58
+1172,WB67HF8236,Neha Sharma,+916210931597,SMS,WB67HF8236 overspeeding (35 km/h) at GH-4 Gate,Failed,2026-03-23 22:00:58
+1173,WB15EK7276,Neha Gupta,+916521010367,SYSTEM,WB15EK7276 overspeeding (60 km/h) at GH-4 Gate,Failed,2026-03-23 16:27:58
+1174,WB15EK7276,Neha Gupta,+916521010367,SMS,WB15EK7276 overspeeding (34 km/h) at Academic Block B,Delivered,2026-03-23 20:06:58
+1175,KA26GV1325,Priya Mehta,+915506330633,EMAIL,KA26GV1325 overspeeding (54 km/h) at Library Junction,Failed,2026-03-24 10:07:58
+1176,ML28CR1695,Suresh Mehta,+915639757890,SMS,ML28CR1695 overspeeding (48 km/h) at Sports Complex,Delivered,2026-03-24 10:33:58
+1177,KA85SP8923,Sneha Iyer,+915424963059,SYSTEM,KA85SP8923 overspeeding (63 km/h) at GH-4 Gate,Failed,2026-03-23 12:27:58
+1178,WB53AS7612,Riya Das,+915125486662,SYSTEM,WB53AS7612 overspeeding (40 km/h) at Residential Zone,Delivered,2026-03-24 01:43:58
+1179,AS84QL6148,Rohan Joshi,+913289615662,EMAIL,AS84QL6148 overspeeding (40 km/h) at Academic Block B,Delivered,2026-03-23 16:20:58
+1180,WB58WC3808,Arjun Joshi,+913635977474,EMAIL,WB58WC3808 overspeeding (42 km/h) at Residential Zone,Delivered,2026-03-23 16:18:58
+1181,DL15VL1668,Arjun Mehta,+918492100012,SYSTEM,DL15VL1668 overspeeding (48 km/h) at Main Gate,Failed,2026-03-23 22:52:58
+1182,WB89CN6765,Riya Mehta,+913561598010,SMS,WB89CN6765 overspeeding (44 km/h) at Library Junction,Delivered,2026-03-24 00:29:58
+1183,DL39UK9366,Pooja Bose,+918116523937,EMAIL,DL39UK9366 overspeeding (43 km/h) at Hospital Road,Failed,2026-03-23 22:25:58
+1184,AS39DD6131,Neha Nair,+917489491004,SYSTEM,AS39DD6131 overspeeding (28 km/h) at Academic Block A,Delivered,2026-03-24 10:28:58
+1185,KA97LD1716,Rajesh Gupta,+916474566939,SYSTEM,KA97LD1716 overspeeding (45 km/h) at Residential Zone,Failed,2026-03-23 20:25:58
+1186,AS84QL6148,Rohan Joshi,+913289615662,EMAIL,AS84QL6148 overspeeding (40 km/h) at Academic Block B,Failed,2026-03-23 15:48:58
+1187,KA91LX9133,Riya Das,+915415160089,EMAIL,KA91LX9133 overspeeding (36 km/h) at Library Junction,Failed,2026-03-23 15:43:58
+1188,WB66YQ5291,Riya Nair,+913398014429,SMS,WB66YQ5291 overspeeding (32 km/h) at Sports Complex,Delivered,2026-03-24 07:46:58
+1189,KA48KJ3409,Aman Bose,+912160886709,SYSTEM,KA48KJ3409 overspeeding (32 km/h) at Library Junction,Failed,2026-03-24 03:32:58
+1190,AS34EA9219,Ananya Verma,+919279012809,SYSTEM,AS34EA9219 overspeeding (43 km/h) at Academic Block A,Failed,2026-03-23 21:15:58
+1191,DL68JU6845,Meena Iyer,+914327603910,EMAIL,DL68JU6845 overspeeding (66 km/h) at Library Junction,Delivered,2026-03-23 12:58:58
+1192,KA72NF7276,Kavya Sharma,+914958854666,SMS,KA72NF7276 overspeeding (19 km/h) at Residential Zone,Failed,2026-03-24 01:57:58
+1193,WB43LM1595,Sneha Gupta,+914372014242,SMS,WB43LM1595 overspeeding (46 km/h) at Residential Zone,Failed,2026-03-24 09:17:58
+1194,WB89CN6765,Riya Mehta,+913561598010,EMAIL,WB89CN6765 overspeeding (39 km/h) at Main Gate,Failed,2026-03-23 17:50:58
+1195,DL99TM2873,Pooja Bose,+918396935104,SMS,DL99TM2873 overspeeding (33 km/h) at Sports Complex,Delivered,2026-03-24 04:36:58
+1196,WB84FK1524,Suresh Das,+919692463706,SYSTEM,WB84FK1524 overspeeding (23 km/h) at Residential Zone,Failed,2026-03-24 00:37:58
+1197,DL39UK9366,Pooja Bose,+918116523937,SMS,DL39UK9366 overspeeding (24 km/h) at Main Gate,Failed,2026-03-24 02:40:58
+1198,AS95FF9779,Arjun Sharma,+917988247351,EMAIL,AS95FF9779 overspeeding (66 km/h) at Sports Complex,Failed,2026-03-24 00:15:58
+1199,DL40VN4049,Rajesh Das,+915928684265,SYSTEM,DL40VN4049 overspeeding (47 km/h) at Academic Block B,Failed,2026-03-23 15:28:58
+1200,AS83FS6022,Kavya Mehta,+917446152331,SMS,AS83FS6022 overspeeding (60 km/h) at Sports Complex,Failed,2026-03-24 07:20:58
+1201,ML96SL5034,Ananya Nair,+913496992806,EMAIL,ML96SL5034 overspeeding (49 km/h) at Main Gate,Failed,2026-03-23 20:23:58
+1202,DL63EZ3326,Suresh Nair,+913397774947,SMS,DL63EZ3326 overspeeding (52 km/h) at Main Gate,Failed,2026-03-24 06:42:58
+1203,AS39DD6131,Neha Nair,+917489491004,EMAIL,AS39DD6131 overspeeding (38 km/h) at Academic Block A,Delivered,2026-03-23 14:51:58
+1204,ML37VL7728,Sneha Nair,+915564478958,SYSTEM,ML37VL7728 overspeeding (34 km/h) at Main Gate,Failed,2026-03-24 05:44:58
+1205,WB84FK1524,Suresh Das,+919692463706,SYSTEM,WB84FK1524 overspeeding (26 km/h) at Sports Complex,Failed,2026-03-24 10:48:58
+1206,WB91KK4291,Sneha Verma,+918987479903,SMS,WB91KK4291 overspeeding (61 km/h) at Hospital Road,Failed,2026-03-24 00:55:58
+1207,DL59NA4362,Arjun Mehta,+917190273178,SYSTEM,DL59NA4362 overspeeding (42 km/h) at GH-4 Gate,Delivered,2026-03-23 18:05:58
+1208,DL62KW3487,Vikram Sharma,+913688960820,SYSTEM,DL62KW3487 overspeeding (53 km/h) at Main Gate,Delivered,2026-03-23 16:00:58
+1209,WB15EK7276,Neha Gupta,+916521010367,SYSTEM,WB15EK7276 overspeeding (65 km/h) at Academic Block A,Delivered,2026-03-23 20:29:58
+1210,DL86SZ9423,Meena Joshi,+919354767148,SMS,DL86SZ9423 overspeeding (46 km/h) at Main Gate,Delivered,2026-03-24 00:54:58
+1211,ML34UE2374,Rohan Joshi,+914806694030,SMS,ML34UE2374 overspeeding (30 km/h) at Academic Block A,Delivered,2026-03-24 06:30:58
