@@ -1,0 +1,1010 @@
+# """
+# vigil_server.py — VIGIL Central Server
+# ========================================
+# Flask server that receives detection packets from rpi_detector.py and
+# maintains all databases, traffic stats, notifications, and parked timers.
+
+# Usage:
+#     pip install flask
+#     python vigil_server.py                     # runs on 0.0.0.0:5000
+#     python vigil_server.py --port 8000         # custom port
+#     python vigil_server.py --host 127.0.0.1    # localhost only
+
+# Database: SQLite (vigil.db), auto-created on first run.
+# Uploaded images stored in: ./server_images/
+# """
+
+# import argparse
+# import json
+# import os
+# import random
+# import shutil
+# import sqlite3
+# import threading
+# import time
+# from datetime import datetime
+# from pathlib import Path
+
+# from flask import Flask, request, jsonify
+
+
+# # ── Tunable parameters ────────────────────────────────────────────────
+# CHAR_CONFIDENCE_THRESHOLD = 40.0   # percent; below this → wildcard
+# SPEED_LIMIT_KMPH = 35.0            # km/h; above this → violation
+# PARKED_TIMEOUT_SECONDS = 45       # .75 minutes
+
+# DB_PATH = "vigil.db"
+# IMAGE_DIR = Path("server_images")
+
+# # ── Area adjacency graph ──────────────────────────────────────────────
+# # Undirected: if A is adjacent to B, then B is adjacent to A.
+# # "OUT" represents outside the monitored campus network.
+# # OUT - A - B - C - OUT
+# AREA_ADJACENCY = {
+#     "A":   {"B", "OUT"},
+#     "B":   {"A", "C"},
+#     "C":   {"B", "OUT"},
+#     "OUT": {"A", "C"},
+# }
+
+
+# def areas_adjacent(a: str, b: str) -> bool:
+#     """Check if two areas are adjacent in the graph."""
+#     if a == b:
+#         return True
+#     return b in AREA_ADJACENCY.get(a, set())
+
+
+# # ── Database ──────────────────────────────────────────────────────────
+
+# def get_db() -> sqlite3.Connection:
+#     conn = sqlite3.connect(DB_PATH)
+#     conn.row_factory = sqlite3.Row
+#     conn.execute("PRAGMA journal_mode=WAL")
+#     return conn
+
+
+# def init_db():
+#     conn = get_db()
+#     conn.executescript("""
+#         CREATE TABLE IF NOT EXISTS nameplates (
+#             nameplate       TEXT PRIMARY KEY,
+#             registered      INTEGER DEFAULT 0,
+#             parked          INTEGER DEFAULT 0,
+#             last_area       TEXT DEFAULT 'OUT',
+#             owner           TEXT DEFAULT '',
+#             owner_phone     TEXT DEFAULT '',
+#             violations      INTEGER DEFAULT 0
+#         );
+
+#         CREATE TABLE IF NOT EXISTS notifications (
+#             id              INTEGER PRIMARY KEY AUTOINCREMENT,
+#             nameplate       TEXT NOT NULL,
+#             area            TEXT NOT NULL,
+#             time            TEXT NOT NULL,
+#             speed           REAL NOT NULL,
+#             owner           TEXT DEFAULT '',
+#             owner_phone     TEXT DEFAULT '',
+#             image_path      TEXT DEFAULT ''
+#         );
+
+#         CREATE TABLE IF NOT EXISTS traffic_stats (
+#             area            TEXT PRIMARY KEY,
+#             active_vehicles INTEGER DEFAULT 0,
+#             avg_speed       REAL DEFAULT 0.0,
+#             speed_observations INTEGER DEFAULT 0
+#         );
+
+#         CREATE TABLE IF NOT EXISTS traffic_log (
+#             id              INTEGER PRIMARY KEY AUTOINCREMENT,
+#             area            TEXT NOT NULL,
+#             nameplate       TEXT NOT NULL,
+#             status          TEXT NOT NULL,
+#             time            TEXT NOT NULL
+#         );
+#     """)
+
+#     # Ensure all areas in adjacency graph have a traffic_stats row
+#     for area in AREA_ADJACENCY:
+#         if area != "OUT":
+#             conn.execute(
+#                 "INSERT OR IGNORE INTO traffic_stats (area) VALUES (?)", (area,)
+#             )
+#     conn.commit()
+#     conn.close()
+#     print(f"[+] Database initialized: {DB_PATH}")
+
+
+# # ── Parked timers ─────────────────────────────────────────────────────
+# # Dict of nameplate -> threading.Timer
+# # When a vehicle is detected, its timer resets to PARKED_TIMEOUT_SECONDS.
+# # If the timer fires, the vehicle is marked as parked.
+
+# _parked_timers: dict[str, threading.Timer] = {}
+# _timer_lock = threading.Lock()
+
+
+# def _on_parked_timer(nameplate: str):
+#     """Called when a vehicle's parked timer expires."""
+#     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+#     conn = get_db()
+#     try:
+#         row = conn.execute(
+#             "SELECT last_area FROM nameplates WHERE nameplate = ?", (nameplate,)
+#         ).fetchone()
+#         if row is None:
+#             return
+#         last_area = row["last_area"]
+
+#         # Mark as parked
+#         conn.execute(
+#             "UPDATE nameplates SET parked = 1 WHERE nameplate = ?", (nameplate,)
+#         )
+
+#         # Decrement active vehicles in last_area (if not OUT)
+#         if last_area != "OUT":
+#             conn.execute(
+#                 "UPDATE traffic_stats SET active_vehicles = MAX(active_vehicles - 1, 0) "
+#                 "WHERE area = ?", (last_area,)
+#             )
+
+#         # Traffic log entry
+#         conn.execute(
+#             "INSERT INTO traffic_log (area, nameplate, status, time) VALUES (?, ?, 'parked', ?)",
+#             (last_area, nameplate, now),
+#         )
+#         conn.commit()
+#         print(f"[T] Parked timer fired: {nameplate} in area {last_area}")
+#     finally:
+#         conn.close()
+
+#     with _timer_lock:
+#         _parked_timers.pop(nameplate, None)
+
+
+# def reset_parked_timer(nameplate: str):
+#     """Cancel existing timer and start a new one."""
+#     with _timer_lock:
+#         old = _parked_timers.pop(nameplate, None)
+#         if old is not None:
+#             old.cancel()
+
+#         t = threading.Timer(PARKED_TIMEOUT_SECONDS, _on_parked_timer, args=[nameplate])
+#         t.daemon = True
+#         t.start()
+#         _parked_timers[nameplate] = t
+
+
+# # ── Nameplate matching ────────────────────────────────────────────────
+
+# def match_nameplate(
+#     raw_plate: str,
+#     char_confidences: list[float],
+#     exit_area: str,
+# ) -> str:
+#     """
+#     Fuzzy-match a detected nameplate against the database.
+
+#     1. Replace low-confidence characters with wildcard '_'
+#     2. Search database with SQL LIKE
+#     3. Filter by adjacency (candidate's last_area must be adjacent to exit_area)
+#     4. If multiple matches: pick one at random
+#     5. If no matches: return the original raw_plate (treated as new)
+#     """
+#     # Build wildcard pattern
+#     pattern_chars = list(raw_plate)
+#     for i, ch in enumerate(pattern_chars):
+#         if i < len(char_confidences) and char_confidences[i] < CHAR_CONFIDENCE_THRESHOLD:
+#             pattern_chars[i] = "_"
+#     pattern = "".join(pattern_chars)
+
+#     has_wildcards = "_" in pattern
+
+#     if not has_wildcards:
+#         # Exact match — no need for fuzzy search
+#         return raw_plate
+
+#     conn = get_db()
+#     try:
+#         rows = conn.execute(
+#             "SELECT nameplate, last_area FROM nameplates WHERE nameplate LIKE ?",
+#             (pattern,),
+#         ).fetchall()
+#     finally:
+#         conn.close()
+
+#     if not rows:
+#         return raw_plate
+
+#     # Filter by adjacency: candidate's last_area must be adjacent to exit_area
+#     candidates = []
+#     for row in rows:
+#         if areas_adjacent(row["last_area"], exit_area):
+#             candidates.append(row["nameplate"])
+
+#     if not candidates:
+#         return raw_plate
+
+#     return random.choice(candidates)
+
+
+# # ── Flask app ─────────────────────────────────────────────────────────
+
+# app = Flask(__name__)
+
+
+# @app.route("/api/detection", methods=["POST"])
+# def handle_detection():
+#     """
+#     Receive a detection packet from rpi_detector.py.
+
+#     Form fields:
+#         entry_area, exit_area, speed (float, km/h),
+#         nameplate (str), char_confidences (JSON list of floats)
+#     File:
+#         image (JPEG)
+#     """
+#     entry_area = request.form.get("entry_area", "")
+#     exit_area = request.form.get("exit_area", "")
+#     speed = float(request.form.get("speed", 0))
+#     raw_nameplate = request.form.get("nameplate", "")
+#     char_conf_json = request.form.get("char_confidences", "[]")
+#     char_confidences = json.loads(char_conf_json)
+
+#     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+#     # Save uploaded image
+#     image_path = ""
+#     if "image" in request.files:
+#         IMAGE_DIR.mkdir(exist_ok=True)
+#         img = request.files["image"]
+#         fname = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{raw_nameplate}.jpg"
+#         image_path = str(IMAGE_DIR / fname)
+#         img.save(image_path)
+
+#     print(f"\n{'='*55}")
+#     print(f"[>] Detection received at {now}")
+#     print(f"    Raw plate       : {raw_nameplate}")
+#     print(f"    Char confidences: {char_confidences}")
+#     print(f"    Speed           : {speed:.1f} km/h")
+#     print(f"    Entry area      : {entry_area}")
+#     print(f"    Exit area       : {exit_area}")
+
+#     # ── Step 1: Nameplate matching ──
+#     nameplate = match_nameplate(raw_nameplate, char_confidences, exit_area)
+#     is_new = False
+
+#     conn = get_db()
+#     try:
+#         existing = conn.execute(
+#             "SELECT * FROM nameplates WHERE nameplate = ?", (nameplate,)
+#         ).fetchone()
+
+#         if existing is None:
+#             # New nameplate — insert as unregistered
+#             is_new = True
+#             conn.execute(
+#                 "INSERT INTO nameplates (nameplate, registered, parked, last_area) "
+#                 "VALUES (?, 0, 0, ?)",
+#                 (nameplate, entry_area),
+#             )
+#             print(f"    Matched plate   : {nameplate} (NEW — unregistered)")
+#         else:
+#             print(f"    Matched plate   : {nameplate} (existing)")
+
+#         # ── Step 2: Reset parked timer ──
+#         conn.execute(
+#             "UPDATE nameplates SET parked = 0 WHERE nameplate = ?", (nameplate,)
+#         )
+
+#         # ── Step 3: Update traffic stats ──
+
+#         # Exit area: -1 active vehicle (unless OUT)
+#         if exit_area != "OUT":
+#             conn.execute(
+#                 "UPDATE traffic_stats SET active_vehicles = MAX(active_vehicles - 1, 0) "
+#                 "WHERE area = ?", (exit_area,)
+#             )
+
+#         # Entry area: +1 active vehicle, update avg speed (unless OUT)
+#         if entry_area != "OUT":
+#             row = conn.execute(
+#                 "SELECT avg_speed, speed_observations FROM traffic_stats WHERE area = ?",
+#                 (entry_area,),
+#             ).fetchone()
+#             if row:
+#                 old_avg = row["avg_speed"]
+#                 n = row["speed_observations"]
+#                 new_avg = (old_avg * n + speed) / (n + 1)
+#                 conn.execute(
+#                     "UPDATE traffic_stats SET "
+#                     "active_vehicles = active_vehicles + 1, "
+#                     "avg_speed = ?, speed_observations = ? "
+#                     "WHERE area = ?",
+#                     (round(new_avg, 2), n + 1, entry_area),
+#                 )
+#             else:
+#                 # Area not in traffic_stats yet (shouldn't happen after init)
+#                 conn.execute(
+#                     "INSERT INTO traffic_stats (area, active_vehicles, avg_speed, speed_observations) "
+#                     "VALUES (?, 1, ?, 1)",
+#                     (entry_area, speed),
+#                 )
+
+#         # ── Step 4: Traffic log (always, even for OUT) ──
+#         conn.execute(
+#             "INSERT INTO traffic_log (area, nameplate, status, time) VALUES (?, ?, 'exit', ?)",
+#             (exit_area, nameplate, now),
+#         )
+#         conn.execute(
+#             "INSERT INTO traffic_log (area, nameplate, status, time) VALUES (?, ?, 'entry', ?)",
+#             (entry_area, nameplate, now),
+#         )
+
+#         # ── Step 5: Speed violation check ──
+#         is_violation = speed > SPEED_LIMIT_KMPH
+#         if is_violation:
+#             conn.execute(
+#                 "UPDATE nameplates SET violations = violations + 1 WHERE nameplate = ?",
+#                 (nameplate,),
+#             )
+
+#             # Fetch owner info for notification
+#             veh = conn.execute(
+#                 "SELECT owner, owner_phone FROM nameplates WHERE nameplate = ?",
+#                 (nameplate,),
+#             ).fetchone()
+
+#             conn.execute(
+#                 "INSERT INTO notifications (nameplate, area, time, speed, owner, owner_phone, image_path) "
+#                 "VALUES (?, ?, ?, ?, ?, ?, ?)",
+#                 (nameplate, entry_area, now, speed,
+#                  veh["owner"] if veh else "", veh["owner_phone"] if veh else "",
+#                  image_path),
+#             )
+#             print(f"    *** SPEED VIOLATION: {speed:.1f} km/h > {SPEED_LIMIT_KMPH} km/h ***")
+
+#         # ── Step 6: Update nameplate's last_area ──
+#         conn.execute(
+#             "UPDATE nameplates SET last_area = ? WHERE nameplate = ?",
+#             (entry_area, nameplate),
+#         )
+
+#         conn.commit()
+#     finally:
+#         conn.close()
+
+#     # ── Step 7: Reset parked timer ──
+#     reset_parked_timer(nameplate)
+
+#     result = {
+#         "status": "ok",
+#         "message": f"Processed plate {nameplate}",
+#         "matched_plate": nameplate,
+#         "is_new": is_new,
+#         "is_violation": is_violation if 'is_violation' in dir() else False,
+#         "speed": speed,
+#         "entry_area": entry_area,
+#         "exit_area": exit_area,
+#     }
+#     print(f"    Result          : {result['message']}")
+#     print(f"{'='*55}\n")
+#     return jsonify(result), 200
+
+
+# # ── Status / debug endpoints ─────────────────────────────────────────
+
+# @app.route("/api/stats", methods=["GET"])
+# def get_stats():
+#     """Return all traffic stats."""
+#     conn = get_db()
+#     rows = conn.execute("SELECT * FROM traffic_stats").fetchall()
+#     conn.close()
+#     return jsonify([dict(r) for r in rows])
+
+
+# @app.route("/api/nameplates", methods=["GET"])
+# def get_nameplates():
+#     """Return all nameplates in the database."""
+#     conn = get_db()
+#     rows = conn.execute("SELECT * FROM nameplates").fetchall()
+#     conn.close()
+#     return jsonify([dict(r) for r in rows])
+
+
+# @app.route("/api/notifications", methods=["GET"])
+# def get_notifications():
+#     """Return all speed violation notifications."""
+#     conn = get_db()
+#     rows = conn.execute(
+#         "SELECT * FROM notifications ORDER BY id DESC LIMIT 50"
+#     ).fetchall()
+#     conn.close()
+#     return jsonify([dict(r) for r in rows])
+
+
+# @app.route("/api/log", methods=["GET"])
+# def get_log():
+#     """Return recent traffic log entries."""
+#     limit = request.args.get("limit", 100, type=int)
+#     conn = get_db()
+#     rows = conn.execute(
+#         "SELECT * FROM traffic_log ORDER BY id DESC LIMIT ?", (limit,)
+#     ).fetchall()
+#     conn.close()
+#     return jsonify([dict(r) for r in rows])
+
+
+# @app.route("/api/timers", methods=["GET"])
+# def get_timers():
+#     """Return currently active parked timers (for debugging)."""
+#     with _timer_lock:
+#         active = list(_parked_timers.keys())
+#     return jsonify({"active_parked_timers": active, "timeout_seconds": PARKED_TIMEOUT_SECONDS})
+
+
+# @app.route("/", methods=["GET"])
+# def index():
+#     return (
+#         "<h2>VIGIL Server Running</h2>"
+#         "<p>Endpoints: "
+#         "<a href='/api/stats'>/api/stats</a> | "
+#         "<a href='/api/nameplates'>/api/nameplates</a> | "
+#         "<a href='/api/notifications'>/api/notifications</a> | "
+#         "<a href='/api/log'>/api/log</a> | "
+#         "<a href='/api/timers'>/api/timers</a>"
+#         "</p>"
+#     )
+
+
+# # ── Pre-populate some test data (optional) ────────────────────────────
+
+# def seed_test_data():
+#     """Insert some test registered vehicles. Call manually or on first run."""
+#     conn = get_db()
+#     test_vehicles = [
+#         ("AS01AB1234", 1, "A", "Test Owner 1", "9876543210"),
+#         ("AS09XY5678", 1, "B", "Test Owner 2", "9876543211"),
+#         ("NL07Z0042",  1, "C", "Test Owner 3", "9876543212"),
+#     ]
+#     for plate, reg, area, owner, phone in test_vehicles:
+#         conn.execute(
+#             "INSERT OR IGNORE INTO nameplates "
+#             "(nameplate, registered, parked, last_area, owner, owner_phone) "
+#             "VALUES (?, ?, 0, ?, ?, ?)",
+#             (plate, reg, area, owner, phone),
+#         )
+#     conn.commit()
+#     conn.close()
+#     print("[+] Test data seeded.")
+
+
+# # ── Entry point ───────────────────────────────────────────────────────
+
+# def main():
+#     parser = argparse.ArgumentParser(description="VIGIL Central Server")
+#     parser.add_argument("--host", default="0.0.0.0", help="Bind address")
+#     parser.add_argument("--port", type=int, default=5000, help="Port")
+#     parser.add_argument("--seed", action="store_true", help="Seed test data on startup")
+#     args = parser.parse_args()
+
+#     init_db()
+#     if args.seed:
+#         seed_test_data()
+
+#     print(f"\n{'='*55}")
+#     print(f"  VIGIL Server")
+#     print(f"  Listening on  : {args.host}:{args.port}")
+#     print(f"  Database      : {DB_PATH}")
+#     print(f"  Speed limit   : {SPEED_LIMIT_KMPH} km/h")
+#     print(f"  Parked timeout: {PARKED_TIMEOUT_SECONDS}s")
+#     print(f"  Char conf threshold: {CHAR_CONFIDENCE_THRESHOLD}%")
+#     print(f"  Areas         : {list(AREA_ADJACENCY.keys())}")
+#     print(f"{'='*55}\n")
+
+#     app.run(host=args.host, port=args.port, debug=False)
+
+
+# if __name__ == "__main__":
+#     main()
+
+
+
+import argparse
+import json
+import random
+import sqlite3
+import threading
+from contextlib import closing
+from datetime import datetime
+from pathlib import Path
+
+from flask import Flask, jsonify, request
+
+# --------------------
+# Tunables
+# --------------------
+CHAR_CONFIDENCE_THRESHOLD = 40.0
+SPEED_LIMIT_KMPH = 35.0
+PARKED_TIMEOUT_SECONDS = 300
+
+DB_PATH = "vigil.db"
+IMAGE_DIR = Path("server_images")
+
+AREA_ADJACENCY = {
+    "A": {"B", "OUT"},
+    "B": {"A", "C"},
+    "C": {"B", "OUT"},
+    "OUT": {"A", "C"},
+}
+
+AREA_ORDER = [a for a in AREA_ADJACENCY.keys() if a != "OUT"]
+AREA_TO_ZONE_ID = {area: idx + 1 for idx, area in enumerate(AREA_ORDER)}
+
+app = Flask(__name__)
+
+_timer_lock = threading.Lock()
+_parked_timers = {}  # nameplate -> threading.Timer
+
+
+def areas_adjacent(a: str, b: str) -> bool:
+    if a == b:
+        return True
+    return b in AREA_ADJACENCY.get(a, set())
+
+
+def get_db():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    conn.execute("PRAGMA journal_mode=WAL")
+    return conn
+
+
+def init_db():
+    with closing(get_db()) as conn:
+        conn.executescript("""
+            CREATE TABLE IF NOT EXISTS nameplates (
+                nameplate TEXT PRIMARY KEY,
+                registered INTEGER DEFAULT 0,
+                parked INTEGER DEFAULT 0,
+                last_area TEXT DEFAULT 'OUT',
+                owner TEXT DEFAULT '',
+                owner_phone TEXT DEFAULT '',
+                violations INTEGER DEFAULT 0,
+                last_seen TEXT DEFAULT '',
+                max_speed REAL DEFAULT 0,
+                min_speed REAL DEFAULT 0,
+                avg_speed REAL DEFAULT 0,
+                speed_observations INTEGER DEFAULT 0
+            );
+
+            CREATE TABLE IF NOT EXISTS notifications (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                nameplate TEXT NOT NULL,
+                area TEXT NOT NULL,
+                time TEXT NOT NULL,
+                speed REAL NOT NULL,
+                owner TEXT DEFAULT '',
+                owner_phone TEXT DEFAULT '',
+                image_path TEXT DEFAULT ''
+            );
+
+            CREATE TABLE IF NOT EXISTS traffic_stats (
+                area TEXT PRIMARY KEY,
+                active_vehicles INTEGER DEFAULT 0,
+                avg_speed REAL DEFAULT 0.0,
+                speed_observations INTEGER DEFAULT 0
+            );
+
+            CREATE TABLE IF NOT EXISTS traffic_log (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                area TEXT NOT NULL,
+                nameplate TEXT NOT NULL,
+                status TEXT NOT NULL,
+                time TEXT NOT NULL,
+                speed REAL DEFAULT 0,
+                camera_id TEXT DEFAULT ''
+            );
+        """)
+
+        for area in AREA_ORDER:
+            conn.execute(
+                "INSERT OR IGNORE INTO traffic_stats (area) VALUES (?)",
+                (area,),
+            )
+        conn.commit()
+
+
+def _safe_float(value, default=0.0):
+    try:
+        return float(value)
+    except Exception:
+        return default
+
+
+def _save_image_from_request(raw_nameplate: str) -> str:
+    image_path = ""
+    if "image" in request.files:
+        IMAGE_DIR.mkdir(exist_ok=True)
+        img = request.files["image"]
+        fname = f"{datetime.now().strftime('%Y%m%d_%H%M%S')}_{raw_nameplate}.jpg"
+        image_path = str(IMAGE_DIR / fname)
+        img.save(image_path)
+    return image_path
+
+
+def _on_parked_timer(nameplate: str):
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with closing(get_db()) as conn:
+        row = conn.execute(
+            "SELECT last_area FROM nameplates WHERE nameplate = ?",
+            (nameplate,),
+        ).fetchone()
+        if row is None:
+            with _timer_lock:
+                _parked_timers.pop(nameplate, None)
+            return
+
+        last_area = row["last_area"] or "OUT"
+        conn.execute(
+            "UPDATE nameplates SET parked = 1 WHERE nameplate = ?",
+            (nameplate,),
+        )
+        if last_area != "OUT":
+            conn.execute(
+                "UPDATE traffic_stats SET active_vehicles = MAX(active_vehicles - 1, 0) "
+                "WHERE area = ?",
+                (last_area,),
+            )
+        conn.execute(
+            "INSERT INTO traffic_log (area, nameplate, status, time, speed, camera_id) "
+            "VALUES (?, ?, 'parked', ?, 0, '')",
+            (last_area, nameplate, now),
+        )
+        conn.commit()
+
+    with _timer_lock:
+        _parked_timers.pop(nameplate, None)
+
+
+def reset_parked_timer(nameplate: str):
+    with _timer_lock:
+        old = _parked_timers.pop(nameplate, None)
+        if old is not None:
+            old.cancel()
+        timer = threading.Timer(PARKED_TIMEOUT_SECONDS, _on_parked_timer, args=(nameplate,))
+        timer.daemon = True
+        timer.start()
+        _parked_timers[nameplate] = timer
+
+
+def match_nameplate(raw_plate: str, char_confidences: list[float], exit_area: str) -> str:
+    pattern_chars = list(raw_plate)
+    for i, ch in enumerate(pattern_chars):
+        if i < len(char_confidences) and _safe_float(char_confidences[i], 100.0) < CHAR_CONFIDENCE_THRESHOLD:
+            pattern_chars[i] = "_"
+    pattern = "".join(pattern_chars)
+
+    if "_" not in pattern:
+        return raw_plate
+
+    with closing(get_db()) as conn:
+        rows = conn.execute(
+            "SELECT nameplate, last_area FROM nameplates WHERE nameplate LIKE ?",
+            (pattern,),
+        ).fetchall()
+
+    if not rows:
+        return raw_plate
+
+    candidates = [
+        row["nameplate"]
+        for row in rows
+        if areas_adjacent((row["last_area"] or "OUT"), exit_area)
+    ]
+    if not candidates:
+        return raw_plate
+    return random.choice(candidates)
+
+
+def _upsert_nameplate_if_new(conn, nameplate: str, entry_area: str):
+    existing = conn.execute(
+        "SELECT nameplate FROM nameplates WHERE nameplate = ?",
+        (nameplate,),
+    ).fetchone()
+    if existing is None:
+        conn.execute(
+            "INSERT INTO nameplates (nameplate, registered, parked, last_area, last_seen) "
+            "VALUES (?, 0, 0, ?, ?)",
+            (nameplate, entry_area, datetime.now().strftime("%Y-%m-%d %H:%M:%S")),
+        )
+        return True
+    return False
+
+
+def _update_nameplate_speed_stats(conn, nameplate: str, speed: float):
+    row = conn.execute(
+        "SELECT max_speed, min_speed, avg_speed, speed_observations FROM nameplates WHERE nameplate = ?",
+        (nameplate,),
+    ).fetchone()
+    if row is None:
+        return
+    obs = int(row["speed_observations"] or 0)
+    if obs <= 0:
+        conn.execute(
+            "UPDATE nameplates SET max_speed = ?, min_speed = ?, avg_speed = ?, speed_observations = 1 "
+            "WHERE nameplate = ?",
+            (speed, speed, speed, nameplate),
+        )
+    else:
+        max_speed = max(float(row["max_speed"] or 0), speed)
+        min_speed = speed if float(row["min_speed"] or 0) == 0 else min(float(row["min_speed"]), speed)
+        avg_speed = (float(row["avg_speed"] or 0) * obs + speed) / (obs + 1)
+        conn.execute(
+            "UPDATE nameplates SET max_speed = ?, min_speed = ?, avg_speed = ?, speed_observations = ? "
+            "WHERE nameplate = ?",
+            (round(max_speed, 2), round(min_speed, 2), round(avg_speed, 2), obs + 1, nameplate),
+        )
+
+
+@app.route("/api/detection", methods=["POST"])
+def handle_detection():
+    entry_area = request.form.get("entry_area", "").strip() or "OUT"
+    exit_area = request.form.get("exit_area", "").strip() or "OUT"
+    speed = _safe_float(request.form.get("speed", 0), 0.0)
+    raw_nameplate = request.form.get("nameplate", "").strip()
+    char_conf_json = request.form.get("char_confidences", "[]")
+
+    try:
+        char_confidences = json.loads(char_conf_json)
+        if not isinstance(char_confidences, list):
+            char_confidences = []
+    except Exception:
+        char_confidences = []
+
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    image_path = _save_image_from_request(raw_nameplate)
+
+    matched = match_nameplate(raw_nameplate, char_confidences, exit_area)
+    is_new = False
+    is_violation = False
+
+    with closing(get_db()) as conn:
+        is_new = _upsert_nameplate_if_new(conn, matched, entry_area)
+
+        conn.execute(
+            "UPDATE nameplates SET parked = 0, last_seen = ? WHERE nameplate = ?",
+            (now, matched),
+        )
+
+        _update_nameplate_speed_stats(conn, matched, speed)
+
+        if exit_area != "OUT":
+            conn.execute(
+                "UPDATE traffic_stats SET active_vehicles = MAX(active_vehicles - 1, 0) WHERE area = ?",
+                (exit_area,),
+            )
+
+        if entry_area != "OUT":
+            row = conn.execute(
+                "SELECT avg_speed, speed_observations FROM traffic_stats WHERE area = ?",
+                (entry_area,),
+            ).fetchone()
+            if row is None:
+                conn.execute(
+                    "INSERT INTO traffic_stats (area, active_vehicles, avg_speed, speed_observations) VALUES (?, 1, ?, 1)",
+                    (entry_area, speed),
+                )
+            else:
+                old_avg = float(row["avg_speed"] or 0)
+                n = int(row["speed_observations"] or 0)
+                new_avg = (old_avg * n + speed) / (n + 1)
+                conn.execute(
+                    "UPDATE traffic_stats SET active_vehicles = active_vehicles + 1, avg_speed = ?, speed_observations = ? WHERE area = ?",
+                    (round(new_avg, 2), n + 1, entry_area),
+                )
+
+        conn.execute(
+            "INSERT INTO traffic_log (area, nameplate, status, time, speed, camera_id) VALUES (?, ?, 'exit', ?, ?, '')",
+            (exit_area, matched, now, speed),
+        )
+        conn.execute(
+            "INSERT INTO traffic_log (area, nameplate, status, time, speed, camera_id) VALUES (?, ?, 'entry', ?, ?, '')",
+            (entry_area, matched, now, speed),
+        )
+
+        is_violation = speed > SPEED_LIMIT_KMPH
+        if is_violation:
+            conn.execute(
+                "UPDATE nameplates SET violations = violations + 1 WHERE nameplate = ?",
+                (matched,),
+            )
+            veh = conn.execute(
+                "SELECT owner, owner_phone FROM nameplates WHERE nameplate = ?",
+                (matched,),
+            ).fetchone()
+            conn.execute(
+                "INSERT INTO notifications (nameplate, area, time, speed, owner, owner_phone, image_path) VALUES (?, ?, ?, ?, ?, ?, ?)",
+                (
+                    matched,
+                    entry_area,
+                    now,
+                    speed,
+                    veh["owner"] if veh else "",
+                    veh["owner_phone"] if veh else "",
+                    image_path,
+                ),
+            )
+
+        conn.execute(
+            "UPDATE nameplates SET last_area = ? WHERE nameplate = ?",
+            (entry_area, matched),
+        )
+        conn.commit()
+
+    reset_parked_timer(matched)
+
+    return jsonify({
+        "status": "ok",
+        "message": f"Processed plate {matched}",
+        "matched_plate": matched,
+        "is_new": is_new,
+        "is_violation": is_violation,
+        "speed": speed,
+        "entry_area": entry_area,
+        "exit_area": exit_area,
+        "image_path": image_path,
+    }), 200
+
+
+@app.route("/api/stats", methods=["GET"])
+def api_stats():
+    with closing(get_db()) as conn:
+        vehicles = conn.execute("SELECT COUNT(*) AS c FROM nameplates").fetchone()["c"]
+        events = conn.execute("SELECT COUNT(*) AS c FROM traffic_log").fetchone()["c"]
+        violations = conn.execute("SELECT COUNT(*) AS c FROM notifications").fetchone()["c"]
+    return jsonify({"vehicles": vehicles, "events": events, "violations": violations})
+
+
+@app.route("/api/nameplates", methods=["GET"])
+def api_nameplates():
+    with closing(get_db()) as conn:
+        rows = conn.execute("SELECT * FROM nameplates ORDER BY nameplate").fetchall()
+    return jsonify([dict(r) for r in rows])
+
+
+@app.route("/api/notifications", methods=["GET"])
+def api_notifications():
+    with closing(get_db()) as conn:
+        rows = conn.execute("SELECT * FROM notifications ORDER BY id DESC LIMIT 50").fetchall()
+    return jsonify([dict(r) for r in rows])
+
+
+@app.route("/api/log", methods=["GET"])
+def api_log():
+    limit = request.args.get("limit", 100, type=int)
+    with closing(get_db()) as conn:
+        rows = conn.execute("SELECT * FROM traffic_log ORDER BY id DESC LIMIT ?", (limit,)).fetchall()
+    return jsonify([dict(r) for r in rows])
+
+
+@app.route("/api/timers", methods=["GET"])
+def api_timers():
+    with _timer_lock:
+        active = list(_parked_timers.keys())
+    return jsonify({"active_parked_timers": active, "timeout_seconds": PARKED_TIMEOUT_SECONDS})
+
+
+# ---- Phase 1 compatibility routes ----
+
+@app.route("/vehicles", methods=["GET"])
+def vehicles_compat():
+    with closing(get_db()) as conn:
+        rows = conn.execute("SELECT * FROM nameplates ORDER BY nameplate").fetchall()
+
+    out = []
+    for r in rows:
+        currently = 1 if (r["parked"] == 0 and (r["last_area"] or "OUT") != "OUT") else 0
+        out.append({
+            "plate": r["nameplate"],
+            "owner": r["owner"] or "",
+            "phone": r["owner_phone"] or "",
+            "email": "",
+            "type": "",
+            "total_violations": r["violations"] or 0,
+            "last_seen": r["last_seen"] or "",
+            "currently_in_campus": bool(currently),
+            "max_speed": r["max_speed"] or 0,
+            "min_speed": r["min_speed"] or 0,
+            "avg_speed": r["avg_speed"] or 0,
+        })
+    return jsonify(out)
+
+
+@app.route("/zones", methods=["GET"])
+def zones_compat():
+    with closing(get_db()) as conn:
+        rows = conn.execute("SELECT * FROM traffic_stats ORDER BY area").fetchall()
+
+    out = []
+    for r in rows:
+        area = r["area"]
+        out.append({
+            "zone_id": AREA_TO_ZONE_ID.get(area, 0),
+            "name": area,
+            "speed_limit": SPEED_LIMIT_KMPH,
+            "risk_level": "HIGH" if (r["active_vehicles"] or 0) >= 10 else "MEDIUM" if (r["active_vehicles"] or 0) >= 4 else "LOW",
+            "accident_count": 0,
+            "vehicle_density": r["active_vehicles"] or 0,
+        })
+    return jsonify(out)
+
+
+@app.route("/events", methods=["GET"])
+def events_compat():
+    with closing(get_db()) as conn:
+        rows = conn.execute("SELECT * FROM traffic_log ORDER BY id DESC LIMIT 100").fetchall()
+
+    out = []
+    for r in rows:
+        speed = float(r["speed"] or 0)
+        out.append({
+            "event_id": r["id"],
+            "plate": r["nameplate"],
+            "zone_id": AREA_TO_ZONE_ID.get(r["area"], 0),
+            "speed": speed,
+            "speed_limit": SPEED_LIMIT_KMPH,
+            "event_time": r["time"],
+            "camera_id": r["camera_id"] or "",
+            "status": "VIOLATION" if speed > SPEED_LIMIT_KMPH else "NORMAL",
+        })
+    return jsonify(out)
+
+
+@app.route("/notifications", methods=["GET"])
+def notifications_compat():
+    with closing(get_db()) as conn:
+        rows = conn.execute("SELECT * FROM notifications ORDER BY id DESC LIMIT 50").fetchall()
+
+    out = []
+    for r in rows:
+        out.append({
+            "notif_id": r["id"],
+            "plate": r["nameplate"],
+            "owner": r["owner"] or "",
+            "phone": r["owner_phone"] or "",
+            "type": "SYSTEM",
+            "message": f"Speed violation in {r['area']} at {r['time']}",
+            "delivery_status": "Delivered",
+            "sent_time": r["time"],
+        })
+    return jsonify(out)
+
+
+@app.route("/stats", methods=["GET"])
+def stats_compat():
+    return api_stats()
+
+
+@app.route("/", methods=["GET"])
+def root():
+    return jsonify({
+        "message": "VIGIL Server Running",
+        "phase2_endpoints": ["/api/detection", "/api/stats", "/api/nameplates", "/api/notifications", "/api/log", "/api/timers"],
+        "phase1_endpoints": ["/vehicles", "/zones", "/events", "/notifications", "/stats"],
+    })
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--host", default="0.0.0.0")
+    parser.add_argument("--port", type=int, default=8000)
+    parser.add_argument("--seed", action="store_true")
+    args = parser.parse_args()
+
+    init_db()
+    app.run(host=args.host, port=args.port, debug=False)
+
+
+if __name__ == "__main__":
+    main()
