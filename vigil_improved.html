@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VIGIL — Central Monitoring</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════════════════════════════════════
+   VIGIL — REDESIGNED
+   Aesthetic: Military-grade brutalism meets premium surveillance tech.
+   Dark slate base, electric yellow-green accents, Space Mono for data,
+   Bebas Neue for headings, DM Sans for body. Dense but breathable.
+═══════════════════════════════════════════════════════════════════════ */
+:root {
+  --bg:        #0a0c0f;
+  --surface:   #0e1117;
+  --card:      #131720;
+  --card2:     #181e2b;
+  --border:    #1e2535;
+  --border2:   #2a3348;
+  --accent:    #b8ff3e;          /* electric lime */
+  --accent-dim:#7ab828;
+  --danger:    #ff4757;
+  --warn:      #ffa502;
+  --info:      #1e90ff;
+  --success:   #2ed573;
+  --muted:     #3a4560;
+  --text:      #c9d4e8;
+  --text2:     #5a6a88;
+  --text3:     #3a4560;
+  --mono:      'Space Mono', monospace;
+  --head:      'Bebas Neue', sans-serif;
+  --body:      'DM Sans', sans-serif;
+  --radius:    6px;
+  --glow-lime: 0 0 24px rgba(184,255,62,0.25);
+  --glow-red:  0 0 24px rgba(255,71,87,0.3);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--body);
+  font-size: 14px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
+}
+
+/* ── Noise texture overlay ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0.6;
+}
+
+/* ── Scanlines ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px, transparent 2px,
+    rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 3px
+  );
+  pointer-events: none;
+  z-index: 9997;
+}
+
+/* ─────────────────────────────── HEADER ─────────────────────────────── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 36px;
+  height: 68px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+/* Left edge accent line */
+header::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo-emblem {
+  position: relative;
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+}
+
+.logo-emblem svg {
+  width: 40px; height: 40px;
+}
+
+.logo-ring {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 3 2;
+  animation: rotate 20s linear infinite;
+  transform-origin: center;
+}
+
+.logo-shield { fill: var(--accent); }
+.logo-inner  { fill: var(--bg); }
+
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
+.logo-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.logo-v {
+  font-family: var(--head);
+  font-size: 26px;
+  letter-spacing: 8px;
+  color: #fff;
+  line-height: 1;
+}
+
+.logo-v span { color: var(--accent); }
+
+.logo-tagline {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--text2);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* ── Header controls ── */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.server-group {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--card);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.server-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text2);
+  background: var(--border);
+  padding: 0 10px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border2);
+  white-space: nowrap;
+}
+
+#serverUrl {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 0 14px;
+  height: 36px;
+  width: 190px;
+  outline: none;
+}
+
+.conn-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 14px;
+  height: 36px;
+  border-left: 1px solid var(--border2);
+}
+
+.status-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--muted);
+  flex-shrink: 0;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+.status-dot.live  { background: var(--accent);  box-shadow: 0 0 10px var(--accent); animation: blink 2s infinite; }
+.status-dot.error { background: var(--danger); box-shadow: var(--glow-red); }
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.status-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 2px;
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0 20px;
+  height: 36px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: all 0.18s;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0a0c0f;
+}
+.btn-primary:hover {
+  background: #caff5a;
+  box-shadow: var(--glow-lime);
+  transform: translateY(-1px);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text2);
+  border: 1px solid var(--border2);
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ─────────────────────────────── TABS ─────────────────────────────── */
+.tabs-bar {
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  padding: 0 36px;
+  gap: 0;
+  overflow-x: auto;
+}
+
+.tab {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 0 22px;
+  height: 48px;
+  cursor: pointer;
+  color: var(--text2);
+  border: none;
+  background: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  position: relative;
+}
+.tab:hover { color: var(--text); background: rgba(255,255,255,0.02); }
+.tab.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.badge {
+  font-size: 9px;
+  font-family: var(--mono);
+  background: var(--danger);
+  color: #fff;
+  padding: 1px 5px;
+  border-radius: 20px;
+  font-weight: 700;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* ─────────────────────────────── MAIN ─────────────────────────────── */
+main { padding: 32px 36px; }
+
+.tab-section { display: none; }
+.tab-section.active { display: block; }
+
+/* ─────────────────────────── KPI STRIP ─────────────────────────────── */
+.kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.kpi {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+  cursor: default;
+}
+.kpi:hover { border-color: var(--border2); transform: translateY(-2px); }
+
+/* Top accent bar */
+.kpi::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+}
+.kpi.lime  ::before { background: var(--accent); }
+.kpi.red   ::before { background: var(--danger); }
+.kpi.green ::before { background: var(--success); }
+.kpi.amber ::before { background: var(--warn); }
+
+/* Glow spot top-right */
+.kpi::after {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  opacity: 0.06;
+}
+.kpi.lime::after  { background: var(--accent); }
+.kpi.red::after   { background: var(--danger); }
+.kpi.green::after { background: var(--success); }
+.kpi.amber::after { background: var(--warn); }
+
+.kpi-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin-bottom: 12px;
+}
+
+.kpi-value {
+  font-family: var(--head);
+  font-size: 48px;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: #fff;
+}
+.kpi.lime  .kpi-value { color: var(--accent);  text-shadow: var(--glow-lime); }
+.kpi.red   .kpi-value { color: var(--danger);  text-shadow: var(--glow-red); }
+.kpi.green .kpi-value { color: var(--success); }
+.kpi.amber .kpi-value { color: var(--warn); }
+
+.kpi-sub {
+  font-size: 12px;
+  color: var(--text2);
+  margin-top: 8px;
+  font-weight: 300;
+}
+
+/* ─────────────────────────── SECTION TITLE ─────────────────────────── */
+.section-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text2);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-title::before {
+  content: '';
+  width: 3px; height: 12px;
+  background: var(--accent);
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─────────────────────────── AREA CARDS ─────────────────────────────── */
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.area-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 22px 18px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.25s, transform 0.25s;
+}
+.area-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+/* giant watermark letter */
+.area-card::before {
+  content: attr(data-area);
+  position: absolute;
+  right: -12px; bottom: -28px;
+  font-family: var(--head);
+  font-size: 130px;
+  line-height: 1;
+  color: rgba(184,255,62,0.04);
+  pointer-events: none;
+  user-select: none;
+}
+
+.area-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.area-name {
+  font-family: var(--head);
+  font-size: 34px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.area-zone-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: var(--text2);
+  background: var(--border);
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-top: 4px;
+}
+
+.area-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.astat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 8px 8px;
+  text-align: center;
+}
+
+.astat-val {
+  font-family: var(--head);
+  font-size: 26px;
+  line-height: 1;
+  color: #fff;
+}
+
+.astat-lbl {
+  font-family: var(--mono);
+  font-size: 8px;
+  letter-spacing: 1.5px;
+  color: var(--text2);
+  margin-top: 4px;
+  text-transform: uppercase;
+}
+
+.speed-track {
+  margin-top: 2px;
+}
+
+.speed-track-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.speed-track-lbl {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--text2);
+}
+
+.speed-track-val {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.track-bg {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.track-fill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.track-fill::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 50%;
+  transform: translateY(-50%);
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: inherit;
+  box-shadow: 0 0 6px currentColor;
+}
+
+.track-limit {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(255,255,255,0.15);
+  right: 0; /* adjusted by JS inline style */
+}
+
+/* ─────────────────────────────── PANELS ─────────────────────────────── */
+.panel {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.panel-title {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text2);
+}
+
+.panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panel-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text2);
+  letter-spacing: 1px;
+}
+
+.search-box {
+  background: var(--card2);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 7px 12px;
+  border-radius: var(--radius);
+  outline: none;
+  width: 220px;
+  transition: border-color 0.2s;
+}
+.search-box:focus { border-color: var(--accent); }
+.search-box::placeholder { color: var(--text3); }
+
+/* ─────────────────────────────── TABLES ─────────────────────────────── */
+table { width: 100%; border-collapse: collapse; }
+
+thead th {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text2);
+  padding: 10px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  white-space: nowrap;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover { background: rgba(184,255,62,0.03); }
+
+td {
+  padding: 11px 18px;
+  font-size: 13px;
+  color: var(--text);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.plate-tag {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(184,255,62,0.07);
+  border: 1px solid rgba(184,255,62,0.18);
+  padding: 3px 9px;
+  border-radius: 3px;
+  letter-spacing: 1.5px;
+  display: inline-block;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  padding: 3px 9px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.pill::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.pill-lime   { background: rgba(184,255,62,0.1);  color: var(--accent);  border: 1px solid rgba(184,255,62,0.2); }
+.pill-lime::before   { background: var(--accent); }
+.pill-red    { background: rgba(255,71,87,0.1);   color: var(--danger);  border: 1px solid rgba(255,71,87,0.2); }
+.pill-red::before    { background: var(--danger); }
+.pill-amber  { background: rgba(255,165,2,0.1);   color: var(--warn);    border: 1px solid rgba(255,165,2,0.2); }
+.pill-amber::before  { background: var(--warn); }
+.pill-gray   { background: rgba(58,69,96,0.3);    color: var(--text2);   border: 1px solid var(--border2); }
+.pill-gray::before   { background: var(--text2); }
+.pill-info   { background: rgba(30,144,255,0.1);  color: var(--info);    border: 1px solid rgba(30,144,255,0.2); }
+.pill-info::before   { background: var(--info); }
+.pill-green  { background: rgba(46,213,115,0.1);  color: var(--success); border: 1px solid rgba(46,213,115,0.2); }
+.pill-green::before  { background: var(--success); }
+
+.viol-count {
+  font-family: var(--head);
+  font-size: 20px;
+}
+.viol-count.high { color: var(--danger); text-shadow: 0 0 12px rgba(255,71,87,0.4); }
+.viol-count.low  { color: var(--text2); }
+
+.speed-val {
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+}
+.speed-val.danger { color: var(--danger); }
+.speed-val.safe   { color: var(--success); }
+
+/* ─────────────────────────────── LOG ─────────────────────────────── */
+.log-list { }
+
+.log-entry {
+  display: grid;
+  grid-template-columns: 160px 44px 8px 130px auto;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 22px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+  animation: logIn 0.25s ease forwards;
+}
+.log-entry:last-child { border-bottom: none; }
+.log-entry:hover { background: rgba(255,255,255,0.015); }
+
+@keyframes logIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.log-time  { font-family: var(--mono); font-size: 11px; color: var(--text2); }
+.log-area  { font-family: var(--head); font-size: 18px; color: var(--accent); letter-spacing: 2px; }
+.log-sep   { color: var(--muted); font-size: 12px; }
+.log-plate { font-family: var(--mono); font-size: 12px; color: var(--text); }
+.log-status {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  display: inline-block;
+}
+.log-status.entry  { background: rgba(46,213,115,0.1);  color: var(--success); border: 1px solid rgba(46,213,115,0.15); }
+.log-status.exit   { background: rgba(255,165,2,0.1);   color: var(--warn);    border: 1px solid rgba(255,165,2,0.15); }
+.log-status.parked { background: rgba(58,69,96,0.3);    color: var(--text2);   border: 1px solid var(--border2); }
+
+/* ─────────────────────────────── EMPTY ─────────────────────────────── */
+.empty {
+  text-align: center;
+  padding: 64px 20px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: var(--text3);
+  text-transform: uppercase;
+}
+.empty::before {
+  content: '//';
+  color: var(--border2);
+  margin-right: 8px;
+}
+
+/* ─────────────────────────────── TOAST ─────────────────────────────── */
+#toastContainer {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 10px;
+}
+
+.toast {
+  background: var(--card2);
+  border: 1px solid var(--border2);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  min-width: 290px;
+  max-width: 380px;
+  font-size: 13px;
+  color: var(--text);
+  animation: toastIn 0.3s cubic-bezier(0.2,0,0,1);
+  backdrop-filter: blur(8px);
+}
+.toast.danger  { border-left-color: var(--danger); }
+.toast.success { border-left-color: var(--success); }
+
+.toast-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+.toast.danger  .toast-title { color: var(--danger); }
+.toast.success .toast-title { color: var(--success); }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1); }
+}
+
+/* ──────────────────────────── MODAL ──────────────────────────────── */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay.open { display: flex; }
+
+.modal {
+  background: var(--card2);
+  border: 1px solid var(--border2);
+  border-top: 2px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 34px;
+  width: 430px;
+  max-width: 95vw;
+  animation: modalIn 0.22s cubic-bezier(0.2,0,0,1);
+}
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.97) translateY(8px); }
+  to   { opacity: 1; transform: scale(1)    translateY(0); }
+}
+
+.modal-title {
+  font-family: var(--head);
+  font-size: 22px;
+  letter-spacing: 4px;
+  color: var(--accent);
+  margin-bottom: 28px;
+  text-transform: uppercase;
+}
+
+.form-group { margin-bottom: 18px; }
+
+.form-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text2);
+  display: block;
+  margin-bottom: 7px;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(184,255,62,0.1);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border);
+}
+
+/* ────────────────────────── REFRESH BAR ─────────────────────────────── */
+.refresh-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: transparent;
+  z-index: 600;
+}
+.refresh-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+  transition: width 0.6s ease;
+}
+
+/* ─────────────────────────── SCROLLBAR ─────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--surface); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* ─────────────────────────── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 960px) {
+  .kpi-strip { grid-template-columns: 1fr 1fr; }
+  .area-grid  { grid-template-columns: 1fr; }
+  header { padding: 0 16px; }
+  main   { padding: 20px 16px; }
+  .tabs-bar { padding: 0 16px; }
+  .server-label { display: none; }
+  #serverUrl { width: 140px; }
+  .log-entry { grid-template-columns: 120px 36px 6px 100px auto; gap: 8px; padding: 9px 14px; }
+}
+
+@media (max-width: 600px) {
+  .kpi-strip { grid-template-columns: 1fr; }
+  .header-right { gap: 10px; }
+  .kpi-value { font-size: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ═══════════════════════════════════════════════════════ -->
+<header>
+  <div class="logo">
+    <div class="logo-emblem">
+      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="18.5" class="logo-ring" stroke-dasharray="4 3"/>
+        <circle cx="20" cy="20" r="18.5" class="logo-ring" stroke-dasharray="4 3" style="animation-duration:30s;animation-direction:reverse;opacity:0.4;"/>
+        <path class="logo-shield" d="M20 6L9 10.5V19.2C9 25.5 13.8 31.4 20 33C26.2 31.4 31 25.5 31 19.2V10.5L20 6Z"/>
+        <path class="logo-inner" d="M20 9.5L12 12.8V19.1C12 23.9 15.6 28.3 20 29.6C24.4 28.3 28 23.9 28 19.1V12.8L20 9.5Z"/>
+        <path fill="var(--accent)" d="M18.5 13.5V19.8L23.5 22.8L24.5 21L20.5 18.7V13.5H18.5Z"/>
+      </svg>
+    </div>
+    <div class="logo-wordmark">
+      <div class="logo-v">VIGI<span>L</span></div>
+      <div class="logo-tagline">Central Monitoring System</div>
+    </div>
+  </div>
+
+  <div class="header-right">
+    <div class="server-group">
+      <span class="server-label">SERVER</span>
+      <input id="serverUrl" type="text" value="http://localhost:8000" placeholder="http://host:port"/>
+      <div class="conn-indicator">
+        <div class="status-dot" id="statusDot"></div>
+        <span class="status-label" id="statusLabel">OFFLINE</span>
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="refreshAll()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M17.65 6.35A7.958 7.958 0 0 0 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08A5.99 5.99 0 0 1 12 18c-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg>
+      REFRESH
+    </button>
+  </div>
+</header>
+
+<!-- ══ TABS ══════════════════════════════════════════════════════════ -->
+<nav class="tabs-bar">
+  <button class="tab active" onclick="switchTab('overview')">Overview</button>
+  <button class="tab" onclick="switchTab('nameplates')">Nameplates</button>
+  <button class="tab" onclick="switchTab('violations')">Violations <span class="badge" id="violBadge">0</span></button>
+  <button class="tab" onclick="switchTab('log')">Traffic Log</button>
+</nav>
+
+<!-- ══ TOASTS ════════════════════════════════════════════════════════ -->
+<div id="toastContainer"></div>
+
+<!-- ══ REFRESH BAR ══════════════════════════════════════════════════ -->
+<div class="refresh-bar"><div class="refresh-bar-fill" id="refreshBar"></div></div>
+
+<!-- ══ REGISTER MODAL ═══════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-title">Register Nameplate</div>
+
+    <div class="form-group">
+      <label class="form-label">Nameplate Number</label>
+      <input class="form-input" id="m_plate" placeholder="e.g. AS01AB1234" style="text-transform:uppercase;font-size:16px;letter-spacing:3px;"/>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">Owner Name</label>
+        <input class="form-input" id="m_owner" placeholder="Full name"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone</label>
+        <input class="form-input" id="m_phone" placeholder="10-digit"/>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Last Known Area</label>
+      <select class="form-input" id="m_area">
+        <option value="OUT">OUT</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-primary" onclick="submitNameplate()">Register</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══ MAIN ══════════════════════════════════════════════════════════ -->
+<main>
+
+  <!-- ── OVERVIEW ── -->
+  <div class="tab-section active" id="tab-overview">
+
+    <!-- KPIs -->
+    <div class="kpi-strip">
+      <div class="kpi lime">
+        <div class="kpi-label">Active Vehicles</div>
+        <div class="kpi-value" id="kpi-active">—</div>
+        <div class="kpi-sub">across all areas</div>
+      </div>
+      <div class="kpi red">
+        <div class="kpi-label">Speed Violations</div>
+        <div class="kpi-value" id="kpi-violations">—</div>
+        <div class="kpi-sub">all time recorded</div>
+      </div>
+      <div class="kpi green">
+        <div class="kpi-label">Registered</div>
+        <div class="kpi-value" id="kpi-registered">—</div>
+        <div class="kpi-sub">vehicles in database</div>
+      </div>
+      <div class="kpi amber">
+        <div class="kpi-label">Currently Parked</div>
+        <div class="kpi-value" id="kpi-parked">—</div>
+        <div class="kpi-sub">timed out / idle</div>
+      </div>
+    </div>
+
+    <!-- Area grid -->
+    <div class="section-title">Area Status</div>
+    <div class="area-grid" id="areaGrid">
+      <div class="empty">Loading area data…</div>
+    </div>
+
+    <!-- Recent violations -->
+    <div class="section-title">Recent Violations</div>
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Speed Violation Log</span>
+        <span class="panel-meta">LIMIT: 35 km/h</span>
+      </div>
+      <div id="recentViolList"></div>
+    </div>
+
+  </div>
+
+  <!-- ── NAMEPLATES ── -->
+  <div class="tab-section" id="tab-nameplates">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Nameplate Registry</span>
+        <div class="panel-actions">
+          <input class="search-box" id="plateSearch" placeholder="Search plate / owner…" oninput="filterPlates()"/>
+          <button class="btn btn-primary" onclick="openModal()">+ Register</button>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Nameplate</th>
+              <th>Owner</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Last Area</th>
+              <th>Parked</th>
+              <th>Violations</th>
+            </tr>
+          </thead>
+          <tbody id="nameplateBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── VIOLATIONS ── -->
+  <div class="tab-section" id="tab-violations">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Speed Violation Notifications</span>
+        <div class="panel-actions">
+          <input class="search-box" id="violSearch" placeholder="Search plate / area…" oninput="filterViolations()"/>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nameplate</th>
+              <th>Area</th>
+              <th>Time</th>
+              <th>Speed</th>
+              <th>Owner</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody id="violBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── LOG ── -->
+  <div class="tab-section" id="tab-log">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Traffic Log</span>
+        <div class="panel-actions">
+          <select class="search-box" id="logLimit" style="width:130px;" onchange="fetchLog()">
+            <option value="50">Last 50</option>
+            <option value="100" selected>Last 100</option>
+            <option value="200">Last 200</option>
+          </select>
+        </div>
+      </div>
+      <div id="logList" class="log-list"></div>
+    </div>
+  </div>
+
+</main>
+
+<!-- ══ SCRIPT ════════════════════════════════════════════════════════ -->
+<script>
+// ── State ──────────────────────────────────────────────────────────────
+let allPlates = [];
+let allViolations = [];
+let autoRefreshTimer = null;
+const AUTO_REFRESH_MS = 10000;
+const SPEED_LIMIT = 35;
+
+// ── Server URL ─────────────────────────────────────────────────────────
+function baseUrl() {
+  return document.getElementById('serverUrl').value.replace(/\/$/, '');
+}
+
+// ── Tab switching ──────────────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelectorAll('.tab')[['overview','nameplates','violations','log'].indexOf(name)].classList.add('active');
+  if (name === 'log') fetchLog();
+}
+
+// ── Toast ──────────────────────────────────────────────────────────────
+function toast(title, msg, type = '') {
+  const c = document.getElementById('toastContainer');
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  t.innerHTML = `<div class="toast-title">${title}</div>${msg}`;
+  c.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
+}
+
+// ── Fetch helpers ──────────────────────────────────────────────────────
+async function apiFetch(path) {
+  const res = await fetch(baseUrl() + path);
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+function setOnline(ok) {
+  const dot = document.getElementById('statusDot');
+  const lbl = document.getElementById('statusLabel');
+  dot.className = 'status-dot ' + (ok ? 'live' : 'error');
+  lbl.textContent = ok ? 'LIVE' : 'ERROR';
+}
+
+// ── Refresh all ────────────────────────────────────────────────────────
+async function refreshAll() {
+  animateRefreshBar();
+  try {
+    const [stats, plates, notifs] = await Promise.all([
+      apiFetch('/api/stats'),
+      apiFetch('/api/nameplates'),
+      apiFetch('/api/notifications'),
+    ]);
+    setOnline(true);
+    allPlates = plates;
+    allViolations = notifs;
+    renderKPIs(stats, plates, notifs);
+    renderAreas(stats);
+    renderRecentViolations(notifs.slice(0, 5));
+    renderNameplateTable(plates);
+    renderViolationsTable(notifs);
+    document.getElementById('violBadge').textContent = notifs.length;
+  } catch (e) {
+    setOnline(false);
+    toast('Connection Error', e.message, 'danger');
+  }
+}
+
+// ── KPIs ───────────────────────────────────────────────────────────────
+function renderKPIs(stats, plates, notifs) {
+  const active = stats.reduce((s, r) => s + r.active_vehicles, 0);
+  const violations = plates.reduce((s, p) => s + p.violations, 0);
+  const registered = plates.filter(p => p.registered).length;
+  const parked = plates.filter(p => p.parked).length;
+  animNum('kpi-active', active);
+  animNum('kpi-violations', violations);
+  animNum('kpi-registered', registered);
+  animNum('kpi-parked', parked);
+}
+
+function animNum(id, target) {
+  const el = document.getElementById(id);
+  const start = parseInt(el.textContent) || 0;
+  const diff = target - start;
+  const dur = 700;
+  const t0 = performance.now();
+  function step(t) {
+    const p = Math.min((t - t0) / dur, 1);
+    const ease = p < 0.5 ? 2*p*p : -1+(4-2*p)*p;
+    el.textContent = Math.round(start + diff * ease);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ── Areas ──────────────────────────────────────────────────────────────
+function renderAreas(stats) {
+  const grid = document.getElementById('areaGrid');
+  if (!stats.length) { grid.innerHTML = '<div class="empty">No area data available</div>'; return; }
+  grid.innerHTML = stats.map(a => {
+    const pct = Math.min((a.avg_speed / (SPEED_LIMIT * 1.5)) * 100, 100);
+    const limitPct = Math.min((SPEED_LIMIT / (SPEED_LIMIT * 1.5)) * 100, 100);
+    const barColor = a.avg_speed > SPEED_LIMIT
+      ? 'var(--danger)'
+      : a.avg_speed > SPEED_LIMIT * 0.85
+        ? 'var(--warn)'
+        : 'var(--success)';
+    const speedColor = a.avg_speed > SPEED_LIMIT ? 'var(--danger)' : '#fff';
+    return `
+    <div class="area-card" data-area="${a.area}">
+      <div class="area-header">
+        <div>
+          <div class="area-name">AREA ${a.area}</div>
+        </div>
+        <div class="area-zone-tag">ZONE ${a.area}</div>
+      </div>
+      <div class="area-stats">
+        <div class="astat">
+          <div class="astat-val" style="color:var(--accent)">${a.active_vehicles}</div>
+          <div class="astat-lbl">Active</div>
+        </div>
+        <div class="astat">
+          <div class="astat-val" style="color:${speedColor}">${a.avg_speed.toFixed(1)}</div>
+          <div class="astat-lbl">Avg km/h</div>
+        </div>
+        <div class="astat">
+          <div class="astat-val" style="color:var(--text2)">${a.speed_observations}</div>
+          <div class="astat-lbl">Obs.</div>
+        </div>
+      </div>
+      <div class="speed-track">
+        <div class="speed-track-header">
+          <span class="speed-track-lbl">Avg Speed</span>
+          <span class="speed-track-val">${a.avg_speed.toFixed(1)} / ${SPEED_LIMIT} km/h</span>
+        </div>
+        <div class="track-bg">
+          <div class="track-fill" style="width:${pct}%;background:${barColor};"></div>
+          <div class="track-limit" style="right:${100-limitPct}%;"></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Recent Violations (overview) ───────────────────────────────────────
+function renderRecentViolations(list) {
+  const el = document.getElementById('recentViolList');
+  if (!list.length) { el.innerHTML = '<div class="empty">No violations recorded</div>'; return; }
+  el.innerHTML = `<div style="overflow-x:auto;"><table>
+    <thead><tr>
+      <th>#</th><th>Nameplate</th><th>Area</th><th>Time</th><th>Speed</th><th>Owner</th>
+    </tr></thead>
+    <tbody>${list.map(v => violRow(v)).join('')}</tbody>
+  </table></div>`;
+}
+
+function violRow(v) {
+  return `<tr>
+    <td style="color:var(--text2);font-family:var(--mono);font-size:11px;">${v.id}</td>
+    <td><span class="plate-tag">${v.nameplate}</span></td>
+    <td><span class="pill pill-info">${v.area}</span></td>
+    <td style="font-family:var(--mono);font-size:11px;color:var(--text2)">${v.time}</td>
+    <td><span class="speed-val danger">${v.speed.toFixed(1)} km/h</span></td>
+    <td>${v.owner || '<span style="color:var(--text3)">—</span>'}</td>
+  </tr>`;
+}
+
+// ── Nameplates table ───────────────────────────────────────────────────
+function renderNameplateTable(plates) {
+  const tbody = document.getElementById('nameplateBody');
+  if (!plates.length) {
+    tbody.innerHTML = '<tr><td colspan="7"><div class="empty">No nameplates in registry</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = plates.map(p => `<tr>
+    <td><span class="plate-tag">${p.nameplate}</span></td>
+    <td>${p.owner || '<span style="color:var(--text3)">—</span>'}</td>
+    <td style="font-family:var(--mono);font-size:11px;color:var(--text2)">${p.owner_phone || '—'}</td>
+    <td><span class="pill ${p.registered ? 'pill-green' : 'pill-amber'}">${p.registered ? 'Registered' : 'Unregistered'}</span></td>
+    <td><span class="pill pill-info">${p.last_area}</span></td>
+    <td><span class="pill ${p.parked ? 'pill-amber' : 'pill-lime'}">${p.parked ? 'Parked' : 'Moving'}</span></td>
+    <td><span class="viol-count ${p.violations > 0 ? 'high' : 'low'}">${p.violations}</span></td>
+  </tr>`).join('');
+}
+
+function filterPlates() {
+  const q = document.getElementById('plateSearch').value.toLowerCase();
+  const filtered = allPlates.filter(p =>
+    p.nameplate.toLowerCase().includes(q) ||
+    (p.owner && p.owner.toLowerCase().includes(q)) ||
+    (p.owner_phone && p.owner_phone.includes(q))
+  );
+  renderNameplateTable(filtered);
+}
+
+// ── Violations table ───────────────────────────────────────────────────
+function renderViolationsTable(list) {
+  const tbody = document.getElementById('violBody');
+  if (!list.length) {
+    tbody.innerHTML = '<tr><td colspan="7"><div class="empty">No violations on record</div></td></tr>';
+    return;
+  }
+  tbody.innerHTML = list.map(v => `<tr>
+    <td style="color:var(--text2);font-family:var(--mono);font-size:11px;">${v.id}</td>
+    <td><span class="plate-tag">${v.nameplate}</span></td>
+    <td><span class="pill pill-info">${v.area}</span></td>
+    <td style="font-family:var(--mono);font-size:11px;color:var(--text2)">${v.time}</td>
+    <td><span class="speed-val danger">${v.speed.toFixed(1)} km/h</span></td>
+    <td>${v.owner || '<span style="color:var(--text3)">—</span>'}</td>
+    <td style="font-family:var(--mono);font-size:11px;color:var(--text2)">${v.owner_phone || '—'}</td>
+  </tr>`).join('');
+}
+
+function filterViolations() {
+  const q = document.getElementById('violSearch').value.toLowerCase();
+  const filtered = allViolations.filter(v =>
+    v.nameplate.toLowerCase().includes(q) ||
+    v.area.toLowerCase().includes(q) ||
+    (v.owner && v.owner.toLowerCase().includes(q))
+  );
+  renderViolationsTable(filtered);
+}
+
+// ── Traffic Log ────────────────────────────────────────────────────────
+async function fetchLog() {
+  const limit = document.getElementById('logLimit').value;
+  try {
+    const log = await apiFetch('/api/log?limit=' + limit);
+    renderLog(log);
+  } catch(e) {
+    document.getElementById('logList').innerHTML = '<div class="empty">Failed to load log</div>';
+  }
+}
+
+function renderLog(log) {
+  const el = document.getElementById('logList');
+  if (!log.length) { el.innerHTML = '<div class="empty">No log entries</div>'; return; }
+  el.innerHTML = log.map(l => `
+    <div class="log-entry">
+      <span class="log-time">${l.time}</span>
+      <span class="log-area">${l.area}</span>
+      <span class="log-sep">›</span>
+      <span class="log-plate">${l.nameplate}</span>
+      <span class="log-status ${l.status}">${l.status.toUpperCase()}</span>
+    </div>
+  `).join('');
+}
+
+// ── Modal ──────────────────────────────────────────────────────────────
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  ['m_plate','m_owner','m_phone'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('m_area').value = 'OUT';
+}
+
+async function submitNameplate() {
+  const plate = document.getElementById('m_plate').value.trim().toUpperCase();
+  const owner = document.getElementById('m_owner').value.trim();
+  const phone = document.getElementById('m_phone').value.trim();
+  const area  = document.getElementById('m_area').value;
+  if (!plate) { toast('Validation', 'Nameplate is required', 'danger'); return; }
+  toast('Note', `Nameplate "${plate}" queued. Add POST /api/register to server to persist.`, '');
+  closeModal();
+}
+
+// ── Refresh bar animation ──────────────────────────────────────────────
+function animateRefreshBar() {
+  const bar = document.getElementById('refreshBar');
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  setTimeout(() => {
+    bar.style.transition = 'width 0.7s ease';
+    bar.style.width = '100%';
+    setTimeout(() => {
+      bar.style.transition = 'width 0.4s ease';
+      bar.style.width = '0%';
+    }, 800);
+  }, 50);
+}
+
+// ── Auto refresh ───────────────────────────────────────────────────────
+function startAutoRefresh() {
+  if (autoRefreshTimer) clearInterval(autoRefreshTimer);
+  autoRefreshTimer = setInterval(refreshAll, AUTO_REFRESH_MS);
+}
+
+// ── Init ───────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  refreshAll();
+  startAutoRefresh();
+  document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+});
+</script>
+</body>
+</html>
