@@ -27,6 +27,8 @@ from pathlib import Path
 
 from flask import Flask, request, jsonify
 
+from flask_cors import CORS
+
 
 # ── Tunable parameters ────────────────────────────────────────────────
 CHAR_CONFIDENCE_THRESHOLD = 40.0   # percent; below this → wildcard
@@ -231,6 +233,7 @@ def match_nameplate(
 # ── Flask app ─────────────────────────────────────────────────────────
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/api/detection", methods=["POST"])

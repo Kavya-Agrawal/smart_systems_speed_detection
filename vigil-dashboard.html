@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIGIL • Traffic Monitoring System</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --slate-900: #0a0e14;
+            --slate-800: #151922;
+            --slate-700: #1f2430;
+            --slate-600: #2a3142;
+            --slate-500: #3d4554;
+            --cyan-400: #00ffff;
+            --cyan-500: #00d9ff;
+            --lime-400: #88ff00;
+            --red-500: #ff3366;
+            --amber-500: #ffaa00;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--slate-900);
+            color: #e0e6f0;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Scanline Effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 255, 255, 0.03) 0px,
+                rgba(0, 255, 255, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 9999;
+            animation: scanline 8s linear infinite;
+        }
+
+        @keyframes scanline {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(100%); }
+        }
+
+        /* Noise Texture */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.5;
+        }
+
+        .app-container {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-700) 100%);
+            border-bottom: 2px solid var(--cyan-400);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 20px rgba(0, 255, 255, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 0.3em;
+            color: var(--cyan-400);
+            text-shadow: 0 0 20px rgba(0, 255, 255, 0.5),
+                         0 0 40px rgba(0, 255, 255, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .system-status {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--lime-400);
+            box-shadow: 0 0 10px var(--lime-400);
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        /* Navigation Tabs */
+        nav {
+            background: var(--slate-800);
+            padding: 0 2rem;
+            border-bottom: 1px solid var(--slate-600);
+        }
+
+        .nav-tabs {
+            display: flex;
+            gap: 0;
+            max-width: 1800px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .nav-tabs button {
+            background: transparent;
+            border: none;
+            padding: 1rem 2rem;
+            color: #8090a0;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            text-transform: uppercase;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-tabs button:hover {
+            color: var(--cyan-400);
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        .nav-tabs button.active {
+            color: var(--cyan-400);
+            border-bottom-color: var(--cyan-400);
+            background: rgba(0, 255, 255, 0.08);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Grid System */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Cards */
+        .card {
+            background: linear-gradient(135deg, var(--slate-800) 0%, var(--slate-700) 100%);
+            border: 1px solid var(--slate-600);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan-400), transparent);
+            animation: sweep 3s linear infinite;
+        }
+
+        @keyframes sweep {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        .card:hover {
+            border-color: var(--cyan-400);
+            box-shadow: 0 8px 20px rgba(0, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--slate-600);
+        }
+
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: var(--cyan-400);
+            text-transform: uppercase;
+        }
+
+        .card-badge {
+            background: var(--slate-600);
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--lime-400);
+        }
+
+        /* Stats */
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .stat-box {
+            background: var(--slate-600);
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 3px solid var(--cyan-400);
+            transition: all 0.3s;
+        }
+
+        .stat-box:hover {
+            background: var(--slate-500);
+            transform: translateX(4px);
+        }
+
+        .stat-label {
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.7rem;
+            color: #8090a0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.75rem;
+            font-weight: 900;
+            color: var(--cyan-400);
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        }
+
+        .stat-unit {
+            font-size: 0.85rem;
+            color: #8090a0;
+            margin-left: 0.25rem;
+        }
+
+        /* Table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .data-table thead {
+            background: var(--slate-600);
+        }
+
+        .data-table th {
+            padding: 0.75rem;
+            text-align: left;
+            font-weight: 700;
+            color: var(--cyan-400);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.75rem;
+            border-bottom: 2px solid var(--cyan-400);
+        }
+
+        .data-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--slate-600);
+            color: #b0c0d0;
+        }
+
+        .data-table tbody tr {
+            transition: all 0.2s;
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(0, 255, 255, 0.05);
+        }
+
+        /* Badges */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .badge-success {
+            background: rgba(136, 255, 0, 0.15);
+            color: var(--lime-400);
+            border: 1px solid var(--lime-400);
+        }
+
+        .badge-danger {
+            background: rgba(255, 51, 102, 0.15);
+            color: var(--red-500);
+            border: 1px solid var(--red-500);
+        }
+
+        .badge-warning {
+            background: rgba(255, 170, 0, 0.15);
+            color: var(--amber-500);
+            border: 1px solid var(--amber-500);
+        }
+
+        .badge-info {
+            background: rgba(0, 255, 255, 0.15);
+            color: var(--cyan-400);
+            border: 1px solid var(--cyan-400);
+        }
+
+        /* Nameplate Display */
+        .nameplate {
+            font-family: 'Share Tech Mono', monospace;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 0.15em;
+            color: #fff;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            padding: 0.5rem 1rem;
+            border: 2px solid #ffaa00;
+            border-radius: 4px;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(255, 170, 0, 0.3);
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 3rem;
+            color: var(--cyan-400);
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: dots 1.5s steps(3, end) infinite;
+        }
+
+        @keyframes dots {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #8090a0;
+            font-family: 'Rajdhani', sans-serif;
+        }
+
+        /* Violation Alert */
+        .violation-card {
+            border-left: 4px solid var(--red-500);
+            background: linear-gradient(135deg, 
+                rgba(255, 51, 102, 0.08) 0%, 
+                var(--slate-700) 100%
+            );
+        }
+
+        /* Area Badge */
+        .area-badge {
+            font-family: 'Orbitron', monospace;
+            font-weight: 700;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            background: var(--slate-600);
+            color: var(--cyan-400);
+            border: 1px solid var(--cyan-400);
+        }
+
+        /* Refresh Button */
+        .refresh-btn {
+            background: transparent;
+            border: 1px solid var(--cyan-400);
+            color: var(--cyan-400);
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .refresh-btn:hover {
+            background: var(--cyan-400);
+            color: var(--slate-900);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.25rem;
+                letter-spacing: 0.2em;
+            }
+
+            .system-status {
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 0.75rem;
+            }
+
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .data-table {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Scroll Animations */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stagger-1 { animation-delay: 0.1s; opacity: 0; }
+        .stagger-2 { animation-delay: 0.2s; opacity: 0; }
+        .stagger-3 { animation-delay: 0.3s; opacity: 0; }
+        .stagger-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // Configuration - UPDATE THIS WITH YOUR SERVER URL
+        const API_BASE = 'http://localhost:8000';  // Change to your server address
+
+        function App() {
+            const [activeTab, setActiveTab] = useState('dashboard');
+            const [stats, setStats] = useState([]);
+            const [nameplates, setNameplates] = useState([]);
+            const [notifications, setNotifications] = useState([]);
+            const [trafficLog, setTrafficLog] = useState([]);
+            const [loading, setLoading] = useState(true);
+            const [lastUpdate, setLastUpdate] = useState(null);
+
+            const fetchData = async () => {
+                try {
+                    const [statsRes, platesRes, notifsRes, logRes] = await Promise.all([
+                        fetch(`${API_BASE}/api/stats`),
+                        fetch(`${API_BASE}/api/nameplates`),
+                        fetch(`${API_BASE}/api/notifications`),
+                        fetch(`${API_BASE}/api/log?limit=50`)
+                    ]);
+
+                    setStats(await statsRes.json());
+                    setNameplates(await platesRes.json());
+                    setNotifications(await notifsRes.json());
+                    setTrafficLog(await logRes.json());
+                    setLastUpdate(new Date());
+                    setLoading(false);
+                } catch (error) {
+                    console.error('Error fetching data:', error);
+                    setLoading(false);
+                }
+            };
+
+            useEffect(() => {
+                fetchData();
+                const interval = setInterval(fetchData, 5000); // Refresh every 5 seconds
+                return () => clearInterval(interval);
+            }, []);
+
+            const totalVehicles = nameplates.length;
+            const registeredVehicles = nameplates.filter(v => v.registered).length;
+            const parkedVehicles = nameplates.filter(v => v.parked).length;
+            const totalViolations = nameplates.reduce((sum, v) => sum + v.violations, 0);
+
+            return (
+                <div className="app-container">
+                    <header>
+                        <div className="header-content">
+                            <div className="logo">VIGIL</div>
+                            <div className="system-status">
+                                <div className="status-item">
+                                    <div className="status-dot"></div>
+                                    <span>SYSTEM ONLINE</span>
+                                </div>
+                                {lastUpdate && (
+                                    <div className="status-item">
+                                        <span>LAST UPDATE: {lastUpdate.toLocaleTimeString()}</span>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </header>
+
+                    <nav>
+                        <ul className="nav-tabs">
+                            <li>
+                                <button 
+                                    className={activeTab === 'dashboard' ? 'active' : ''}
+                                    onClick={() => setActiveTab('dashboard')}
+                                >
+                                    Dashboard
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    className={activeTab === 'vehicles' ? 'active' : ''}
+                                    onClick={() => setActiveTab('vehicles')}
+                                >
+                                    Vehicles
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    className={activeTab === 'violations' ? 'active' : ''}
+                                    onClick={() => setActiveTab('violations')}
+                                >
+                                    Violations
+                                </button>
+                            </li>
+                            <li>
+                                <button 
+                                    className={activeTab === 'logs' ? 'active' : ''}
+                                    onClick={() => setActiveTab('logs')}
+                                >
+                                    Traffic Logs
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <main>
+                        {loading ? (
+                            <div className="loading">LOADING SYSTEM DATA</div>
+                        ) : (
+                            <>
+                                {activeTab === 'dashboard' && (
+                                    <DashboardView 
+                                        stats={stats}
+                                        totalVehicles={totalVehicles}
+                                        registeredVehicles={registeredVehicles}
+                                        parkedVehicles={parkedVehicles}
+                                        totalViolations={totalViolations}
+                                        notifications={notifications}
+                                        onRefresh={fetchData}
+                                    />
+                                )}
+                                {activeTab === 'vehicles' && (
+                                    <VehiclesView nameplates={nameplates} onRefresh={fetchData} />
+                                )}
+                                {activeTab === 'violations' && (
+                                    <ViolationsView notifications={notifications} onRefresh={fetchData} />
+                                )}
+                                {activeTab === 'logs' && (
+                                    <LogsView trafficLog={trafficLog} onRefresh={fetchData} />
+                                )}
+                            </>
+                        )}
+                    </main>
+                </div>
+            );
+        }
+
+        function DashboardView({ stats, totalVehicles, registeredVehicles, parkedVehicles, totalViolations, notifications, onRefresh }) {
+            const activeVehicles = stats.reduce((sum, s) => sum + s.active_vehicles, 0);
+            const recentViolations = notifications.slice(0, 5);
+
+            return (
+                <>
+                    <div className="dashboard-grid">
+                        <div className="card fade-in stagger-1">
+                            <div className="card-header">
+                                <h3 className="card-title">System Overview</h3>
+                            </div>
+                            <div className="stat-grid">
+                                <div className="stat-box">
+                                    <div className="stat-label">Total Vehicles</div>
+                                    <div className="stat-value">{totalVehicles}</div>
+                                </div>
+                                <div className="stat-box">
+                                    <div className="stat-label">Active Now</div>
+                                    <div className="stat-value">{activeVehicles}</div>
+                                </div>
+                                <div className="stat-box">
+                                    <div className="stat-label">Parked</div>
+                                    <div className="stat-value">{parkedVehicles}</div>
+                                </div>
+                                <div className="stat-box">
+                                    <div className="stat-label">Registered</div>
+                                    <div className="stat-value">{registeredVehicles}</div>
+                                </div>
+                                <div className="stat-box">
+                                    <div className="stat-label">Unregistered</div>
+                                    <div className="stat-value">{totalVehicles - registeredVehicles}</div>
+                                </div>
+                                <div className="stat-box">
+                                    <div className="stat-label">Violations</div>
+                                    <div className="stat-value" style={{color: 'var(--red-500)'}}>{totalViolations}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {stats.map((area, idx) => (
+                            <div key={area.area} className={`card fade-in stagger-${idx + 2}`}>
+                                <div className="card-header">
+                                    <h3 className="card-title">Area {area.area}</h3>
+                                    <span className="card-badge">{area.active_vehicles} Active</span>
+                                </div>
+                                <div className="stat-grid">
+                                    <div className="stat-box">
+                                        <div className="stat-label">Active Vehicles</div>
+                                        <div className="stat-value">{area.active_vehicles}</div>
+                                    </div>
+                                    <div className="stat-box">
+                                        <div className="stat-label">Avg Speed</div>
+                                        <div className="stat-value">
+                                            {area.avg_speed.toFixed(1)}
+                                            <span className="stat-unit">km/h</span>
+                                        </div>
+                                    </div>
+                                    <div className="stat-box">
+                                        <div className="stat-label">Observations</div>
+                                        <div className="stat-value">{area.speed_observations}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="card fade-in stagger-4">
+                        <div className="card-header">
+                            <h3 className="card-title">Recent Violations</h3>
+                            <button className="refresh-btn" onClick={onRefresh}>Refresh</button>
+                        </div>
+                        {recentViolations.length === 0 ? (
+                            <div className="empty-state">No violations recorded</div>
+                        ) : (
+                            <table className="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nameplate</th>
+                                        <th>Area</th>
+                                        <th>Speed</th>
+                                        <th>Time</th>
+                                        <th>Owner</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {recentViolations.map(v => (
+                                        <tr key={v.id}>
+                                            <td><span className="nameplate">{v.nameplate}</span></td>
+                                            <td><span className="area-badge">{v.area}</span></td>
+                                            <td>
+                                                <span style={{color: 'var(--red-500)', fontWeight: 700}}>
+                                                    {v.speed.toFixed(1)} km/h
+                                                </span>
+                                            </td>
+                                            <td>{v.time}</td>
+                                            <td>{v.owner || 'N/A'}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        )}
+                    </div>
+                </>
+            );
+        }
+
+        function VehiclesView({ nameplates, onRefresh }) {
+            return (
+                <div className="card fade-in">
+                    <div className="card-header">
+                        <h3 className="card-title">Vehicle Registry</h3>
+                        <button className="refresh-btn" onClick={onRefresh}>Refresh</button>
+                    </div>
+                    {nameplates.length === 0 ? (
+                        <div className="empty-state">No vehicles in database</div>
+                    ) : (
+                        <table className="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nameplate</th>
+                                    <th>Status</th>
+                                    <th>Last Area</th>
+                                    <th>Owner</th>
+                                    <th>Phone</th>
+                                    <th>Violations</th>
+                                    <th>Parked</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {nameplates.map(v => (
+                                    <tr key={v.nameplate}>
+                                        <td><span className="nameplate">{v.nameplate}</span></td>
+                                        <td>
+                                            {v.registered ? (
+                                                <span className="badge badge-success">Registered</span>
+                                            ) : (
+                                                <span className="badge badge-warning">Unregistered</span>
+                                            )}
+                                        </td>
+                                        <td><span className="area-badge">{v.last_area}</span></td>
+                                        <td>{v.owner || 'N/A'}</td>
+                                        <td>{v.owner_phone || 'N/A'}</td>
+                                        <td>
+                                            {v.violations > 0 ? (
+                                                <span className="badge badge-danger">{v.violations}</span>
+                                            ) : (
+                                                <span style={{color: '#8090a0'}}>0</span>
+                                            )}
+                                        </td>
+                                        <td>
+                                            {v.parked ? (
+                                                <span className="badge badge-info">Yes</span>
+                                            ) : (
+                                                <span style={{color: '#8090a0'}}>No</span>
+                                            )}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                </div>
+            );
+        }
+
+        function ViolationsView({ notifications, onRefresh }) {
+            return (
+                <div className="card fade-in violation-card">
+                    <div className="card-header">
+                        <h3 className="card-title">Speed Violations</h3>
+                        <button className="refresh-btn" onClick={onRefresh}>Refresh</button>
+                    </div>
+                    {notifications.length === 0 ? (
+                        <div className="empty-state">No violations recorded</div>
+                    ) : (
+                        <table className="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nameplate</th>
+                                    <th>Area</th>
+                                    <th>Speed</th>
+                                    <th>Time</th>
+                                    <th>Owner</th>
+                                    <th>Phone</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {notifications.map(n => (
+                                    <tr key={n.id}>
+                                        <td>#{n.id}</td>
+                                        <td><span className="nameplate">{n.nameplate}</span></td>
+                                        <td><span className="area-badge">{n.area}</span></td>
+                                        <td>
+                                            <span style={{color: 'var(--red-500)', fontWeight: 700}}>
+                                                {n.speed.toFixed(1)} km/h
+                                            </span>
+                                        </td>
+                                        <td>{n.time}</td>
+                                        <td>{n.owner || 'N/A'}</td>
+                                        <td>{n.owner_phone || 'N/A'}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                </div>
+            );
+        }
+
+        function LogsView({ trafficLog, onRefresh }) {
+            return (
+                <div className="card fade-in">
+                    <div className="card-header">
+                        <h3 className="card-title">Traffic Activity Log</h3>
+                        <button className="refresh-btn" onClick={onRefresh}>Refresh</button>
+                    </div>
+                    {trafficLog.length === 0 ? (
+                        <div className="empty-state">No traffic logs available</div>
+                    ) : (
+                        <table className="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Area</th>
+                                    <th>Nameplate</th>
+                                    <th>Status</th>
+                                    <th>Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {trafficLog.map(log => (
+                                    <tr key={log.id}>
+                                        <td>#{log.id}</td>
+                                        <td><span className="area-badge">{log.area}</span></td>
+                                        <td><span className="nameplate">{log.nameplate}</span></td>
+                                        <td>
+                                            {log.status === 'entry' && <span className="badge badge-success">Entry</span>}
+                                            {log.status === 'exit' && <span className="badge badge-warning">Exit</span>}
+                                            {log.status === 'parked' && <span className="badge badge-info">Parked</span>}
+                                        </td>
+                                        <td>{log.time}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    )}
+                </div>
+            );
+        }
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+</html>

@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VIGIL — Central Monitoring</title>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg:        #09090b;
+    --surface:   #111114;
+    --card:      #16161a;
+    --border:    #23232a;
+    --border2:   #2e2e38;
+    --accent:    #00e5ff;
+    --accent2:   #ff3b3b;
+    --accent3:   #00ff88;
+    --muted:     #4a4a5a;
+    --text:      #d4d4e0;
+    --text2:     #7a7a90;
+    --mono:      'Share Tech Mono', monospace;
+    --head:      'Orbitron', sans-serif;
+    --body:      'Rajdhani', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 15px;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Scanline overlay ── */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0px,
+      transparent 3px,
+      rgba(0,229,255,0.012) 3px,
+      rgba(0,229,255,0.012) 4px
+    );
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── Header ── */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    height: 64px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .logo-icon {
+    width: 36px; height: 36px;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .logo-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,229,255,0.15), transparent);
+  }
+  .logo-icon svg { width: 20px; height: 20px; fill: var(--accent); }
+
+  .logo-text {
+    font-family: var(--head);
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(0,229,255,0.5);
+  }
+
+  .logo-sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--accent);
+    letter-spacing: 2px;
+    line-height: 1;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .server-url-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .server-url-group label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 1px;
+  }
+
+  #serverUrl {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    width: 180px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  #serverUrl:focus { border-color: var(--accent); }
+
+  .status-dot {
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--muted);
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  .status-dot.live {
+    background: var(--accent3);
+    box-shadow: 0 0 10px var(--accent3);
+    animation: pulse 2s infinite;
+  }
+  .status-dot.error { background: var(--accent2); box-shadow: 0 0 10px var(--accent2); }
+
+  @keyframes pulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .status-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    letter-spacing: 1px;
+  }
+
+  .btn {
+    font-family: var(--head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 8px 18px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .btn-accent {
+    background: var(--accent);
+    color: #000;
+  }
+  .btn-accent:hover { background: #33eeff; box-shadow: 0 0 18px rgba(0,229,255,0.4); }
+  .btn-ghost {
+    background: transparent;
+    color: var(--text2);
+    border: 1px solid var(--border2);
+  }
+  .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Tabs ── */
+  .tabs {
+    display: flex;
+    gap: 0;
+    padding: 0 32px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tab {
+    font-family: var(--head);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 14px 22px;
+    cursor: pointer;
+    color: var(--text2);
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    position: relative;
+  }
+  .tab:hover { color: var(--text); }
+  .tab.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+  .tab .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    background: var(--accent2);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    margin-left: 6px;
+    font-family: var(--mono);
+  }
+
+  /* ── Main layout ── */
+  main { padding: 28px 32px; }
+
+  /* ── KPI strip ── */
+  .kpi-strip {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .kpi {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .kpi:hover { border-color: var(--border2); }
+  .kpi::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+  }
+  .kpi.cyan::before  { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+  .kpi.red::before   { background: linear-gradient(90deg, transparent, var(--accent2), transparent); }
+  .kpi.green::before { background: linear-gradient(90deg, transparent, var(--accent3), transparent); }
+  .kpi.amber::before { background: linear-gradient(90deg, transparent, #f59e0b, transparent); }
+
+  .kpi-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text2);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .kpi-value {
+    font-family: var(--head);
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+  }
+  .kpi.cyan  .kpi-value { color: var(--accent); text-shadow: 0 0 20px rgba(0,229,255,0.3); }
+  .kpi.red   .kpi-value { color: var(--accent2); text-shadow: 0 0 20px rgba(255,59,59,0.3); }
+  .kpi.green .kpi-value { color: var(--accent3); text-shadow: 0 0 20px rgba(0,255,136,0.3); }
+  .kpi.amber .kpi-value { color: #f59e0b; text-shadow: 0 0 20px rgba(245,158,11,0.3); }
+
+  .kpi-sub {
+    font-family: var(--body);
+    font-size: 12px;
+    color: var(--text2);
+    margin-top: 6px;
+  }
+
+  /* ── Area cards ── */
+  .section-title {
+    font-family: var(--head);
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--text2);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  .area-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .area-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 22px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .area-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .area-card::after {
+    content: attr(data-area);
+    position: absolute;
+    right: -10px; top: -15px;
+    font-family: var(--head);
+    font-size: 80px;
+    font-weight: 900;
+    color: rgba(0,229,255,0.04);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .area-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .area-name {
+    font-family: var(--head);
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--accent);
+    letter-spacing: 3px;
+  }
+
+  .area-traffic {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text2);
+    letter-spacing: 1px;
+  }
+
+  .area-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .area-stat {
+    text-align: center;
+  }
+  .area-stat-val {
+    font-family: var(--head);
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .area-stat-lbl {
+    font-family: var(--mono);
+    font-size: 9px;
+    color: var(--text2);
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  .speed-bar-wrap {
+    margin-top: 14px;
+  }
+  .speed-bar-lbl {
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--text2);
+    margin-bottom: 5px;
+  }
+  .speed-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .speed-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.8s cubic-bezier(0.4,0,0.2,1);
+  }
+
+  /* ── Tables ── */
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 28px;
+  }
+
+  .panel-header {
+    padding: 16px 22px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .panel-title {
+    font-family: var(--head);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--text2);
+    text-transform: uppercase;
+  }
+
+  .panel-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .search-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 5px 12px;
+    border-radius: 4px;
+    outline: none;
+    width: 200px;
+    transition: border-color 0.2s;
+  }
+  .search-box:focus { border-color: var(--accent); }
+  .search-box::placeholder { color: var(--muted); }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  thead th {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text2);
+    text-transform: uppercase;
+    padding: 10px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    white-space: nowrap;
+  }
+
+  tbody tr {
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+  }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: rgba(0,229,255,0.04); }
+
+  td {
+    padding: 10px 16px;
+    font-family: var(--body);
+    font-size: 14px;
+    color: var(--text);
+    white-space: nowrap;
+  }
+
+  .plate-tag {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 700;
+    background: rgba(0,229,255,0.08);
+    color: var(--accent);
+    padding: 3px 8px;
+    border-radius: 3px;
+    border: 1px solid rgba(0,229,255,0.2);
+    letter-spacing: 1px;
+  }
+
+  .badge-pill {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    font-weight: 700;
+  }
+  .pill-green  { background: rgba(0,255,136,0.12); color: var(--accent3); border: 1px solid rgba(0,255,136,0.25); }
+  .pill-red    { background: rgba(255,59,59,0.12);  color: var(--accent2); border: 1px solid rgba(255,59,59,0.25); }
+  .pill-amber  { background: rgba(245,158,11,0.12); color: #f59e0b;        border: 1px solid rgba(245,158,11,0.25); }
+  .pill-gray   { background: rgba(74,74,90,0.25);   color: var(--text2);   border: 1px solid var(--border2); }
+  .pill-cyan   { background: rgba(0,229,255,0.12);  color: var(--accent);  border: 1px solid rgba(0,229,255,0.25); }
+
+  .viol-count {
+    font-family: var(--head);
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .viol-count.high { color: var(--accent2); }
+  .viol-count.low  { color: var(--text2); }
+
+  .speed-val { font-family: var(--mono); font-size: 13px; }
+  .speed-val.danger { color: var(--accent2); font-weight: 700; }
+  .speed-val.safe   { color: var(--accent3); }
+
+  /* ── Traffic log ── */
+  .log-entry {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 10px 22px;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
+    animation: slideIn 0.3s ease;
+  }
+  .log-entry:hover { background: rgba(255,255,255,0.02); }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  .log-time {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text2);
+    min-width: 140px;
+  }
+
+  .log-area {
+    font-family: var(--head);
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent);
+    min-width: 32px;
+  }
+
+  .log-arrow {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .log-plate {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--text);
+    min-width: 110px;
+  }
+
+  .log-status {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 3px;
+  }
+  .log-status.entry  { background: rgba(0,255,136,0.1); color: var(--accent3); }
+  .log-status.exit   { background: rgba(245,158,11,0.1); color: #f59e0b; }
+  .log-status.parked { background: rgba(74,74,90,0.2); color: var(--text2); }
+
+  /* ── Empty state ── */
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* ── Toast notifications ── */
+  #toastContainer {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .toast {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-left: 3px solid var(--accent);
+    border-radius: 6px;
+    padding: 14px 18px;
+    min-width: 280px;
+    font-family: var(--body);
+    font-size: 14px;
+    color: var(--text);
+    animation: toastIn 0.3s ease;
+    position: relative;
+  }
+  .toast.danger { border-left-color: var(--accent2); }
+  .toast.success { border-left-color: var(--accent3); }
+  .toast-title {
+    font-family: var(--head);
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--accent);
+    margin-bottom: 4px;
+    font-weight: 700;
+  }
+  .toast.danger .toast-title { color: var(--accent2); }
+  .toast.success .toast-title { color: var(--accent3); }
+
+  @keyframes toastIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ── Sections ── */
+  .tab-section { display: none; }
+  .tab-section.active { display: block; }
+
+  /* ── Add nameplate modal ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center; justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.open { display: flex; }
+
+  .modal {
+    background: var(--card);
+    border: 1px solid var(--border2);
+    border-radius: 10px;
+    padding: 32px;
+    width: 420px;
+    max-width: 95vw;
+    animation: modalIn 0.25s ease;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .modal-title {
+    font-family: var(--head);
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    color: var(--accent);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .form-group { margin-bottom: 16px; }
+  .form-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--text2);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .form-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 14px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-input:focus { border-color: var(--accent); }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .modal-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    justify-content: flex-end;
+  }
+
+  /* ── VIGIL logo animation ── */
+  .logo-text {
+    background: linear-gradient(90deg, var(--accent), #ffffff, var(--accent));
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shimmer 4s linear infinite;
+  }
+  @keyframes shimmer {
+    0%   { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+  }
+
+  /* ── Refresh indicator ── */
+  .refresh-bar {
+    height: 2px;
+    background: var(--border);
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+  }
+  .refresh-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    width: 0%;
+    transition: width linear;
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  /* scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--surface); }
+  ::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+  @media (max-width: 900px) {
+    .kpi-strip { grid-template-columns: 1fr 1fr; }
+    .area-grid  { grid-template-columns: 1fr; }
+    header { padding: 0 16px; }
+    main   { padding: 20px 16px; }
+    .tabs  { padding: 0 16px; overflow-x: auto; }
+    .server-url-group label { display: none; }
+    #serverUrl { width: 140px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6L12 2zm0 2.18l6 2.61V12c0 4.15-2.78 8.01-6 9.3C8.78 20.01 6 16.15 6 12V6.79l6-2.61zM11 8v4.5l4 2.45.75-1.23-3.25-2V8H11z"/>
+      </svg>
+    </div>
+    <div>
+      <div class="logo-text">VIGIL</div>
+      <div class="logo-sub">CENTRAL MONITORING</div>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="server-url-group">
+      <label>SERVER</label>
+      <input id="serverUrl" type="text" value="http://localhost:8000" placeholder="http://host:port"/>
+    </div>
+    <div class="status-dot" id="statusDot"></div>
+    <span class="status-label" id="statusLabel">OFFLINE</span>
+    <button class="btn btn-accent" onclick="refreshAll()">REFRESH</button>
+  </div>
+</header>
+
+<!-- Tabs -->
+<nav class="tabs">
+  <button class="tab active" onclick="switchTab('overview')">OVERVIEW</button>
+  <button class="tab" onclick="switchTab('nameplates')">NAMEPLATES</button>
+  <button class="tab" onclick="switchTab('violations')">VIOLATIONS <span class="badge" id="violBadge">0</span></button>
+  <button class="tab" onclick="switchTab('log')">TRAFFIC LOG</button>
+</nav>
+
+<!-- Toast container -->
+<div id="toastContainer"></div>
+
+<!-- Refresh bar -->
+<div class="refresh-bar"><div class="refresh-bar-fill" id="refreshBar"></div></div>
+
+<!-- Add Nameplate Modal -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <div class="modal-title">Register Nameplate</div>
+    <div class="form-group">
+      <label class="form-label">NAMEPLATE</label>
+      <input class="form-input" id="m_plate" placeholder="e.g. AS01AB1234" style="text-transform:uppercase;font-size:16px;letter-spacing:2px;"/>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label class="form-label">OWNER NAME</label>
+        <input class="form-input" id="m_owner" placeholder="Full name"/>
+      </div>
+      <div class="form-group">
+        <label class="form-label">PHONE</label>
+        <input class="form-input" id="m_phone" placeholder="10-digit number"/>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="form-label">LAST AREA</label>
+      <select class="form-input" id="m_area">
+        <option value="OUT">OUT</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-ghost" onclick="closeModal()">CANCEL</button>
+      <button class="btn btn-accent" onclick="submitNameplate()">REGISTER</button>
+    </div>
+  </div>
+</div>
+
+<!-- Main -->
+<main>
+
+  <!-- OVERVIEW TAB -->
+  <div class="tab-section active" id="tab-overview">
+
+    <!-- KPIs -->
+    <div class="kpi-strip">
+      <div class="kpi cyan">
+        <div class="kpi-label">Total Active Vehicles</div>
+        <div class="kpi-value" id="kpi-active">—</div>
+        <div class="kpi-sub">across all areas</div>
+      </div>
+      <div class="kpi red">
+        <div class="kpi-label">Speed Violations</div>
+        <div class="kpi-value" id="kpi-violations">—</div>
+        <div class="kpi-sub">all time</div>
+      </div>
+      <div class="kpi green">
+        <div class="kpi-label">Registered Vehicles</div>
+        <div class="kpi-value" id="kpi-registered">—</div>
+        <div class="kpi-sub">in database</div>
+      </div>
+      <div class="kpi amber">
+        <div class="kpi-label">Currently Parked</div>
+        <div class="kpi-value" id="kpi-parked">—</div>
+        <div class="kpi-sub">timed out</div>
+      </div>
+    </div>
+
+    <!-- Area stats -->
+    <div class="section-title">Area Status</div>
+    <div class="area-grid" id="areaGrid">
+      <div class="empty">Loading area data…</div>
+    </div>
+
+    <!-- Recent violations -->
+    <div class="section-title">Recent Violations</div>
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Speed Violation Log</span>
+        <span class="panel-actions">
+          <span style="font-family:var(--mono);font-size:11px;color:var(--text2);">LIMIT: 35 km/h</span>
+        </span>
+      </div>
+      <div id="recentViolList"></div>
+    </div>
+
+  </div>
+
+  <!-- NAMEPLATES TAB -->
+  <div class="tab-section" id="tab-nameplates">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Nameplate Registry</span>
+        <div class="panel-actions">
+          <input class="search-box" id="plateSearch" placeholder="Search plate / owner…" oninput="filterPlates()"/>
+          <button class="btn btn-accent" onclick="openModal()">+ REGISTER</button>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>NAMEPLATE</th>
+              <th>OWNER</th>
+              <th>PHONE</th>
+              <th>STATUS</th>
+              <th>LAST AREA</th>
+              <th>PARKED</th>
+              <th>VIOLATIONS</th>
+            </tr>
+          </thead>
+          <tbody id="nameplateBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- VIOLATIONS TAB -->
+  <div class="tab-section" id="tab-violations">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Speed Violation Notifications</span>
+        <div class="panel-actions">
+          <input class="search-box" id="violSearch" placeholder="Search plate / area…" oninput="filterViolations()"/>
+        </div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>NAMEPLATE</th>
+              <th>AREA</th>
+              <th>TIME</th>
+              <th>SPEED</th>
+              <th>OWNER</th>
+              <th>PHONE</th>
+            </tr>
+          </thead>
+          <tbody id="violBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOG TAB -->
+  <div class="tab-section" id="tab-log">
+    <div class="panel">
+      <div class="panel-header">
+        <span class="panel-title">Traffic Log</span>
+        <div class="panel-actions">
+          <select class="search-box" id="logLimit" style="width:120px;" onchange="fetchLog()">
+            <option value="50">Last 50</option>
+            <option value="100" selected>Last 100</option>
+            <option value="200">Last 200</option>
+          </select>
+        </div>
+      </div>
+      <div id="logList"></div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ── State ──────────────────────────────────────────────────────────────
+let allPlates = [];
+let allViolations = [];
+let autoRefreshTimer = null;
+const AUTO_REFRESH_MS = 10000;
+const SPEED_LIMIT = 35;
+
+// ── Server URL ─────────────────────────────────────────────────────────
+function baseUrl() {
+  return document.getElementById('serverUrl').value.replace(/\/$/, '');
+}
+
+// ── Tab switching ──────────────────────────────────────────────────────
+function switchTab(name) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  document.querySelectorAll('.tab')[['overview','nameplates','violations','log'].indexOf(name)].classList.add('active');
+  if (name === 'log') fetchLog();
+}
+
+// ── Toast ──────────────────────────────────────────────────────────────
+function toast(title, msg, type = '') {
+  const c = document.getElementById('toastContainer');
+  const t = document.createElement('div');
+  t.className = 'toast ' + type;
+  t.innerHTML = `<div class="toast-title">${title}</div>${msg}`;
+  c.appendChild(t);
+  setTimeout(() => t.remove(), 4000);
+}
+
+// ── Fetch helpers ──────────────────────────────────────────────────────
+async function apiFetch(path) {
+  const res = await fetch(baseUrl() + path);
+  if (!res.ok) throw new Error('HTTP ' + res.status);
+  return res.json();
+}
+
+function setOnline(ok) {
+  const dot = document.getElementById('statusDot');
+  const lbl = document.getElementById('statusLabel');
+  dot.className = 'status-dot ' + (ok ? 'live' : 'error');
+  lbl.textContent = ok ? 'LIVE' : 'ERROR';
+}
+
+// ── Refresh all ────────────────────────────────────────────────────────
+async function refreshAll() {
+  animateRefreshBar();
+  try {
+    const [stats, plates, notifs] = await Promise.all([
+      apiFetch('/api/stats'),
+      apiFetch('/api/nameplates'),
+      apiFetch('/api/notifications'),
+    ]);
+    setOnline(true);
+    allPlates = plates;
+    allViolations = notifs;
+    renderKPIs(stats, plates, notifs);
+    renderAreas(stats);
+    renderRecentViolations(notifs.slice(0, 5));
+    renderNameplateTable(plates);
+    renderViolationsTable(notifs);
+    document.getElementById('violBadge').textContent = notifs.length;
+  } catch (e) {
+    setOnline(false);
+    toast('CONNECTION ERROR', e.message, 'danger');
+  }
+}
+
+// ── KPIs ───────────────────────────────────────────────────────────────
+function renderKPIs(stats, plates, notifs) {
+  const active = stats.reduce((s, r) => s + r.active_vehicles, 0);
+  const violations = plates.reduce((s, p) => s + p.violations, 0);
+  const registered = plates.filter(p => p.registered).length;
+  const parked = plates.filter(p => p.parked).length;
+  animNum('kpi-active', active);
+  animNum('kpi-violations', violations);
+  animNum('kpi-registered', registered);
+  animNum('kpi-parked', parked);
+}
+
+function animNum(id, target) {
+  const el = document.getElementById(id);
+  const start = parseInt(el.textContent) || 0;
+  const diff = target - start;
+  const dur = 600;
+  const t0 = performance.now();
+  function step(t) {
+    const p = Math.min((t - t0) / dur, 1);
+    el.textContent = Math.round(start + diff * p);
+    if (p < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+// ── Areas ──────────────────────────────────────────────────────────────
+function renderAreas(stats) {
+  const grid = document.getElementById('areaGrid');
+  if (!stats.length) { grid.innerHTML = '<div class="empty">NO AREA DATA</div>'; return; }
+  grid.innerHTML = stats.map(a => {
+    const pct = Math.min((a.avg_speed / SPEED_LIMIT) * 100, 100);
+    const barColor = a.avg_speed > SPEED_LIMIT ? 'var(--accent2)' : a.avg_speed > SPEED_LIMIT * 0.8 ? '#f59e0b' : 'var(--accent3)';
+    return `
+    <div class="area-card" data-area="${a.area}">
+      <div class="area-header">
+        <div class="area-name">AREA ${a.area}</div>
+        <div class="area-traffic">ZONE ${a.area}</div>
+      </div>
+      <div class="area-stat-row">
+        <div class="area-stat">
+          <div class="area-stat-val" style="color:var(--accent)">${a.active_vehicles}</div>
+          <div class="area-stat-lbl">ACTIVE</div>
+        </div>
+        <div class="area-stat">
+          <div class="area-stat-val" style="color:${a.avg_speed > SPEED_LIMIT ? 'var(--accent2)' : '#fff'}">${a.avg_speed.toFixed(1)}</div>
+          <div class="area-stat-lbl">AVG KM/H</div>
+        </div>
+        <div class="area-stat">
+          <div class="area-stat-val" style="color:var(--text2)">${a.speed_observations}</div>
+          <div class="area-stat-lbl">OBS</div>
+        </div>
+      </div>
+      <div class="speed-bar-wrap">
+        <div class="speed-bar-lbl">
+          <span>AVG SPEED</span>
+          <span>${a.avg_speed.toFixed(1)} / ${SPEED_LIMIT} km/h</span>
+        </div>
+        <div class="speed-bar">
+          <div class="speed-bar-fill" style="width:${pct}%;background:${barColor};"></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── Recent Violations (overview) ───────────────────────────────────────
+function renderRecentViolations(list) {
+  const el = document.getElementById('recentViolList');
+  if (!list.length) { el.innerHTML = '<div class="empty">NO VIOLATIONS RECORDED</div>'; return; }
+  el.innerHTML = `<div style="overflow-x:auto;"><table>
+    <thead><tr><th>#</th><th>NAMEPLATE</th><th>AREA</th><th>TIME</th><th>SPEED</th><th>OWNER</th></tr></thead>
+    <tbody>${list.map(v => violRow(v)).join('')}</tbody>
+  </table></div>`;
+}
+
+function violRow(v) {
+  return `<tr>
+    <td style="color:var(--text2);font-family:var(--mono)">${v.id}</td>
+    <td><span class="plate-tag">${v.nameplate}</span></td>
+    <td><span class="badge-pill pill-cyan">${v.area}</span></td>
+    <td style="font-family:var(--mono);font-size:12px;color:var(--text2)">${v.time}</td>
+    <td><span class="speed-val danger">${v.speed.toFixed(1)} km/h</span></td>
+    <td>${v.owner || '<span style="color:var(--muted)">—</span>'}</td>
+  </tr>`;
+}
+
+// ── Nameplates table ───────────────────────────────────────────────────
+function renderNameplateTable(plates) {
+  const tbody = document.getElementById('nameplateBody');
+  if (!plates.length) { tbody.innerHTML = '<tr><td colspan="7"><div class="empty">NO NAMEPLATES</div></td></tr>'; return; }
+  tbody.innerHTML = plates.map(p => `<tr>
+    <td><span class="plate-tag">${p.nameplate}</span></td>
+    <td>${p.owner || '<span style="color:var(--muted)">—</span>'}</td>
+    <td style="font-family:var(--mono);font-size:12px">${p.owner_phone || '—'}</td>
+    <td><span class="badge-pill ${p.registered ? 'pill-green' : 'pill-amber'}">${p.registered ? 'REGISTERED' : 'UNREGISTERED'}</span></td>
+    <td><span class="badge-pill pill-cyan">${p.last_area}</span></td>
+    <td><span class="badge-pill ${p.parked ? 'pill-amber' : 'pill-green'}">${p.parked ? 'PARKED' : 'MOVING'}</span></td>
+    <td><span class="viol-count ${p.violations > 0 ? 'high' : 'low'}">${p.violations}</span></td>
+  </tr>`).join('');
+}
+
+function filterPlates() {
+  const q = document.getElementById('plateSearch').value.toLowerCase();
+  const filtered = allPlates.filter(p =>
+    p.nameplate.toLowerCase().includes(q) ||
+    (p.owner && p.owner.toLowerCase().includes(q)) ||
+    (p.owner_phone && p.owner_phone.includes(q))
+  );
+  renderNameplateTable(filtered);
+}
+
+// ── Violations table ───────────────────────────────────────────────────
+function renderViolationsTable(list) {
+  const tbody = document.getElementById('violBody');
+  if (!list.length) { tbody.innerHTML = '<tr><td colspan="7"><div class="empty">NO VIOLATIONS</div></td></tr>'; return; }
+  tbody.innerHTML = list.map(v => `<tr>
+    <td style="color:var(--text2);font-family:var(--mono)">${v.id}</td>
+    <td><span class="plate-tag">${v.nameplate}</span></td>
+    <td><span class="badge-pill pill-cyan">${v.area}</span></td>
+    <td style="font-family:var(--mono);font-size:12px;color:var(--text2)">${v.time}</td>
+    <td><span class="speed-val danger">${v.speed.toFixed(1)} km/h</span></td>
+    <td>${v.owner || '<span style="color:var(--muted)">—</span>'}</td>
+    <td style="font-family:var(--mono);font-size:12px">${v.owner_phone || '—'}</td>
+  </tr>`).join('');
+}
+
+function filterViolations() {
+  const q = document.getElementById('violSearch').value.toLowerCase();
+  const filtered = allViolations.filter(v =>
+    v.nameplate.toLowerCase().includes(q) ||
+    v.area.toLowerCase().includes(q) ||
+    (v.owner && v.owner.toLowerCase().includes(q))
+  );
+  renderViolationsTable(filtered);
+}
+
+// ── Traffic Log ────────────────────────────────────────────────────────
+async function fetchLog() {
+  const limit = document.getElementById('logLimit').value;
+  try {
+    const log = await apiFetch('/api/log?limit=' + limit);
+    renderLog(log);
+  } catch(e) {
+    document.getElementById('logList').innerHTML = '<div class="empty">FAILED TO LOAD LOG</div>';
+  }
+}
+
+function renderLog(log) {
+  const el = document.getElementById('logList');
+  if (!log.length) { el.innerHTML = '<div class="empty">NO LOG ENTRIES</div>'; return; }
+  el.innerHTML = log.map(l => `
+    <div class="log-entry">
+      <span class="log-time">${l.time}</span>
+      <span class="log-area">${l.area}</span>
+      <span class="log-arrow">›</span>
+      <span class="log-plate">${l.nameplate}</span>
+      <span class="log-status ${l.status}">${l.status.toUpperCase()}</span>
+    </div>
+  `).join('');
+}
+
+// ── Modal ──────────────────────────────────────────────────────────────
+function openModal() {
+  document.getElementById('modalOverlay').classList.add('open');
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  ['m_plate','m_owner','m_phone'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('m_area').value = 'OUT';
+}
+
+// NOTE: Server has no POST /api/nameplates endpoint; this sends detection to simulate
+// or you can directly seed via the server's seed function.
+// For a real add-nameplate API you'd add an endpoint to the server.
+async function submitNameplate() {
+  const plate = document.getElementById('m_plate').value.trim().toUpperCase();
+  const owner = document.getElementById('m_owner').value.trim();
+  const phone = document.getElementById('m_phone').value.trim();
+  const area  = document.getElementById('m_area').value;
+  if (!plate) { toast('VALIDATION', 'Nameplate is required', 'danger'); return; }
+  // This is a stub — to fully support this you'd add a POST /api/register endpoint to your server.
+  toast('NOTE', `Nameplate "${plate}" queued. Add POST /api/register to server to persist.`, '');
+  closeModal();
+}
+
+// ── Refresh bar animation ──────────────────────────────────────────────
+function animateRefreshBar() {
+  const bar = document.getElementById('refreshBar');
+  bar.style.transition = 'none';
+  bar.style.width = '0%';
+  setTimeout(() => {
+    bar.style.transition = 'width 0.6s ease';
+    bar.style.width = '100%';
+    setTimeout(() => {
+      bar.style.transition = 'width 0.3s ease';
+      bar.style.width = '0%';
+    }, 700);
+  }, 50);
+}
+
+// ── Auto refresh ───────────────────────────────────────────────────────
+function startAutoRefresh() {
+  if (autoRefreshTimer) clearInterval(autoRefreshTimer);
+  autoRefreshTimer = setInterval(() => {
+    refreshAll();
+  }, AUTO_REFRESH_MS);
+}
+
+// ── Init ───────────────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  refreshAll();
+  startAutoRefresh();
+  document.getElementById('modalOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeModal();
+  });
+});
+</script>
+</body>
+</html>
